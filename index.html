@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Senhas do Fernando Isnaldo versão web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Gerador de Senhas</h1>
+        <div id="GerarSenha">
+            <label>Tipo de senha: </label>
+            <span id="exibeTipo">ASCII</span>
+            <br />
+            <br />
+            <button type="button" onclick="setASCII()">ASCII</button>
+            <button type="button" onclick="setSilabas()">Sílabas</button>
+            <button type="button" onclick="setAlfanumerico()">Alfanumérico</button>
+            <button type="button" onclick="setHexadecimal()">Hexadecimal</button>
+            <button type="button" onclick="setDecimal()">Números</button>
+            <br />
+            <br />
+            <label for="numel">Quantidade de elementos: </label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32">
+            <button type="button" onclick="gerarSenha()">Gerar senha</button>
+            <div id="copiar"></div>
+            <p id="output">Por favor, utilize um navegador compatível com JavaScript!</p>
+        </div>
+    </main>
+    <footer>
+        <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>Este é um software livre: você pode redistribui-lo sob as condições da GPL v3 ou posterior. NÃO HÁ GARANTIA</p>
+        <p>Veja o arquivo <a href="LICENSE">LICENSE</a> para mais detalhes.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
