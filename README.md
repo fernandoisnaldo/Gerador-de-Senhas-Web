@@ -3,5 +3,5 @@ Gerador de Senhas versão web, baseado na lógica do meu gerador de senhas em Ja
 
 Para ver online: https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/
 
-# Ver tambem
+# Ver também
 Gerador de senhas versão Java CLI: https://github.com/fernandoisnaldo/Gerador-de-Senhas
