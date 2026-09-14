@@ -32,12 +32,11 @@ let alfabeto = {
 function numAleatorio(max) {
     const buffer = new Uint32Array(1);
     const maxPermitido = Math.floor(4294967296 / max) * max;
-
     let valor;
     do {
         window.crypto.getRandomValues(buffer);
         valor = buffer[0];
-    } while (valor >= maxPermitido); // Descarta e 'refaz' se estiver no viés
+    } while (valor >= maxPermitido);
 
     return valor % max;
 }
@@ -63,13 +62,12 @@ function setDecimal(){
 }
 function gerarSenha(){
     senha.innerHTML="";
-    //senha.append("teste"); <button type="button" id="copiar" onclick="copiar()">Copiar senha</button>
     let numChar = document.getElementById("numel");
     let quantidade = parseInt(numChar.value) || 0;
-    exibirCopiar.innerHTML="<button type=\"button\" onclick=\"copiar()\">Copiar senha</button>";
+    exibirCopiar.innerHTML="<br \><button type=\"button\" onclick=\"copiar()\">Copiar senha</button>";
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == 0){
-            senha.append(String.fromCharCode(numAleatorio(94)+33));
+            senha.append(String.fromCharCode(numAleatorio(94https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/)+33));
         }
         else if (tipoElemento == 1){
             if(contador!=0){
