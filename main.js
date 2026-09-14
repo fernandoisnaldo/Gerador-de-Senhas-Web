@@ -64,7 +64,7 @@ function gerarSenha(){
     senha.innerHTML="";
     let numChar = document.getElementById("numel");
     let quantidade = parseInt(numChar.value) || 0;
-    exibirCopiar.innerHTML="<br \><button type=\"button\" onclick=\"copiar()\">Copy</button>";
+    exibirCopiar.innerHTML="<br \><button type=\"button\" onclick=\"copiar()\">Ctrl + C</button>";
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == 0){
             senha.append(String.fromCharCode(numAleatorio(94)+33));
@@ -99,7 +99,7 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText);
 }
 function inicializa(){
-    senha.innerHTML="Aqui vai aparecer a sua senha";
+    senha.innerHTML="-----------------------------";
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
