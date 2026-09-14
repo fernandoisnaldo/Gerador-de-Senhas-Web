@@ -6,3 +6,6 @@ main, footer {
     padding: 5px;
     word-break: break-all;
 }
+body {
+    font-size: 11pt;
+}
