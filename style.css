@@ -5,7 +5,7 @@ header, main, footer {
     font-family: monospace;
     padding: 5px;
 }
-footer {
+main {
     word-break: break-all;
 }
 body {
