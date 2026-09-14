@@ -67,7 +67,7 @@ function gerarSenha(){
     exibirCopiar.innerHTML="<br \><button type=\"button\" onclick=\"copiar()\">Copiar senha</button>";
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == 0){
-            senha.append(String.fromCharCode(numAleatorio(94https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/)+33));
+            senha.append(String.fromCharCode(numAleatorio(94)+33));
         }
         else if (tipoElemento == 1){
             if(contador!=0){
