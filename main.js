@@ -99,7 +99,7 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText);
 }
 function inicializa(){
-    senha.innerHTML="-----------------------------";
+    senha.innerHTML="*********************************";
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
