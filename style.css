@@ -4,6 +4,8 @@ header, main, footer {
     border: dashed 1px #000;
     font-family: monospace;
     padding: 5px;
+}
+footer {
     word-break: break-all;
 }
 body {
