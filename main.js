@@ -46,7 +46,7 @@ function setASCII(){
 }
 function setSilabas(){
     tipoElemento = 1;
-    exibirTipo.innerText="Sílabas\n⚠️ pode sair palavras feias por seleção fonética aleatória ⚠️";
+    exibirTipo.innerText="Sílabas\n⚠️ pode sair palavras inapropriadas ou de baixo calão⚠️\n⚠️seleção fonética aleatória ⚠️";
 }
 function setAlfanumerico(){
     tipoElemento = 2;
