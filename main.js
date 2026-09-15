@@ -96,7 +96,8 @@ function gerarSenha(){
     }
 }
 function copiar(){
-    navigator.clipboard.writeText(senha.innerText);
+    navigator.clipboard.writeText(senha.innerText)
+        .catch(erro => alert("Não foi possível copiar: " + erro.name));
 }
 function inicializa(){
     senha.innerText="*********************************";
