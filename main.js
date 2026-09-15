@@ -3,6 +3,7 @@
  * Copyright (c) 2026 Fernando Isnaldo Silva de Faria
  * Programa licenciado sob a GNU General Public License v3.0 (ou qualquer versão posterior).
  * Veja o arquivo LICENSE no repositório do código-fonte para mais detalhes.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 let tipoElemento = 0;
 let senha = document.getElementById("output");
