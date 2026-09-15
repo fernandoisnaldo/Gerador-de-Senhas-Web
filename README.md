@@ -4,7 +4,7 @@ Baseado na lógica do meu gerador de senhas em Java
 # Principais características
 1) Usa gerador de números aleatórios criptograficamente seguro, com rejeição de viés de módulo.
 2) Formato de aplicação web, executa direto no navegador a partir do documento HTML.
-3) Emite senhas em formato ASCII (faixa 33~126), sílabas, alfanumérico, hexadecimal e decimal. [Clique aqui para ver a documentação das sílabas.](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo)
+3) Emite senhas em formato ASCII (faixa 33~126), sílabas, alfanumérico, hexadecimal e decimal. [Documentação das sílabas.](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo)
 4) Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
    
 # Instruções de uso
