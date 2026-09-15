@@ -46,7 +46,7 @@ function setASCII(){
 }
 function setSilabas(){
     tipoElemento = 1;
-    exibirTipo.innerHTML="Sílabas<br />⚠️ pode sair palavras feias por seleção fonética aleatória ⚠️";
+    exibirTipo.innerText="Sílabas\n⚠️ pode sair palavras feias por seleção fonética aleatória ⚠️";
 }
 function setAlfanumerico(){
     tipoElemento = 2;
@@ -61,10 +61,11 @@ function setDecimal(){
     exibirTipo.innerText="Números";
 }
 function gerarSenha(){
-    senha.innerHTML="";
+    senha.innerText="";
     let numChar = document.getElementById("numel");
     let quantidade = parseInt(numChar.value) || 0;
-    exibirCopiar.innerHTML="<button type=\"button\" onclick=\"copiar()\">Copiar</button>";
+    //exibirCopiar.innerHTML="<button type=\"button\" onclick=\"copiar()\">Copiar</button>";
+    //TODO criar função pra mostrar o botão
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == 0){
             senha.append(String.fromCharCode(numAleatorio(94)+33));
