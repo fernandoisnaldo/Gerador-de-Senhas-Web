@@ -2,6 +2,7 @@
  * Gerador de Senhas versão web do Fernando Isnaldo
  * Copyright (c) 2026 Fernando Isnaldo Silva de Faria
  * Licenciado sob a GNU General Public License v3.0 (ou versão posterior).
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 header, main, footer {
     margin: auto 0;
