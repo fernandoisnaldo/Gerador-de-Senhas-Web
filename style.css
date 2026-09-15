@@ -11,7 +11,7 @@ header, main, footer {
     font-family: monospace;
     padding: 5px;
 }
-main {
+#output {
     word-break: break-all;
 }
 body {
