@@ -46,7 +46,7 @@ function setASCII(){
 }
 function setSilabas(){
     tipoElemento = 1;
-    exibirTipo.innerText="Sílabas";
+    exibirTipo.innerText="Sílabas (aviso: pode sair palavras feias por razões da combinação aleatória de fonemas)";
 }
 function setAlfanumerico(){
     tipoElemento = 2;
