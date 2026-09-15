@@ -8,9 +8,10 @@ Baseado na lógica do meu gerador de senhas em Java
 4) Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
    
 # Instruções de uso
-Simplesmente acesse este link e execute no seu navegador: https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/
+Simplesmente acesse este [link](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/
+) e execute no seu navegador.
 
-Você também pode baixar os arquivos e executar a página HTML direto do seu computador, porém requer servidor loopback ou protocolo HTTPS para funcionar o botão "Copiar".
+Caso você prefira, também pode simplesmente clonar este repositório pra tua máquina e abrir o arquivo index.html.
 
 # Ver também
 Gerador de Senhas versão Java CLI: https://github.com/fernandoisnaldo/Gerador-de-Senhas
