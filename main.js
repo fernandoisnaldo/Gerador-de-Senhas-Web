@@ -96,12 +96,7 @@ function gerarSenha(){
     }
 }
 function copiar(){
-    try {
-        navigator.clipboard.writeText(senhaEl.innerText);
-
-    } catch (err) {
-        exibirCopiar.innerText="Erro";
-    }
+    navigator.clipboard.writeText(senha.innerText);
 }
 function inicializa(){
     senha.innerText="*********************************";
