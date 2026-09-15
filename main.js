@@ -38,7 +38,6 @@ function numAleatorio(max) {
         window.crypto.getRandomValues(buffer);
         valor = buffer[0];
     } while (valor >= maxPermitido);
-
     return valor % max;
 }
 function setASCII(){
