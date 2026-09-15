@@ -98,7 +98,6 @@ function gerarSenha(){
 function copiar(){
     try {
         navigator.clipboard.writeText(senhaEl.innerText);
-        exibirCopiar.innerText="Copiado";
 
     } catch (err) {
         exibirCopiar.innerText="Erro";
