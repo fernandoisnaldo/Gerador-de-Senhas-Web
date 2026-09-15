@@ -17,3 +17,6 @@ header, main, footer {
 body {
     font-size: 11pt;
 }
+#copiar {
+    display: none;
+}
