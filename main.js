@@ -29,8 +29,8 @@ let alfabeto = {
     ],
     silabas: []
 };
+const buffer = new Uint32Array(1);
 function numAleatorio(max) {
-    const buffer = new Uint32Array(1);
     const maxPermitido = Math.floor(4294967296 / max) * max;
     let valor;
     do {
@@ -107,6 +107,5 @@ function inicializa(){
             }
         }
     }
-
 }
 inicializa();
