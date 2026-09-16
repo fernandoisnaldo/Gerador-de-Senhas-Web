@@ -12,34 +12,34 @@
     </header>
     <main>
         <h1>Gerador de Senhas</h1>
-        <div id="GerarSenha">
+        <section id="GerarSenha">
             <label>Tipo de senha: </label>
             <span id="exibeTipo">ASCII</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()">ASCII</button>
-            <button type="button" onclick="setSilabas()">Sílabas</button>
-            <button type="button" onclick="setAlfanumerico()">Alfanumérico</button>
-            <button type="button" onclick="setHexadecimal()">Hexadecimal</button>
-            <button type="button" onclick="setDecimal()">Números</button>
+            <button type="button" onclick="setASCII()" alt="Define opção para ASCII">ASCII</button>
+            <button type="button" onclick="setSilabas()" alt="Define opção para sílabas">Sílabas</button>
+            <button type="button" onclick="setAlfanumerico()" alt="Define opção para letras e números">Alfanumérico</button>
+            <button type="button" onclick="setHexadecimal()" alt="Define opção para números hexadecimais">Hexadecimal</button>
+            <button type="button" onclick="setDecimal()" alt="Define opção para números comuns">Números</button>
             <br />
             <br />
             <label for="numel">Quantidade de elementos: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32">
-            <button type="button" onclick="gerarSenha()">Gerar senha</button>
+            <button type="button" onclick="gerarSenha()" alt="Gera a senha e faz o botão Copiar aparecer logo abaixo">Gerar senha</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()">Copiar</button>
+                <button type="button" onclick="copiar()" alt="Clique aqui pra copiar a senha gerada">Copiar</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output">JavaScript é necessário</span>
+                <span id="output" alt="Esta será a sua senha">Navegador não compatível ou com JavaScript desativado</span>
                 <br />
                 <br />
             </section>
-        </div>
+        </section>
     </main>
     <footer>
         <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
