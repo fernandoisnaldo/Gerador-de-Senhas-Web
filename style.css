@@ -13,6 +13,8 @@ header, main, footer {
 }
 #output {
     word-break: break-all;
+    font-weight: bold;
+    font-size: 10pt;
 }
 body {
     font-size: 11pt;
