@@ -4,7 +4,7 @@ Baseado na lógica do meu gerador de senhas em Java
 # Instruções de uso
 Simplesmente acesse o [Gerador de Senhas versão web](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/) e execute no seu navegador.
 
-Caso você prefira, também pode simplesmente clonar este repositório pra tua máquina e abrir o arquivo index.html (ou qualquer arquivo html que esteja de acordo com a linguagem que você enntende).
+Caso você prefira, também pode simplesmente clonar este repositório pra tua máquina e abrir o arquivo index.html (ou qualquer arquivo html que esteja de acordo com a linguagem que você entende).
 
 # Principais características
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.
