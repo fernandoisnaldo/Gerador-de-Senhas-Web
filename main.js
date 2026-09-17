@@ -127,8 +127,12 @@ function gerarSenha(){
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 1px";
 }
 function copiar(){
+    if (!navigator.clipboard) {
+        alert("Este navegador não suporta o nosso botão copiar (ou a página não está em contexto seguro).");
+        return;
+    }
     navigator.clipboard.writeText(senha.innerText)
-        .catch(erro => alert("Não foi possível copiar: " + erro.name));
+        .catch(erro => alert("Não copiou, por: " + erro.name));
 }
 function inicializa(){
     senha.innerText="*********************************";
