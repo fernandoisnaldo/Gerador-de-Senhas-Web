@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# este shellscript é meramente um protótipo
 mkdir -p build/GeradordeSenhas-web
 cp index.html build/GeradordeSenhas-web/index.html
 cp main.js build/GeradordeSenhas-web/main.js
