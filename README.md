@@ -11,7 +11,7 @@ Caso você fale um idioma diferente do usado pra escrever este README, entre no 
 A fonte de números pseudoaleatórios é a função window.crypto.getRandomValues(), nativa do motor JavaScript de navegadores modernos.
 4) Formato de aplicação web: executa direto no navegador a partir de qualquer qualquer destes documentos HTML.
 5) Emite senhas em formato ASCII ([faixa 33~126 da tabela ASCII](https://pt.wikipedia.org/wiki/ASCII)), sílabas, alfanumérico, hexadecimal e decimal. ([Documentação das sílabas aqui](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo))
-6) Design aleatório: As senhas tem suas cores sorteadas a cada geração, aproveitando o mesmo gerador criptograficamente seguro para ter estilo aleatório. Existe um enviesamento matemático para a cor verde no código, mas o motivo disso é porque é meramente questão de escolha de design, isso não tem implicação na segurança da geração de senhas.
+6) Design aleatório: As senhas tem suas cores sorteadas a cada geração dentro de uma certa palheta de cores, aproveitando o mesmo gerador criptograficamente seguro para ter estilo aleatório. Este recurso é meramente uma questão de design, sem implicações nem positivas e nem negativas na segurança.
 7) Está disponível em várias línguas. 
 8) Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 
