@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Fernando Isnaldo 密码生成器网页版</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <nav id="idiomas">
+        <a href="en_US.html">American English</a>
+        <a href="es_419.html">Español Latinoamericano</a>
+        <a href="index.html">Português Brasileiro</a>
+        <a href="ja_JP.html">日本語</a>
+        <a href="zh_CN.html">中文（中国大陆)</a>
+    </nav>
+    <!-- TODO: 请一位中文母语者校对翻译。 -->
+    <header>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Github 仓库</a></p>
+        <p>本程序还有<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">命令行版本。</a></p>
+    </header>
+    <main>
+        <h1>密码生成器</h1>
+        <section id="GerarSenha">
+            <label>密码类型：</label>
+            <span id="tipo_ascii">ASCII</span>
+            <span id="tipo_silabas">
+                音节
+                <br />⚠️ 随机音节组合 ⚠️
+                <br />⚠️ 可能生成不雅词汇 ⚠️
+            </span>
+            <span id="tipo_alfanum">字母数字</span>
+            <span id="tipo_hexadecimal">十六进制</span>
+            <span id="tipo_numero">数字</span>
+            <br />
+            <br />
+            <button type="button" onclick="setASCII()" title="设置为 ASCII 表中的字母、数字和符号">ASCII</button>
+            <button type="button" onclick="setSilabas()" title="设置为音节">音节</button>
+            <button type="button" onclick="setAlfanumerico()" title="设置为字母和数字">字母数字</button>
+            <button type="button" onclick="setHexadecimal()" title="设置为十六进制数字">十六进制</button>
+            <button type="button" onclick="setDecimal()" title="设置为普通数字">数字</button>
+            <br />
+            <br />
+            <label for="numel">元素数量：</label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
+            <button type="button" onclick="gerarSenha()" title="生成密码并显示下方的复制按钮">生成密码</button>
+            <br />
+            <br />
+            <section id="copiar">
+                <button type="button" onclick="copiar()" title="点击这里复制生成的密码">复制</button>
+                <br />
+            </section>
+            <section>
+                <br />
+                <span id="output" title="这将是你的密码">浏览器不兼容或未启用 JavaScript</span>
+                <br />
+                <br />
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>这是自由软件：你可以根据 GPL v3 或更高版本的条款重新分发它。</p>
+        <p>本程序不提供任何担保；详情请参阅 <a href="LICENSE" target="_blank">LICENSE</a> 文件。</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

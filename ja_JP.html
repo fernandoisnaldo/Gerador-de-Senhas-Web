@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Fernando Isnaldo のパスワードジェネレーター ウェブ版</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <nav id="idiomas">
+        <a href="en_US.html">American English</a>
+        <a href="es_419.html">Español Latinoamericano</a>
+        <a href="index.html">Português Brasileiro</a>
+        <a href="ja_JP.html">日本語</a>
+        <a href="zh_CN.html">中文（中国大陆)</a>
+    </nav>
+    <!--  TODO: 日本語ネイティブスピーカーと復習しましょう。 -->
+    <header>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Githubリポジトリ</a></p>
+        <p>このプログラムには<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">CLI版</a>もあります。</p>
+    </header>
+    <main>
+        <h1>パスワードジェネレーター</h1>
+        <section id="GerarSenha">
+            <label>パスワードの種類： </label>
+            <span id="tipo_ascii">ASCII</span>
+            <span id="tipo_silabas">
+                音節
+                <br />⚠️ ランダムな音声選択 ⚠️
+                <br />⚠️ 不適切な単語が出ることがあります ⚠️
+            </span>
+            <span id="tipo_alfanum">英数字</span>
+            <span id="tipo_hexadecimal">16進数</span>
+            <span id="tipo_numero">数字</span>
+            <br />
+            <br />
+            <button type="button" onclick="setASCII()" title="ASCII表の文字・数字・記号を使用します">ASCII</button>
+            <button type="button" onclick="setSilabas()" title="音節を使用します">音節</button>
+            <button type="button" onclick="setAlfanumerico()" title="文字と数字を使用します">英数字</button>
+            <button type="button" onclick="setHexadecimal()" title="16進数を使用します">16進数</button>
+            <button type="button" onclick="setDecimal()" title="通常の数字を使用します">数字</button>
+
+            <br />
+            <br />
+            <label for="numel">要素数： </label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
+            <button type="button" onclick="gerarSenha()" title="パスワードを生成し、下にコピーボタンを表示します">パスワードを生成</button>
+            <br />
+            <br />
+            <section id="copiar">
+                <button type="button" onclick="copiar()" title="生成されたパスワードをコピーするにはここをクリックしてください">コピー</button>
+                <br />
+            </section>
+            <section>
+                <br />
+                <span id="output" title="これがあなたのパスワードです">ブラウザが非対応か、JavaScriptが無効です</span>
+                <br />
+                <br />
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>これはフリーソフトウェアです。GPL v3 以降の条件の下で再配布できます。</p>
+        <p>本プログラムにはいかなる保証もありません。詳細は <a href="LICENSE" target="_blank">LICENSE</a> ファイルをご覧ください。</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
