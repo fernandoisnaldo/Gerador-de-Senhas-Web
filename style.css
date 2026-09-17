@@ -8,8 +8,10 @@ header, main, footer {
     margin: auto 0;
     text-align: center;
     border: dashed 1px #000;
-    font-family: monospace;
     padding: 5px;
+}
+#tipo_ascii, #tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero{
+    display:none;
 }
 #output {
     word-break: break-all;
@@ -17,6 +19,7 @@ header, main, footer {
     font-size: 10pt;
 }
 body {
+    font-family: monospace;
     font-size: 11pt;
 }
 #copiar {
