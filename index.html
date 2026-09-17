@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <a href="en_US.html" alt="Muda pra língua inglesa">en_US</a>
     <header>
         <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Repositório do Github</a></p>
         <p>Este programa também tem <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versão CLI.</a></p>
@@ -15,7 +16,15 @@
         <h1>Gerador de Senhas</h1>
         <section id="GerarSenha">
             <label>Tipo de senha: </label>
-            <span id="exibeTipo">ASCII</span>
+            <span id="tipo_ascii">ASCII</span>
+            <span id="tipo_silabas">
+                Sílabas
+                <br />⚠️ seleção fonética aleatória ⚠️
+                <br />⚠️ podem sair palavras inapropriadas ⚠️
+            </span>
+            <span id="tipo_alfanum">Alfanumerico</span>
+            <span id="tipo_hexadecimal">Hexadecimais</span>
+            <span id="tipo_numero">Números</span>
             <br />
             <br />
             <button type="button" onclick="setASCII()" title="Define opção para letras, números e símbolos da tabela ASCII">ASCII</button>
@@ -23,6 +32,7 @@
             <button type="button" onclick="setAlfanumerico()" title="Define opção para letras e números">Alfanumérico</button>
             <button type="button" onclick="setHexadecimal()" title="Define opção para números hexadecimais">Hexadecimal</button>
             <button type="button" onclick="setDecimal()" title="Define opção para números comuns">Números</button>
+
             <br />
             <br />
             <label for="numel">Quantidade de elementos: </label>
