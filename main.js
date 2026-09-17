@@ -6,8 +6,13 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 let tipoElemento = 0;
+let ascii_span = document.getElementById("tipo_ascii");
+let silabas_span = document.getElementById("tipo_silabas");
+let alfanum_span = document.getElementById("tipo_alfanum");
+let hexadecimal_span =  document.getElementById("tipo_hexadecimal");
+let numero_span = document.getElementById("tipo_numero");
 let senha = document.getElementById("output");
-let exibirTipo = document.getElementById("exibeTipo");
+//let exibirTipo document.getElementById("exibeTipo")
 let exibirCopiar  = document.getElementById("copiar");
 let alfabeto = {
     consoantes: [
@@ -42,23 +47,46 @@ function numAleatorio(max) {
 }
 function setASCII(){
     tipoElemento = 0;
-    exibirTipo.innerText="ASCII";
+    ascii_span.style.display="inline";
+    silabas_span.style.display="none";
+    alfanum_span.style.display="none";
+    hexadecimal_span.style.display="none";
+    numero_span.style.display="none";
 }
 function setSilabas(){
     tipoElemento = 1;
-    exibirTipo.innerText="Sílabas\n⚠️ seleção fonética aleatória ⚠️\n⚠️ podem sair palavras inapropriadas ⚠️";
+    ascii_span.style.display="none";
+    silabas_span.style.display="inline";
+    alfanum_span.style.display="none";
+    hexadecimal_span.style.display="none";
+    numero_span.style.display="none";
+
 }
 function setAlfanumerico(){
     tipoElemento = 2;
-    exibirTipo.innerText="Alfanuméricos";
+    ascii_span.style.display="none";
+    silabas_span.style.display="none";
+    alfanum_span.style.display="inline";
+    hexadecimal_span.style.display="none";
+    numero_span.style.display="none";
+
 }
 function setHexadecimal(){
     tipoElemento = 3;
-    exibirTipo.innerText="Hexadecimais";
+    ascii_span.style.display="none";
+    silabas_span.style.display="none";
+    alfanum_span.style.display="none";
+    hexadecimal_span.style.display="inline";
+    numero_span.style.display="none";
 }
 function setDecimal(){
     tipoElemento = 4;
-    exibirTipo.innerText="Números";
+    ascii_span.style.display="none";
+    silabas_span.style.display="none";
+    alfanum_span.style.display="none";
+    hexadecimal_span.style.display="none";
+    numero_span.style.display="inline";
+
 }
 function gerarSenha(){
     senha.innerText="";
