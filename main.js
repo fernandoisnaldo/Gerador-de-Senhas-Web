@@ -1,5 +1,5 @@
 /*
- * Gerador de Senhas versão web - Gera senhas de alta segurança,com
+ * Gerador de Senhas versão web - Gera senhas de alta segurança, com
  * acessibilidade e simplicidade por design
  * Copyright (C) 2026  Fernando Isnaldo Silva de Faria
  *
