@@ -129,7 +129,7 @@ function gerarSenha(){
         else if (tipoElemento == 3){ //hexadecimal
             senha.append(numAleatorio(16).toString(16)); //emite hexadecimal
         }
-        else if (tipoElemento == 4){ //hexadecimal
+        else if (tipoElemento == 4){ //número
             senha.append(numAleatorio(10)); //emite número decimal
         }
     }
