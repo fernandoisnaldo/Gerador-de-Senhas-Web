@@ -41,7 +41,7 @@ body {
         background-color: #111;
         color: #ccc;
     }
-    header, main, footer nav a, nav a:hover{
+    header, main, footer, nav a, nav a:hover{
         border-color: #aaa;
     }
     a, a:visited {
