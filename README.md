@@ -2,9 +2,7 @@
 Baseado na lógica do meu gerador de senhas em Java
 
 # Instruções de uso
-Simplesmente acesse o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/) e execute no seu navegador.
-
-Caso você fale um idioma diferente do usado pra escrever este README, entre no arquivo [setLang.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/setLang.html) e selecione o idioma do seu melhor entendimento.
+Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/) e execute no seu navegador.
 
 # Principais características
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.
