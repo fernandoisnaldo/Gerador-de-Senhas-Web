@@ -11,7 +11,7 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
 3) Emite senhas em formato ASCII ([faixa 33~126 da tabela ASCII](https://pt.wikipedia.org/wiki/ASCII)), sílabas, alfanumérico, hexadecimal e decimal. ([Documentação das sílabas aqui](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo))
 4) Está disponível em várias línguas. 
    
-# Principais aracterísticas de design, arquitetura e acessibilidade:
+# Principais aracterísticas de design, arquitetura e acessibilidade
 1) Está disponível em várias línguas.
 2) Usa HTML semântico com aria-label em botões, para facilitar acessibilidade para quem é cego.
 3) As senhas geradas possuem cores aleatórias dentro de uma palheta definida no código.
