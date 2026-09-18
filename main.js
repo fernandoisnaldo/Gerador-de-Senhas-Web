@@ -44,16 +44,16 @@ let alfabeto = {
         "ss", "sd", "sh", "sk", "t", "tt", "th", "tk", "v", "vv", "w", "wd", "wm", "wn", "ww", "x",
         "xx", "y", "yk", "yx", "yy", "yz", "z", "zz"
     ],
-    silabas: []
+    silabas: []//este array vai ser ocupado depois que o código inicializar
 };
-const buffer = new Uint32Array(1);
+const buffer = new Uint32Array(1); //ponteiro pra uso do CSPRNG
 function numAleatorio(max) {
     const maxPermitido = Math.floor(4294967296 / max) * max;
     let valor;
     do {
         window.crypto.getRandomValues(buffer);
         valor = buffer[0];
-    } while (valor >= maxPermitido);
+    } while (valor >= maxPermitido); //rejeita viés de módulo
     return valor % max;
 }
 function setASCII(){
@@ -105,17 +105,17 @@ function gerarSenha(){
     let quantidade = parseInt(numChar.value) || 0;
     exibirCopiar.style.display="block";
     for(let contador=0;contador<quantidade;contador++){
-        if (tipoElemento == 0){
-            senha.append(String.fromCharCode(numAleatorio(94)+33));
+        if (tipoElemento == 0){ //ASCII
+            senha.append(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
         }
-        else if (tipoElemento == 1){
+        else if (tipoElemento == 1){ //sílabas
             if(contador!=0){
-                senha.append(" ");
+                senha.append(" ");//adciona um espaço entre as sílabas
             }
-            senha.append(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]);
+            senha.append(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
         }
-        else if (tipoElemento == 2){
-            let base62 = numAleatorio(62);
+        else if (tipoElemento == 2){ //alfanumérico
+            let base62 = numAleatorio(62); //sorteia número de 0 a 61 para seleção alfanumérica
             if (base62<10){
                 senha.append(base62); //emite 0 a 9
             }
@@ -126,13 +126,14 @@ function gerarSenha(){
                 senha.append(String.fromCharCode(base62+61)); //emite a-z
             }
         }
-        else if (tipoElemento == 3){
-            senha.append(numAleatorio(16).toString(16));
+        else if (tipoElemento == 3){ //hexadecimal
+            senha.append(numAleatorio(16).toString(16)); //emite hexadecimal
         }
-        else if (tipoElemento == 4){
-            senha.append(numAleatorio(10));
+        else if (tipoElemento == 4){ //hexadecimal
+            senha.append(numAleatorio(10)); //emite número decimal
         }
     }
+    //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 1px";
@@ -146,11 +147,11 @@ function copiar(){
         .catch(erro => alert("Não copiou, por: " + erro.name));
 }
 function inicializa(){
-    senha.innerText="*********************************";
+    senha.innerText="*********************************";//substitui o aviso padrão de "requer JavaScript" que está em outros documentos HTML.
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
-                alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
+                alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);//ocupa o vetor silabas
             }
         }
     }
