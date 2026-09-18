@@ -29,26 +29,25 @@
             <span id="tipo_numero">Numbers</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" title="Set option for letters, numbers, and symbols from the ASCII table">ASCII</button>
-            <button type="button" onclick="setSilabas()" title="Set option for syllables">Syllables</button>
-            <button type="button" onclick="setAlfanumerico()" title="Set option for letters and numbers">Alphanumerics</button>
-            <button type="button" onclick="setHexadecimal()" title="Set option for hexadecimals">Hexadecimals</button>
-            <button type="button" onclick="setDecimal()" title="Set option for numbers">Numbers</button>
-
+            <button type="button" onclick="setASCII()" aria-label="Set option for letters, numbers, and symbols from the ASCII table">ASCII</button>
+            <button type="button" onclick="setSilabas()" aria-label="Set option for syllables">Syllables</button>
+            <button type="button" onclick="setAlfanumerico()" aria-label="Set option for letters and numbers">Alphanumerics</button>
+            <button type="button" onclick="setHexadecimal()" aria-label="Set option for hexadecimals">Hexadecimals</button>
+            <button type="button" onclick="setDecimal()" aria-label="Set option for numbers">Numbers</button>
             <br />
             <br />
             <label for="numel">Number of elements: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" title="Generate password and show Copy button">Generate password</button>
+            <button type="button" onclick="gerarSenha()" aria-label="Generate password and show Copy button">Generate password</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" title="Copy password">Copy</button>
+                <button type="button" onclick="copiar()" aria-label="Copy password">Copy</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output" title="This is your password">Browser not compatible or with JavaScript disabled.</span>
+                <span id="output">Browser not compatible or with JavaScript disabled.</span>
                 <br />
                 <br />
             </section>
