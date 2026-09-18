@@ -140,11 +140,11 @@ function gerarSenha(){
 }
 function copiar(){
     if (!navigator.clipboard) {
-        alert("Este navegador não suporta o nosso botão copiar (ou a página não está em contexto seguro).");
+        alert(d.erroClipboard);
         return;
     }
     navigator.clipboard.writeText(senha.innerText)
-        .catch(erro => alert("Não copiou, por: " + erro.name));
+        .catch(erro => alert(erro));
 }
 function inicializa(){
     senha.innerText="*********************************";//substitui o aviso padrão de "requer JavaScript" que está em outros documentos HTML.
