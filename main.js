@@ -24,7 +24,6 @@ let alfanum_span = document.getElementById("tipo_alfanum");
 let hexadecimal_span =  document.getElementById("tipo_hexadecimal");
 let numero_span = document.getElementById("tipo_numero");
 let senha = document.getElementById("output");
-//let exibirTipo document.getElementById("exibeTipo")
 let exibirCopiar  = document.getElementById("copiar");
 let alfabeto = {
     consoantes: [
