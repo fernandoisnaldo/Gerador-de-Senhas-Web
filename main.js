@@ -1,8 +1,20 @@
 /*
- * Gerador de Senhas versão web do Fernando Isnaldo
- * Copyright (c) 2026 Fernando Isnaldo Silva de Faria
- * Programa licenciado sob a GNU General Public License v3.0 (ou qualquer versão posterior).
- * Veja o arquivo LICENSE para mais detalhes.
+ * Gerador de Senhas versão web - Gera senhas de alta segurança,com
+ * acessibilidade e simplicidade por design
+ * Copyright (C) 2026  Fernando Isnaldo Silva de Faria
+ *
+ * Este programa é um software livre: você pode redistribuí-lo e/ou
+ * modificá-lo sob os termos da Licença Pública Geral GNU (GNU GPL)
+ * como publicada pela Free Software Foundation, tanto a versão 3
+ * da Licença, ou qualquer versão posterior.
+ *
+ * Este programa é distribuído na esperança de que seja útil,
+ * mas SEM QUALQUER GARANTIA; nem mesmo a garantia implícita de
+ * COMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR.
+ * Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU
+ * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 let tipoElemento = 0;
