@@ -17,7 +17,7 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-let tipoElemento = 0;
+let tipoElemento = 0; //define tipo ASCII por padrão
 let ascii_span = document.getElementById("tipo_ascii");
 let silabas_span = document.getElementById("tipo_silabas");
 let alfanum_span = document.getElementById("tipo_alfanum");
