@@ -30,26 +30,26 @@
             <span id="tipo_numero">数字</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" title="ASCII表の文字・数字・記号を使用します">ASCII</button>
-            <button type="button" onclick="setSilabas()" title="音節を使用します">音節</button>
-            <button type="button" onclick="setAlfanumerico()" title="文字と数字を使用します">英数字</button>
-            <button type="button" onclick="setHexadecimal()" title="16進数を使用します">16進数</button>
-            <button type="button" onclick="setDecimal()" title="通常の数字を使用します">数字</button>
+            <button type="button" onclick="setASCII()" aria-label="ASCII表の文字・数字・記号を使用します">ASCII</button>
+            <button type="button" onclick="setSilabas()" aria-label="音節を使用します">音節</button>
+            <button type="button" onclick="setAlfanumerico()" aria-label="文字と数字を使用します">英数字</button>
+            <button type="button" onclick="setHexadecimal()" aria-label="16進数を使用します">16進数</button>
+            <button type="button" onclick="setDecimal()" aria-label="通常の数字を使用します">数字</button>
 
             <br />
             <br />
             <label for="numel">要素数： </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" title="パスワードを生成し、下にコピーボタンを表示します">パスワードを生成</button>
+            <button type="button" onclick="gerarSenha()" aria-label="パスワードを生成し、下にコピーボタンを表示します">パスワードを生成</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" title="生成されたパスワードをコピーするにはここをクリックしてください">コピー</button>
+                <button type="button" onclick="copiar()" aria-label="生成されたパスワードをコピーするにはここをクリックしてください">コピー</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output" title="これがあなたのパスワードです">ブラウザが非対応か、JavaScriptが無効です</span>
+                <span id="output">ブラウザが非対応か、JavaScriptが無効です</span>
                 <br />
                 <br />
             </section>
