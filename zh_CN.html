@@ -30,25 +30,25 @@
             <span id="tipo_numero">数字</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" title="设置为 ASCII 表中的字母、数字和符号">ASCII</button>
-            <button type="button" onclick="setSilabas()" title="设置为音节">音节</button>
-            <button type="button" onclick="setAlfanumerico()" title="设置为字母和数字">字母数字</button>
-            <button type="button" onclick="setHexadecimal()" title="设置为十六进制数字">十六进制</button>
-            <button type="button" onclick="setDecimal()" title="设置为普通数字">数字</button>
+            <button type="button" onclick="setASCII()" aria-label="设置为 ASCII 表中的字母、数字和符号">ASCII</button>
+            <button type="button" onclick="setSilabas()" aria-label="设置为音节">音节</button>
+            <button type="button" onclick="setAlfanumerico()" aria-label="设置为字母和数字">字母数字</button>
+            <button type="button" onclick="setHexadecimal()" aria-label="设置为十六进制数字">十六进制</button>
+            <button type="button" onclick="setDecimal()" aria-label="设置为普通数字">数字</button>
             <br />
             <br />
             <label for="numel">元素数量：</label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" title="生成密码并显示下方的复制按钮">生成密码</button>
+            <button type="button" onclick="gerarSenha()" aria-label="生成密码并显示下方的复制按钮">生成密码</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" title="点击这里复制生成的密码">复制</button>
+                <button type="button" onclick="copiar()" aria-label="点击这里复制生成的密码">复制</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output" title="这将是你的密码">浏览器不兼容或未启用 JavaScript</span>
+                <span id="output">浏览器不兼容或未启用 JavaScript</span>
                 <br />
                 <br />
             </section>
