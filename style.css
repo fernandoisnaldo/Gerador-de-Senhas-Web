@@ -5,7 +5,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 header, main, footer {
-    margin: auto 0;
     text-align: center;
     border: dashed 1px #000;
     padding: 5px;
