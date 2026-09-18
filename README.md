@@ -1,5 +1,5 @@
 # Gerador de Senhas versão web
-Baseado na lógica do meu gerador de senhas em Java, porém implementando requisitos de acessibilidade.
+Baseado na lógica do meu gerador de senhas em Java, porém com requisitos de acessibilidade.
 
 # Instruções de uso
 Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/) e execute no seu navegador.
