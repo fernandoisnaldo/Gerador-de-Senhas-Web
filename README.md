@@ -14,7 +14,7 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
 1) Está disponível em várias línguas.
 2) Usa HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.
 3) As senhas geradas possuem cores aleatórias dentro de uma palheta definida no código.
-4) Simplicidade máxima: Escrito praticamente na unha, baseado principalmente em HTML estático, sem nenhuma importação de APIs externas.
+4) Simplicidade máxima: Escrito praticamente na unha, baseado principalmente em HTML estático, em estilos de CSS e funções Javascript já entregues pelo seu navegador, sem nenhuma inserção de APIs externas.
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 
