@@ -29,26 +29,26 @@
             <span id="tipo_numero">Números</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" title="Define la opción de letras, números y símbolos de la tabla ASCII">ASCII</button>
-            <button type="button" onclick="setSilabas()" title="Define la opción de sílabas">Sílabas</button>
-            <button type="button" onclick="setAlfanumerico()" title="Define la opción de letras y números">Alfanumérico</button>
-            <button type="button" onclick="setHexadecimal()" title="Define la opción de números hexadecimales">Hexadecimal</button>
-            <button type="button" onclick="setDecimal()" title="Define la opción de números comunes">Números</button>
+            <button type="button" onclick="setASCII()" aria-label="Define la opción de letras, números y símbolos de la tabla ASCII">ASCII</button>
+            <button type="button" onclick="setSilabas()" aria-label="Define la opción de sílabas">Sílabas</button>
+            <button type="button" onclick="setAlfanumerico()" aria-label="Define la opción de letras y números">Alfanumérico</button>
+            <button type="button" onclick="setHexadecimal()" aria-label="Define la opción de números hexadecimales">Hexadecimal</button>
+            <button type="button" onclick="setDecimal()" aria-label="Define la opción de números comunes">Números</button>
 
             <br />
             <br />
             <label for="numel">Cantidad de elementos: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" title="Genera la contraseña y hace aparecer el botón Copiar justo abajo">Generar contraseña</button>
+            <button type="button" onclick="gerarSenha()" aria-label="Genera la contraseña y hace aparecer el botón Copiar justo abajo">Generar contraseña</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" title="Haz clic aquí para copiar la contraseña generada">Copiar</button>
+                <button type="button" onclick="copiar()" aria-label="Haz clic aquí para copiar la contraseña generada">Copiar</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output" title="Esta será tu contraseña">Navegador no compatible o con JavaScript desactivado</span>
+                <span id="output">Navegador no compatible o con JavaScript desactivado</span>
                 <br />
                 <br />
             </section>
