@@ -24,7 +24,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 
 [^4]: Algumas funções meramente decorativas também são sorteadas via `window.crypto.getRandomValues()`, por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória vulnerável (nomeadamente: `Math.random()`) para esta finalidade, significaria maior complexidade de código e de auditoria, com nenhum ganho prático de performance.
 
-[^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado perda funcional significativa, mesmo para quem tem ausência total de cones verdes ou ausência total de todos os cones. 
+[^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado desfuncionalidade visual, mesmo para quem tem falta de contraste (no nível indicado pelo navegador) ausência total de cones verdes ou ausência total de todos os cones. 
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
