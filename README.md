@@ -12,7 +12,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em vários idiomas, e a localização é extensível via HTML.
 2) HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.
-3) As senhas geradas possuem estilo com cores aleatórias, dentro de uma paleta com canal verde predominante conforme definido em código.[^4]
+3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
 4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que o seu navegador já entrega. Não há importação externa de APIs ou bibliotecas.
 
    
@@ -24,8 +24,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 
 [^4]: Algumas funções meramente decorativas também são sorteadas via `window.crypto.getRandomValues()`, por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória vulnerável (nomeadamente: `Math.random()`) para esta finalidade, significaria maior complexidade de código e de auditoria, com nenhum ganho prático de performance.
 
-
-# Considerações finais
+[^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado prejuízo significativo, mesmo pra quem tem ausência total de cones verdes ou ausência total de todos os cones. 
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
