@@ -22,7 +22,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 
 [^3]: Leia as [especificações das sílabas](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo) para saber mais.
 
-[^4]: As cores para funções decorativas aleatórias também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória inferior (ou seja, Math.random), mesmo num contexto onde isso não piora a segurança, significa maior complexidade de código e de auditoria, com nenhum ganho prático em performance para esta finalidade.
+[^4]: As cores para funções decorativas aleatórias também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória criptograficamente inferior (nomeadamente: Math.random()), mesmo num contexto onde isso não piora a segurança, significa maior complexidade de código e de auditoria, com nenhum ganho prático em performance para esta finalidade.
 
 
 # Considerações finais
