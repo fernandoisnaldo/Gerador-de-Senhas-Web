@@ -11,7 +11,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
    
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
-2) HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.
+2) HTML semântico com aria-label, para tentar facilitar para quem é deficiente visual.
 3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
 4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que o seu navegador já entrega. Não há importação externa de APIs ou bibliotecas.
 
