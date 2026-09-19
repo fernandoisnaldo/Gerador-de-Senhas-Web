@@ -100,6 +100,7 @@ function setDecimal(){
 
 }
 function gerarSenha(){
+    senha.setAttribute("aria-hidden", "true");
     senha.innerText="";
     let numChar = document.getElementById("numel");
     let quantidade = parseInt(numChar.value) || 0;
