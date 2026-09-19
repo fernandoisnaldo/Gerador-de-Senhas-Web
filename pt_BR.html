@@ -39,7 +39,9 @@
             <br />
             <label for="numel">Quantidade de elementos: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="Gera a senha e faz o botão Copiar aparecer logo abaixo">Gerar senha</button>
+            <button type="button" onclick="gerarSenha()" aria-label="Gerar senha. Faz o botão Copiar aparecer logo abaixo. Por segurança, a senha não é lida em voz alta; confira se ninguém está vendo a tela.">
+                Gerar senha
+            </button>
             <br />
             <br />
             <section id="copiar">
