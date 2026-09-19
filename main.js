@@ -102,7 +102,7 @@ function setDecimal(){
 }
 function exibeAjuda(){
     if(window.getComputedStyle(help_span).display === "none"){
-        help_span.style.display="inline";
+        help_span.style.display="inline-block";
     }
     else {
         help_span.style.display="none";
