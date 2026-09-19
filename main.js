@@ -103,11 +103,9 @@ function setDecimal(){
 function exibeAjuda(){
     if(window.getComputedStyle(help_span).display === "none"){
         help_span.style.display="inline-block";
-        help_span.setAttribute("aria-live", "polite");
     }
     else {
         help_span.style.display="none";
-        help_span.removeAttribute("aria-live");
     }
 }
 function gerarSenha(){
