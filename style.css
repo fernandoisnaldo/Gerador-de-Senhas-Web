@@ -21,7 +21,7 @@ a {
 a:hover, button:hover {
     font-weight: bold;
 }
-#tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero{
+#tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero, #exibe_ajuda{
     display:none;
 }
 #output {
