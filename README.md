@@ -12,8 +12,8 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
    
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em várias línguas.
-2) Usa HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.¹
-3) As senhas geradas possuem cores aleatórias dentro de uma palheta definida no código.
+2) Usa HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.
+3) As senhas geradas possuem cores aleatórias dentro de uma palheta definida no código.¹
 4) Simplicidade máxima: Escrito praticamente na unha, baseado exclusivamente em tecnologias que o seu navegador já entrega, sem importar APIs ou bibliotecas externas.
 
 <sub>Nota 1: As cores para funções decorativas aleatórias também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória inferior (i.e Math.random), mesmo num contexto onde isso não piora segurança, significaria maior complexidade de código e de auditoria, com nenhum benefício prático em performance.</sub>
