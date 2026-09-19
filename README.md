@@ -28,7 +28,7 @@ A implementação deste CSPRNG pode variar de acordo com o motor de JavaScriptdo
 
 # Considerações finais
 
-Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior; NÃO HÁ GARANTIA (e isso também tá na GPL, conforme  texto original do projeto GNU)
+Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior; NÃO HÁ GARANTIA.
 
 # Ver também
  [Gerador de Senhas versão CLI](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
