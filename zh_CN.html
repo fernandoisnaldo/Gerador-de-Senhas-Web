@@ -40,7 +40,9 @@
             <br />
             <label for="numel">元素数量：</label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="生成密码并显示下方的复制按钮">生成密码</button>
+            <button type="button" onclick="gerarSenha()" aria-label="生成密码。复制按钮将显示在下方。出于安全考虑，密码不会朗读；请确保无人查看屏幕。">
+                生成密码
+            </button>
             <br />
             <br />
             <section id="copiar">
