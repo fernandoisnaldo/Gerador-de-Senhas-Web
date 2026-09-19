@@ -17,7 +17,7 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
 4) Simplicidade máxima: Escrito praticamente na unha, baseado exclusivamente em tecnologias que o seu navegador já entrega, sem importar APIs ou bibliotecas externas.
 
    
-<sub>Nota 1: Este programa depende de window.crypto.getRandomValues(), padronizada pela API WebCrypto do W3C, que exige saída criptograficamente segura. Os motores modernos (Gecko, Blink, WebKit) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Navegadores desatualizados, adulterados ou motores fora desses três podem não cumprir o contrato, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.</sub>
+<sub>Nota 1: Este programa depende de window.crypto.getRandomValues(), padronizada pela API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Navegadores desatualizados, adulterados ou motores não baseados desses três podem não cumprir o contrato, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.</sub>
 
 <sub>Nota 2: As cores para funções decorativas aleatórias também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória inferior (ou seja, Math.random), mesmo num contexto onde isso não piora segurança, significa maior complexidade de código e de auditoria, com nenhum benefício prático em performance.</sub>
 
