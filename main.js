@@ -140,11 +140,11 @@ function gerarSenha(){
 }
 function copiar(){
     if (!navigator.clipboard) {
-        alert(d.erroClipboard);
+        alert("Clipboard object: unavailable");
         return;
     }
     navigator.clipboard.writeText(senha.innerText)
-        .catch(erro => alert(erro));
+        .catch(erro => alert("Clipboard object: " + erro));
 }
 function inicializa(){
     senha.innerText="*********************************";//substitui o aviso padrão de "requer JavaScript" que está em outros documentos HTML.
