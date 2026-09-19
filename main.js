@@ -23,6 +23,7 @@ let silabas_span = document.getElementById("tipo_silabas");
 let alfanum_span = document.getElementById("tipo_alfanum");
 let hexadecimal_span =  document.getElementById("tipo_hexadecimal");
 let numero_span = document.getElementById("tipo_numero");
+let help_span = document.getElementById("exibe_ajuda");
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let alfabeto = {
@@ -98,6 +99,14 @@ function setDecimal(){
     hexadecimal_span.style.display="none";
     numero_span.style.display="inline";
 
+}
+function exibeAjuda(){
+    if(window.getComputedStyle(help_span).display === "none"){
+        help_span.style.display="inline";
+    }
+    else {
+        help_span.style.display="none";
+    }
 }
 function gerarSenha(){
     senha.setAttribute("aria-hidden", "true");
