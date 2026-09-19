@@ -10,7 +10,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 3) Emite senhas em formato ASCII[^2], sílabas[^3], alfanumérico, hexadecimal e decimal.
    
 # Principais características de design, arquitetura e acessibilidade
-1) Está disponível em várias línguas.
+1) Está disponível em vários idiomas, e a localização é extensivel via HTML.
 2) HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.
 3) As senhas geradas possuem estilo com cores aleatórias, dentro de uma paleta com canal verde predominante conforme definido em código.[^4]
 4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que o seu navegador já entrega. Não há importação externa de APIs ou bibliotecas.
