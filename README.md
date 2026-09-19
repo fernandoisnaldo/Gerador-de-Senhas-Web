@@ -24,7 +24,6 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
 
 # Considerações finais
 
-Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior; NÃO HÁ GARANTIA.
-
+Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
  [Gerador de Senhas versão CLI](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
