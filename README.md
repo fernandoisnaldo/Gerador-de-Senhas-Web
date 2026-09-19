@@ -18,7 +18,7 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
 
 <sub>Nota 1: As cores para funções decorativas também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória inferior siginifica maior complexidade de código e de auditoria, com nenhum benefício prático em performance.</sub>
 
-<sub>Nota 2: A implementação deste CSPRNG pode variar de acordo com o motor de JavaScript do navegador utilizado. As alegações de segurança de CSPRNG encontradas neste README presumem o uso de uma versão atualizada de navegador com motor Gecko, Blink ou WebKit, conforme implementado pela Google, Mozilla, Microsoft ou Apple.</sub>
+<sub>Nota 2: A implementação deste CSPRNG pode variar de acordo com o motor de JavaScript do navegador utilizado. As alegações de segurança de CSPRNG encontradas neste README presumem o uso de uma versão atualizada de navegador com motor Gecko (Firefox), Blink (Chromium) ou WebKit (Safari), conforme implementado pela Google, Mozilla ou Apple.</sub>
 
 # Considerações finais
 
