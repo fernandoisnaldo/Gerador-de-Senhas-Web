@@ -13,12 +13,12 @@
     </nav>
     <header>
         <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Repositório do Github</a></p>
-        <p>Este programa também tem <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versão CLI.</a></p>
+        <p>Este programa também tem <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versão em linha de comandos.</a></p>
     </header>
     <main>
         <h1>Gerador de Senhas</h1>
         <section id="GerarSenha">
-            <label>Tipo de senha: </label>
+            <label  for="tipo_senha">Tipo de senha: </label>
             <span id="tipo_ascii">ASCII</span>
             <span id="tipo_silabas">
                 Sílabas
@@ -30,24 +30,31 @@
             <span id="tipo_numero">Números</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-label="Define opção para letras, números e símbolos da tabela ASCII">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-label="Define opção para sílabas">Sílabas</button>
-            <button type="button" onclick="setAlfanumerico()" aria-label="Define opção para letras e números">Alfanumérico</button>
-            <button type="button" onclick="setHexadecimal()" aria-label="Define opção para números hexadecimais">Hexadecimal</button>
-            <button type="button" onclick="setDecimal()" aria-label="Define opção para números comuns">Números</button>
+            <button type="button" id="tipo_senha" onclick="setASCII()">ASCII</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()">Sílabas</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()">Alfanumérico</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()">Hexadecimal</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()">Números</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Exibe ajuda">?</button>
+            <span id="exibe_ajuda" >
+                <p>O botão ASCII define que a sua senha gerada será composta de forma variada por letras com caixa alta, letras com caixa baixa, símbolos e números.</p>
+                <p>O botão sílabas define que a sua senha gerada de forma mais longa, mas com sílabas em caixa baixa dividida por espaços.</p>
+                <p>O botão alfanumérico define que a sua senha gerada com letras com caixa alta, letras com caixa baixa e números.</p>
+                <p>O botão hexadecimal indica que a sua senha será composta por números de base hexadecimal, de 0 a f, pouco convencional no dia a dia, mas com aplicações técnicas.</p>
+                <p>O botão números indica que a sua senha será composta apenas números convencionais, de 0 a 9.</p>
+                <p>Acionar qualquer um destes botões é opcional, dado que o gerador de senhas por padrão é configurado para gerar ASCII.</p>
+            </span>
             <br />
             <br />
             <label for="numel">Quantidade de elementos: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="Gerar senha. Faz o botão Copiar aparecer logo abaixo. Por segurança, a senha não é lida em voz alta; confira se ninguém está vendo a tela.">
+            <button type="button" onclick="gerarSenha()">
                 Gerar senha
             </button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" aria-label="Sua senha foi gerada com sucesso, clique aqui para copiar.">
-                    Copiar
-                </button>
+                <button type="button" onclick="copiar()">Copiar senha</button>
                 <br />
             </section>
             <section>
@@ -57,6 +64,7 @@
                 <br />
             </section>
         </section>
+        <p>Sua senha é sigilosa, seus dados não são enviados a servidor algum. Certifique-se de que ninguém está te observando.</p>
     </main>
     <footer>
         <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
