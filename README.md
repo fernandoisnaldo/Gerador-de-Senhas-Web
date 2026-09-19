@@ -17,9 +17,9 @@ A fonte de números pseudoaleatórios é a função window.crypto.getRandomValue
 4) Simplicidade máxima: Escrito praticamente na unha, baseado exclusivamente em tecnologias que o seu navegador já entrega, sem importar APIs ou bibliotecas externas.
 
    
-[^1]: Este programa depende de window.crypto.getRandomValues(), padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Navegadores desatualizados, adulterados e/ou não baseados nesses navegadores já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.</sub>
+[^1]: Este programa depende de window.crypto.getRandomValues(), padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Navegadores desatualizados, adulterados e/ou não baseados nesses navegadores já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.
 
-[^2]: As cores para funções decorativas aleatórias também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória inferior (ou seja, Math.random), mesmo num contexto onde isso não piora segurança, significa maior complexidade de código e de auditoria, com nenhum benefício prático em performance.</sub>
+[^2]: As cores para funções decorativas aleatórias também são selecionadas via window.crypto.getRandomValues(), por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória inferior (ou seja, Math.random), mesmo num contexto onde isso não piora segurança, significa maior complexidade de código e de auditoria, com nenhum ganho prático em performance para esta finalidade.
 
 
 # Considerações finais
