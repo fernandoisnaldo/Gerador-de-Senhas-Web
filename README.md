@@ -12,7 +12,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em várias línguas.
 2) Usa HTML semântico com aria-label em botões, para facilitar para quem é deficiente visual.
-3) As senhas geradas possuem cores aleatórias ao serem geradas, dentro de uma paleta com canal verde predominante.[^4]
+3) As senhas geradas possuem estilo com cores aleatórias, dentro de uma paleta com canal verde predominante.[^4]
 4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que o seu navegador já entrega. Não há importação externa de APIs ou bibliotecas.
 
    
