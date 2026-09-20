@@ -10,12 +10,10 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 3) Emite senhas em formato ASCII[^2], sílabas[^3], alfanumérico, hexadecimal e decimal.
    
 # Principais características de design, arquitetura e acessibilidade
-1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
-2) HTML semântico com aria-label e adição de tabindex quando necessário, para tentar facilitar para quem é deficiente visual.
+1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).~
+2) HTML semântico com aria-label e adição de tabindex quando necessário, para tentar facilitar para quem é deficiente visual.[^6]
 3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
 4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que o seu navegador já entrega. Não há importação externa de APIs ou bibliotecas.
-
-Observação: Não foram feitos testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
    
 [^1]: O Gerador de Senhas versão web depende da função `window.crypto.getRandomValues()`, padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Navegadores desatualizados, adulterados e/ou não baseados nesses já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.
 
@@ -25,7 +23,9 @@ Observação: Não foram feitos testes com usuários reais de leitores de tela. 
 
 [^4]: Algumas funções meramente decorativas também são sorteadas via `window.crypto.getRandomValues()`, por razões de escopo de projeto. Adicionar uma implementação de geração pseudoaleatória vulnerável (nomeadamente: `Math.random()`) para esta finalidade, significaria maior complexidade de código e de auditoria, com nenhum ganho prático de performance.
 
-[^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado prejuízo à legibilidade, mesmo com perda de contraste (no nível simulado pelo navegador), com ausência total de cones verdes ou com ausência total de todos os cones. 
+[^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado prejuízo à legibilidade, mesmo com perda de contraste (no nível simulado pelo navegador), com ausência total de cones verdes ou com ausência total de todos os cones.
+
+[^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
