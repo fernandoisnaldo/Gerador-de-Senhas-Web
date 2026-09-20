@@ -13,7 +13,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).~
 2) HTML semântico com aria-label e adição de tabindex quando necessário, para tentar facilitar para quem é deficiente visual.[^6]
 3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
-4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que o seu navegador já entrega. Não há importação externa de APIs ou bibliotecas.
+4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que um navegador moderno já entrega. Não há importação externa de APIs ou bibliotecas.
    
 [^1]: O Gerador de Senhas versão web depende da função `window.crypto.getRandomValues()`, padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Innterface web executada em ambientes desatualizados, adulterados e/ou não baseados nesses já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.
 
