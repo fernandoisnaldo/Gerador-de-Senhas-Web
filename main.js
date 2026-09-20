@@ -156,7 +156,7 @@ function copiar(){
         .catch(erro => alert("Clipboard object: " + erro));
 }
 function inicializa(){
-    senha.innerText="*********************************";//substitui o aviso padrão de "requer JavaScript" que está em outros documentos HTML.
+    senha.innerText="";//substitui o aviso padrão de "requer JavaScript" que está em outros documentos HTML.
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
