@@ -36,9 +36,9 @@
             <button type="button" onclick="setAlfanumerico()">字母数字</button>
             <button type="button" onclick="setHexadecimal()">十六进制</button>
             <button type="button" onclick="setDecimal()">数字</button>
-            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="显示帮助">?</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="显示帮助">???</button>
             <br />
-            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+            <section id="exibe_ajuda" style="text-align: left;" tabindex="0" aria-live="polite">
                 <p>ASCII 按钮表示生成的密码由大写字母、小写字母、符号和数字等多种字符组成。</p>
                 <p>音节按钮表示生成的密码会更长，由以小写字母构成、以空格分隔的音节组成。</p>
                 <p>字母数字按钮表示生成的密码由大写字母、小写字母和数字组成。</p>
@@ -64,7 +64,7 @@
                 <br />
             </section>
         </section>
-        <p>您的密码属于机密信息；您的数据不会发送到任何服务器。请确保没有人正在偷看您的屏幕。</p>
+        <p tabindex="0">您的密码属于机密信息；您的数据不会发送到任何服务器。请确保没有人正在偷看您的屏幕。</p>
     </main>
     <footer>
         <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
