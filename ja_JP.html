@@ -36,9 +36,9 @@
             <button type="button" onclick="setAlfanumerico()">英数字</button>
             <button type="button" onclick="setHexadecimal()">16進数</button>
             <button type="button" onclick="setDecimal()">数字</button>
-            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="ヘルプを表示">?</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="ヘルプを表示">???</button>
             <br />
-            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+            <section id="exibe_ajuda" style="text-align: left;" tabindex="0" aria-live="polite">
                 <p>ASCIIボタンは、生成されるパスワードが大文字、小文字、記号、数字を含む多様な文字で構成されるように設定します。</p>
                 <p>音節ボタンは、生成されるパスワードがより長くなりますが、スペースで区切られた小文字の音節で構成されるように設定します。</p>
                 <p>英数字ボタンは、生成されるパスワードが大文字、小文字、数字で構成されるように設定します。</p>
@@ -64,7 +64,7 @@
                 <br />
             </section>
         </section>
-        <p>パスワードは機密情報です。データはどのサーバーにも送信されません。誰もあなたの画面を見ていないことを確認してください。</p>
+        <p tabindex="0">パスワードは機密情報です。データはどのサーバーにも送信されません。誰もあなたの画面を見ていないことを確認してください。</p>
     </main>
     <footer>
         <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
