@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Contraseñas de Fernando Isnaldo versión web</title>
+    <title>Generador de contraseñas de Fernando Isnaldo - Versión web</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -12,57 +12,63 @@
         <a href="setLang.html" title="Seleccionar idioma">🌐 Idiomas</a>
     </nav>
     <header>
-        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Repositorio de Github</a></p>
-        <p>Este programa también tiene <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versión CLI.</a></p>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Repositorio en GitHub</a></p>
+        <p>Este programa también tiene una <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versión de línea de comandos.</a></p>
     </header>
     <main>
-        <h1>Generador de Contraseñas</h1>
+        <h1>Generador de contraseñas</h1>
         <section id="GerarSenha">
             <label>Tipo de contraseña: </label>
             <span id="tipo_ascii">ASCII</span>
             <span id="tipo_silabas">
                 Sílabas
                 <br />⚠️ selección fonética aleatoria ⚠️
-                <br />⚠️ pueden salir palabras inapropiadas ⚠️
+                <br />⚠️ pueden aparecer palabras inapropiadas ⚠️
             </span>
             <span id="tipo_alfanum">Alfanumérico</span>
             <span id="tipo_hexadecimal">Hexadecimales</span>
             <span id="tipo_numero">Números</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-label="Define la opción de letras, números y símbolos de la tabla ASCII">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-label="Define la opción de sílabas">Sílabas</button>
-            <button type="button" onclick="setAlfanumerico()" aria-label="Define la opción de letras y números">Alfanumérico</button>
-            <button type="button" onclick="setHexadecimal()" aria-label="Define la opción de números hexadecimales">Hexadecimal</button>
-            <button type="button" onclick="setDecimal()" aria-label="Define la opción de números comunes">Números</button>
-
+            <button type="button" onclick="setASCII()">ASCII</button>
+            <button type="button" onclick="setSilabas()">Sílabas</button>
+            <button type="button" onclick="setAlfanumerico()">Alfanuméricos</button>
+            <button type="button" onclick="setHexadecimal()">Hexadecimales</button>
+            <button type="button" onclick="setDecimal()">Números</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Mostrar ayuda">?</button>
+            <br />
+            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <p>El botón ASCII establece que la contraseña generada estará compuesta de varias formas, incluyendo letras mayúsculas, minúsculas, símbolos y números.</p>
+                <p>El botón Sílabas establece que la contraseña generada será más larga, pero con sílabas en minúsculas separadas por espacios.</p>
+                <p>El botón Alfanuméricos establece que la contraseña generada constará de letras mayúsculas, minúsculas y números.</p>
+                <p>El botón Hexadecimales indica que la contraseña estará compuesta por números hexadecimales, del 0 a la f. Esto es poco común en el uso diario, pero tiene aplicaciones técnicas.</p>
+                <p>El botón Números indica que la contraseña constará únicamente de números convencionales, del 0 al 9.</p>
+                <p>Por defecto, este programa genera caracteres ASCII.</p>
+            </section>
             <br />
             <br />
-            <label for="numel">Cantidad de elementos: </label>
+            <label for="numel">Número de elementos: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="Generar contraseña. Aparecerá el botón Copiar justo debajo. Por motivos de seguridad, la contraseña no se leerá en voz alta; asegúrese de que nadie esté mirando la pantalla.">
-                Generar contraseña
-            </button>
+            <button type="button" onclick="gerarSenha()">Generar contraseña</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" aria-label="Su contraseña se ha generado correctamente. Haga clic aquí para copiarla.">
-                    Copiar
-                </button>
+                <button type="button" onclick="copiar()">Copiar contraseña</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output">Navegador no compatible o con JavaScript desactivado</span>
+                <span id="output">Navegador no compatible o con JavaScript desactivado.</span>
                 <br />
                 <br />
             </section>
         </section>
+        <p>Tu contraseña es confidencial; tus datos no se envían a ningún servidor. Asegúrate de que nadie te esté viendo.</p>
     </main>
     <footer>
         <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
-        <p>Este es software libre: puedes redistribuirlo bajo los términos de la GPL v3 o posterior.</p>
-        <p>Este programa viene SIN NINGUNA GARANTÍA; consulta el archivo <a href="LICENSE" target="_blank">LICENSE</a> para más detalles.</p>
+        <p>Este es software libre: puedes redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU (GPL) versión 3 o posterior.</p>
+        <p>Este programa se distribuye SIN NINGUNA GARANTÍA. Consulta el archivo <a href="LICENSE" target="_blank">LICENSE</a> para obtener más detalles.</p>
     </footer>
     <script src="main.js"></script>
 </body>
