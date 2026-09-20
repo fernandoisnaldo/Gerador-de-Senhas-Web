@@ -11,10 +11,10 @@
     <nav id="idiomas">
         <a href="setLang.html" title="选择语言">🌐 语言</a>
     </nav>
-    <!-- TODO: 请一位中文母语者校对翻译。 -->
+    <!-- TODO: 请中文母语者校对：确认“不当词汇”是否合适，标点是否应放在链接外，以及帮助文本的措辞。 -->
     <header>
         <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Github 仓库</a></p>
-        <p>本程序还有<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">命令行版本</a></p>。
+        <p>本程序还有<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">命令行版本</a>。</p>
     </header>
     <main>
         <h1>密码生成器</h1>
@@ -31,24 +31,30 @@
             <span id="tipo_numero">数字</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-label="设置为 ASCII 表中的字母、数字和符号">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-label="设置为音节">音节</button>
-            <button type="button" onclick="setAlfanumerico()" aria-label="设置为字母和数字">字母数字</button>
-            <button type="button" onclick="setHexadecimal()" aria-label="设置为十六进制数字">十六进制</button>
-            <button type="button" onclick="setDecimal()" aria-label="设置为普通数字">数字</button>
+            <button type="button" onclick="setASCII()">ASCII</button>
+            <button type="button" onclick="setSilabas()">音节</button>
+            <button type="button" onclick="setAlfanumerico()">字母数字</button>
+            <button type="button" onclick="setHexadecimal()">十六进制</button>
+            <button type="button" onclick="setDecimal()">数字</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="显示帮助">?</button>
+            <br />
+            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <p>ASCII 按钮表示生成的密码由大写字母、小写字母、符号和数字等多种字符组成。</p>
+                <p>音节按钮表示生成的密码会更长，由以小写字母构成、以空格分隔的音节组成。</p>
+                <p>字母数字按钮表示生成的密码由大写字母、小写字母和数字组成。</p>
+                <p>十六进制按钮表示密码由 0 到 f 的十六进制数字组成。这在日常使用中并不常见，但有技术用途。</p>
+                <p>数字按钮表示密码仅由 0 到 9 的普通数字组成。</p>
+                <p>默认情况下，本程序生成 ASCII 字符。</p>
+            </section>
             <br />
             <br />
             <label for="numel">元素数量：</label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="生成密码。复制按钮将显示在下方。出于安全考虑，密码不会朗读；请确保无人查看屏幕。">
-                生成密码
-            </button>
+            <button type="button" onclick="gerarSenha()">生成密码</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" aria-label="您的密码已成功生成，点击此处复制密码。">
-                    复制
-                </button>
+                <button type="button" onclick="copiar()">复制密码</button>
                 <br />
             </section>
             <section>
@@ -58,6 +64,7 @@
                 <br />
             </section>
         </section>
+        <p>您的密码属于机密信息；您的数据不会发送到任何服务器。请确保没有人正在偷看您的屏幕。</p>
     </main>
     <footer>
         <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
