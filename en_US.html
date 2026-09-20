@@ -28,24 +28,33 @@
             <span id="tipo_alfanum">Alphanumeric</span>
             <span id="tipo_hexadecimal">Hexadecimals</span>
             <span id="tipo_numero">Numbers</span>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Show help">?</button>
+            <br />
+            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <p>The ASCII button defines that your generated password will be composed in a variety of ways, including uppercase letters, lowercase letters, symbols, and numbers.</p>
+                <p>The syllables button defines that your generated password will be longer, but with lowercase syllables separated by spaces.</p>
+                <p>The alphanumeric button defines that your generated password will consist of uppercase letters, lowercase letters, and numbers.</p>
+                <p>The hexadecimal button indicates that your password will be composed of hexadecimal numbers, from 0 to f. This is unconventional in everyday use, but has technical applications.</p>
+                <p>The numbers button indicates that your password will consist only of conventional numbers, from 0 to 9.</p>
+                <p>By default, this program generates ASCII characters.</p>
+            </section>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-label="Set option for letters, numbers, and symbols from the ASCII table">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-label="Set option for syllables">Syllables</button>
-            <button type="button" onclick="setAlfanumerico()" aria-label="Set option for letters and numbers">Alphanumerics</button>
-            <button type="button" onclick="setHexadecimal()" aria-label="Set option for hexadecimals">Hexadecimals</button>
-            <button type="button" onclick="setDecimal()" aria-label="Set option for numbers">Numbers</button>
+            <button type="button" onclick="setASCII()">ASCII</button>
+            <button type="button" onclick="setSilabas()">Syllables</button>
+            <button type="button" onclick="setAlfanumerico()">Alphanumerics</button>
+            <button type="button" onclick="setHexadecimal()">Hexadecimals</button>
+            <button type="button" onclick="setDecimal()">Numbers</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Exibe ajuda">?</button>
             <br />
             <br />
             <label for="numel">Number of elements: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="Generate password. Makes the Copy button appear right below. For security reasons, the password is not read aloud; make sure no one is looking at the screen.">
-                Generate password
-            </button>
+            <button type="button" onclick="gerarSenha()">Generate password/button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" aria-label="Your password has been successfully generated, click here to copy it.">
+                <button type="button" onclick="copiar()">
                     Copy
                 </button>
                 <br />
@@ -57,6 +66,7 @@
                 <br />
             </section>
         </section>
+        <p>Your password is confidential; your data is not sent to any server. Make sure no one is watching you.</p>
     </main>
     <footer>
         <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
