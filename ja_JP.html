@@ -11,10 +11,10 @@
     <nav id="idiomas">
         <a href="setLang.html" title="言語の選択">🌐 言語</a>
     </nav>
-    <!--  TODO: 日本語ネイティブスピーカーと復習しましょう。 -->
+    <!--  TODO: 日本語ネイティブスピーカーと復習しましょう。特に「音節選択」の表現とヘルプ文章を確認してください。 -->
     <header>
         <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Githubリポジトリ</a></p>
-        <p>このプログラムには<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">CLI版</a>もあります。</p>
+        <p>このプログラムには<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">コマンドライン版</a>もあります。</p>
     </header>
     <main>
         <h1>パスワードジェネレーター</h1>
@@ -31,24 +31,30 @@
             <span id="tipo_numero">数字</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-label="ASCII表の文字・数字・記号を使用します">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-label="音節を使用します">音節</button>
-            <button type="button" onclick="setAlfanumerico()" aria-label="文字と数字を使用します">英数字</button>
-            <button type="button" onclick="setHexadecimal()" aria-label="16進数を使用します">16進数</button>
-            <button type="button" onclick="setDecimal()" aria-label="通常の数字を使用します">数字</button>
+            <button type="button" onclick="setASCII()">ASCII</button>
+            <button type="button" onclick="setSilabas()">音節</button>
+            <button type="button" onclick="setAlfanumerico()">英数字</button>
+            <button type="button" onclick="setHexadecimal()">16進数</button>
+            <button type="button" onclick="setDecimal()">数字</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="ヘルプを表示">?</button>
+            <br />
+            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <p>ASCIIボタンは、生成されるパスワードが大文字、小文字、記号、数字を含む多様な文字で構成されるように設定します。</p>
+                <p>音節ボタンは、生成されるパスワードがより長くなりますが、スペースで区切られた小文字の音節で構成されるように設定します。</p>
+                <p>英数字ボタンは、生成されるパスワードが大文字、小文字、数字で構成されるように設定します。</p>
+                <p>16進数ボタンは、パスワードが0からfまでの16進数で構成されることを示します。これは日常的な使用では一般的ではありませんが、技術的な用途があります。</p>
+                <p>数字ボタンは、パスワードが0から9までの通常の数字のみで構成されることを示します。</p>
+                <p>デフォルトでは、このプログラムはASCII文字を生成します。</p>
+            </section>
             <br />
             <br />
             <label for="numel">要素数： </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
-            <button type="button" onclick="gerarSenha()" aria-label="パスワードを生成します。すぐ下にコピーボタンが表示されます。セキュリティ上の理由から、パスワードは読み上げられません。画面を誰も見ていないことを確認してください。">
-                パスワードを生成
-            </button>
+            <button type="button" onclick="gerarSenha()">パスワードを生成</button>
             <br />
             <br />
             <section id="copiar">
-                <button type="button" onclick="copiar()" aria-label="パスワードが正常に生成されました。ここをクリックしてコピーしてください。">
-                    コピー
-                </button>
+                <button type="button" onclick="copiar()">パスワードをコピー</button>
                 <br />
             </section>
             <section>
@@ -58,6 +64,7 @@
                 <br />
             </section>
         </section>
+        <p>パスワードは機密情報です。データはどのサーバーにも送信されません。誰もあなたの画面を見ていないことを確認してください。</p>
     </main>
     <footer>
         <p>Gerador de Senhas do Fernando Isnaldo versão web | Copyright (C) 2026 Fernando Isnaldo Silva de Faria.</p>
