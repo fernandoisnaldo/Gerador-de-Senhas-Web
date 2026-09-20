@@ -21,20 +21,17 @@ a {
 a:hover, button:hover {
     font-weight: bold;
 }
-#tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero, #exibe_ajuda{
+#tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero, #exibe_ajuda, #copiar{
     display:none;
 }
 #output {
     word-break: break-all;
     font-weight: bold;
-    font-size: 10pt;
+    font-size: 8pt;
 }
 body {
     font-family: monospace;
     font-size: 11pt;
-}
-#copiar {
-    display: none;
 }
 @media (prefers-color-scheme: dark) {
     body {
