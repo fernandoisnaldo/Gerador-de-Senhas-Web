@@ -33,6 +33,9 @@ body {
     font-family: monospace;
     font-size: 12pt;
 }
+footer {
+    font-size: 9pt;
+}
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #111;
