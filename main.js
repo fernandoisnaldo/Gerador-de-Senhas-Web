@@ -110,38 +110,40 @@ function exibeAjuda(){
 }
 function gerarSenha(){
     senha.innerText="";
+    let novaSenha=[];
     let numChar = document.getElementById("numel");
     let quantidade = parseInt(numChar.value) || 0;
     exibirCopiar.style.display="block";
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == 0){ //ASCII
-            senha.append(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
+            novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
         }
         else if (tipoElemento == 1){ //sílabas
             if(contador!=0){
-                senha.append(" ");//adciona um espaço entre as sílabas
+                novaSenha.push(" ");//adciona um espaço entre as sílabas
             }
-            senha.append(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
+            novaSenha.push(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
         }
         else if (tipoElemento == 2){ //alfanumérico
             let base62 = numAleatorio(62); //sorteia número de 0 a 61 para seleção alfanumérica
             if (base62<10){
-                senha.append(base62); //emite 0 a 9
+                novaSenha.push(base62); //emite 0 a 9
             }
             else if(base62<36){
-                senha.append(String.fromCharCode(base62+55)); //emite A-Z
+                novaSenha.push(String.fromCharCode(base62+55)); //emite A-Z
             }
             else {
-                senha.append(String.fromCharCode(base62+61)); //emite a-z
+                novaSenha.push(String.fromCharCode(base62+61)); //emite a-z
             }
         }
         else if (tipoElemento == 3){ //hexadecimal
-            senha.append(numAleatorio(16).toString(16)); //emite hexadecimal
+            novaSenha.push(numAleatorio(16).toString(16)); //emite hexadecimal
         }
         else if (tipoElemento == 4){ //número
-            senha.append(numAleatorio(10)); //emite número decimal
+            novaSenha.push(numAleatorio(10)); //emite número decimal
         }
     }
+    senha.innerText=novaSenha.join("");
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
