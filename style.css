@@ -34,7 +34,7 @@ body {
     font-size: 12pt;
 }
 footer, header {
-    font-size: 9pt;
+    font-size: 10pt;
 }
 @media (prefers-color-scheme: dark) {
     body {
