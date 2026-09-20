@@ -33,7 +33,7 @@ body {
     font-family: monospace;
     font-size: 12pt;
 }
-footer {
+footer, header {
     font-size: 9pt;
 }
 @media (prefers-color-scheme: dark) {
