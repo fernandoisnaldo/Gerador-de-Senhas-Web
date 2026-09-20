@@ -28,7 +28,14 @@
             <span id="tipo_alfanum">Alphanumeric</span>
             <span id="tipo_hexadecimal">Hexadecimals</span>
             <span id="tipo_numero">Numbers</span>
-            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Show help">?</button>
+            <br />
+            <br />
+            <button type="button" onclick="setASCII()">ASCII</button>
+            <button type="button" onclick="setSilabas()">Syllables</button>
+            <button type="button" onclick="setAlfanumerico()">Alphanumerics</button>
+            <button type="button" onclick="setHexadecimal()">Hexadecimals</button>
+            <button type="button" onclick="setDecimal()">Numbers</button>
+            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Exibe ajuda">?</button>
             <br />
             <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
                 <p>The ASCII button defines that your generated password will be composed in a variety of ways, including uppercase letters, lowercase letters, symbols, and numbers.</p>
@@ -38,14 +45,6 @@
                 <p>The numbers button indicates that your password will consist only of conventional numbers, from 0 to 9.</p>
                 <p>By default, this program generates ASCII characters.</p>
             </section>
-            <br />
-            <br />
-            <button type="button" onclick="setASCII()">ASCII</button>
-            <button type="button" onclick="setSilabas()">Syllables</button>
-            <button type="button" onclick="setAlfanumerico()">Alphanumerics</button>
-            <button type="button" onclick="setHexadecimal()">Hexadecimals</button>
-            <button type="button" onclick="setDecimal()">Numbers</button>
-            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Exibe ajuda">?</button>
             <br />
             <br />
             <label for="numel">Number of elements: </label>
