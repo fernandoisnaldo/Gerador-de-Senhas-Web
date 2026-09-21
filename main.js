@@ -20,9 +20,7 @@
 let tipoElemento = 0; //define tipo ASCII por padrão
 let ascii_span = document.getElementById("tipo_ascii");
 let silabas_span = document.getElementById("tipo_silabas");
-let alfanum_span = document.getElementById("tipo_alfanum");
-let hexadecimal_span =  document.getElementById("tipo_hexadecimal");
-let numero_span = document.getElementById("tipo_numero");
+let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let alfabeto = {
@@ -58,57 +56,38 @@ function numAleatorio(max) {
 }
 function setASCII(){
     tipoElemento = 0;
-    atualizarAriaPressed(tipoElemento);
-    ascii_span.style.display="inline";
-    silabas_span.style.display="none";
-    alfanum_span.style.display="none";
-    hexadecimal_span.style.display="none";
-    numero_span.style.display="none";
+     atualizarBotoesSpan(tipoElemento);
 }
 function setSilabas(){
     tipoElemento = 1;
-    atualizarAriaPressed(tipoElemento);
-    ascii_span.style.display="none";
-    silabas_span.style.display="inline";
-    alfanum_span.style.display="none";
-    hexadecimal_span.style.display="none";
-    numero_span.style.display="none";
-
+     atualizarBotoesSpan(tipoElemento);
 }
 function setAlfanumerico(){
     tipoElemento = 2;
-    atualizarAriaPressed(tipoElemento);
-    ascii_span.style.display="none";
-    silabas_span.style.display="none";
-    alfanum_span.style.display="inline";
-    hexadecimal_span.style.display="none";
-    numero_span.style.display="none";
+     atualizarBotoesSpan(tipoElemento);
 
 }
 function setHexadecimal(){
     tipoElemento = 3;
-    atualizarAriaPressed(tipoElemento);
-    ascii_span.style.display="none";
-    silabas_span.style.display="none";
-    alfanum_span.style.display="none";
-    hexadecimal_span.style.display="inline";
-    numero_span.style.display="none";
+     atualizarBotoesSpan(tipoElemento);
 }
 function setDecimal(){
     tipoElemento = 4;
-    atualizarAriaPressed(tipoElemento);
-    ascii_span.style.display="none";
-    silabas_span.style.display="none";
-    alfanum_span.style.display="none";
-    hexadecimal_span.style.display="none";
-    numero_span.style.display="inline";
+     atualizarBotoesSpan(tipoElemento);
 }
-function atualizarAriaPressed(indiceAtivo) {
-    let botoes = document.querySelectorAll('[id="tipo_senha"]');
-    botoes.forEach((btn, index) => {
+function  atualizarBotoesSpan(indiceAtivo) {
+    ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
+    if(indiceAtivo == 1){
+        silabas_span.style.display="inline-block";
+    }
+    else {
+        silabas_span.style.display="none";
+    }
+    botoes_senha.forEach((btn, index) => {
         if (index === indiceAtivo) {
             btn.setAttribute("aria-pressed", "true");
-        } else {
+        }
+        else {
             btn.setAttribute("aria-pressed", "false");
         }
     });
