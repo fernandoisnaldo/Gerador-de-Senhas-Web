@@ -144,13 +144,6 @@ function gerarSenha(){
         }
     }
     senha.innerText=novaSenha.join("");
-    senha.setAttribute('tabindex', '0');
-    senha.onkeydown = function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            exibirCopiar.querySelector('button').focus();
-        }
-    };
     exibirCopiar.querySelector("button").focus();
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
