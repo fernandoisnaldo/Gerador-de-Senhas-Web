@@ -18,7 +18,7 @@
     <main>
         <h1>Password Generator</h1>
         <section id="GerarSenha">
-            <label>Password type: </label>
+            <label for="tipo_senha">Password type: </label>
             <span id="tipo_ascii">ASCII</span>
             <span id="tipo_silabas">
                 Syllables
@@ -30,11 +30,11 @@
             <span id="tipo_numero">Numbers</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-pressed="true">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-pressed="false">Syllables</button>
-            <button type="button" onclick="setAlfanumerico()" aria-pressed="false">Alphanumerics</button>
-            <button type="button" onclick="setHexadecimal()" aria-pressed="false">Hexadecimals</button>
-            <button type="button" onclick="setDecimal()" aria-pressed="false">Numbers</button>
+            <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Syllables</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alphanumerics</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimals</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Numbers</button>
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
