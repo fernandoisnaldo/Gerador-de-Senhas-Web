@@ -145,6 +145,9 @@ function gerarSenha(){
     }
     senha.innerText=novaSenha.join("");
     senha.setAttribute('tabindex', '0');
+    senha.addEventListener('click', () => {
+        exibirCopiar.querySelector('button').focus();
+    });
     exibirCopiar.querySelector("button").focus();
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
