@@ -37,14 +37,15 @@
             <button type="button" onclick="setDecimal()">Números</button>
             <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Mostrar ayuda">???</button>
             <br />
-            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
-                <p>El botón ASCII permite seleccionar caracteres en mayúsculas, minúsculas, símbolos y números de la tabla ASCII.</p>
-                <p>El botón de sílabas permite seleccionar sílabas aleatorias.</p>
-                <p>El botón alfanumérico permite seleccionar caracteres en mayúsculas, minúsculas y números.</p>
-                <p>El botón hexadecimal permite seleccionar números hexadecimales.</p>
-                <p>El botón de números permite seleccionar números decimales.</p>
+            <details id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <summary>Mostrar ayuda</summary>
+                <p>El botón ASCII define la selección por letras mayúsculas, letras minúsculas, símbolos y números de la tabla ASCII.</p>
+                <p>El botón sílabas define la selección de sílabas aleatorias.</p>
+                <p>El botón alfanumérico define la selección por letras mayúsculas, letras minúsculas y números.</p>
+                <p>El botón hexadecimal define la selección por números hexadecimales.</p>
+                <p>El botón números define la selección por números decimales.</p>
                 <p>Por defecto, este programa genera caracteres ASCII.</p>
-            </section>
+            </details>
             <br />
             <br />
             <label for="numel">Número de elementos: </label>
