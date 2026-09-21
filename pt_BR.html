@@ -30,14 +30,14 @@
             <span id="tipo_numero">Números</span>
             <br />
             <br />
-            <button type="button" id="tipo_senha" onclick="setASCII()">ASCII</button>
-            <button type="button" id="tipo_senha" onclick="setSilabas()">Sílabas</button>
-            <button type="button" id="tipo_senha" onclick="setAlfanumerico()">Alfanumérico</button>
-            <button type="button" id="tipo_senha" onclick="setHexadecimal()">Hexadecimal</button>
-            <button type="button" id="tipo_senha" onclick="setDecimal()">Números</button>
+            <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Sílabas</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alfanumérico</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimal</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Números</button>
             <br />
             <br />
-            <details id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+            <details id="exibe_ajuda" style="text-align: left;">
                 <summary>Exibe ajuda</summary>
                 <p>O botão ASCII define seleção por letras com caixa alta, letras com caixa baixa, símbolos e números da tabela ASCII.</p>
                 <p>O botão sílabas define seleção de sílabas aleatórias.</p>
