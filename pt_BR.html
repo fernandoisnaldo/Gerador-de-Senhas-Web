@@ -35,16 +35,16 @@
             <button type="button" id="tipo_senha" onclick="setAlfanumerico()">Alfanumérico</button>
             <button type="button" id="tipo_senha" onclick="setHexadecimal()">Hexadecimal</button>
             <button type="button" id="tipo_senha" onclick="setDecimal()">Números</button>
-            <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Exibe ajuda">???</button>
             <br />
-            <span id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+            <details id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <summary>Exibe ajuda</summary>
                 <p>O botão ASCII define seleção por letras com caixa alta, letras com caixa baixa, símbolos e números da tabela ASCII.</p>
                 <p>O botão sílabas define seleção de sílabas aleatórias.</p>
                 <p>O botão alfanumérico define seleção por letras caixa alta, letras caixa baixa e números.</p>
                 <p>O botão hexadecimal define seleção por números hexadecimais.</p>
                 <p>O botão números define seleção por números decimais.</p>
                 <p>Por padrão este programa gera caracteres ASCII.</p>
-            </span>
+            </details>
             <br />
             <br />
             <label for="numel">Quantidade de elementos: </label>
