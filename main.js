@@ -77,10 +77,10 @@ function setDecimal(){
 function atualizarBotoesSPan(indiceAtivo) {
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
     if(indiceAtivo == 1){
-        silabas_span.style.display="inline-block";
+        silabas_span.style.visibility="visible";
     }
     else {
-        silabas_span.style.display="none";
+        silabas_span.style.visibility="hidden";
     }
     botoes_senha.forEach((btn, index) => {
         if (index === indiceAtivo) {
