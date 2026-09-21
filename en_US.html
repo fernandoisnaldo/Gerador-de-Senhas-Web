@@ -37,14 +37,14 @@
             <button type="button" onclick="setDecimal()">Numbers</button>
             <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Show help">???</button>
             <br />
-            <section id="exibe_ajuda" style="text-align: left;" aria-live="polite">
-                <p tabindex="0">The ASCII button defines selection by uppercase letters, lowercase letters, symbols, and numbers from the ASCII table.</p>
-                <p tabindex="0">The syllables button defines selection of random syllables.</p>
-                <p tabindex="0">The alphanumeric button defines selection by uppercase letters, lowercase letters, and numbers.</p>
-                <p tabindex="0">The hexadecimal button defines selection by hexadecimal numbers.</p>
-                <p tabindex="0">The numbers button defines selection by decimal numbers.</p>
-                <p tabindex="0">By default, this program generates ASCII characters.</p>
-            </section>
+            <dialog id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+                <p>The ASCII button defines selection by uppercase letters, lowercase letters, symbols, and numbers from the ASCII table.</p>
+                <p>The syllables button defines selection of random syllables.</p>
+                <p>The alphanumeric button defines selection by uppercase letters, lowercase letters, and numbers.</p>
+                <p>The hexadecimal button defines selection by hexadecimal numbers.</p>
+                <p>The numbers button defines selection by decimal numbers.</p>
+                <p>By default, this program generates ASCII characters.</p>
+            </dialog>
             <br />
             <br />
             <label for="numel">Number of elements: </label>
