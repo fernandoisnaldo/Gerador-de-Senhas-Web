@@ -56,25 +56,25 @@ function numAleatorio(max) {
 }
 function setASCII(){
     tipoElemento = 0;
-     atualizarBotoesSpan(tipoElemento);
+    atualizarBotoesSPan(tipoElemento);
 }
 function setSilabas(){
     tipoElemento = 1;
-     atualizarBotoesSpan(tipoElemento);
+    atualizarBotoesSPan(tipoElemento);
 }
 function setAlfanumerico(){
     tipoElemento = 2;
-     atualizarBotoesSpan(tipoElemento);
+    atualizarBotoesSPan(tipoElemento);
 }
 function setHexadecimal(){
     tipoElemento = 3;
-     atualizarBotoesSpan(tipoElemento);
+    atualizarBotoesSPan(tipoElemento);
 }
 function setDecimal(){
     tipoElemento = 4;
-     atualizarBotoesSpan(tipoElemento);
+    atualizarBotoesSPan(tipoElemento);
 }
-function  atualizarBotoesSpan(indiceAtivo) {
+function atualizarBotoesSPan(indiceAtivo) {
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
     if(indiceAtivo == 1){
         silabas_span.style.display="inline-block";
