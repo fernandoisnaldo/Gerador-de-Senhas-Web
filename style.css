@@ -21,7 +21,7 @@ a {
 a:hover, button:hover {
     font-weight: bold;
 }
-#tipo_silabas, #copiar{
+#copiar{
     display:none;
 }
 details {
@@ -42,6 +42,7 @@ footer, header {
 }
 #tipo_silabas {
     font-size: 9pt;
+    visibility: hidden
 }
 @media (prefers-color-scheme: dark) {
     body {
