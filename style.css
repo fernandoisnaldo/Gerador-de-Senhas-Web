@@ -40,6 +40,9 @@ body {
 footer, header {
     font-size: 10pt;
 }
+#tipo_silabas {
+    font-size: 9pt;
+}
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #111;
