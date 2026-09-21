@@ -37,14 +37,14 @@
             <button type="button" id="tipo_senha" onclick="setDecimal()">Números</button>
             <button type="button" id="tipo_senha" onclick="exibeAjuda()" aria-label="Exibe ajuda">???</button>
             <br />
-            <dialog id="exibe_ajuda" style="text-align: left;" aria-live="polite">
+            <span id="exibe_ajuda" style="text-align: left;" aria-live="polite">
                 <p>O botão ASCII define seleção por letras com caixa alta, letras com caixa baixa, símbolos e números da tabela ASCII.</p>
                 <p>O botão sílabas define seleção de sílabas aleatórias.</p>
                 <p>O botão alfanumérico define seleção por letras caixa alta, letras caixa baixa e números.</p>
                 <p>O botão hexadecimal define seleção por números hexadecimais.</p>
                 <p>O botão números define seleção por números decimais.</p>
                 <p>Por padrão este programa gera caracteres ASCII.</p>
-            </dialog>
+            </span>
             <br />
             <br />
             <label for="numel">Quantidade de elementos: </label>
@@ -63,7 +63,7 @@
                 <br />
             </section>
         </section>
-        <p tabindex="0">Sua senha é sigilosa, seus dados não são enviados a servidor algum. Certifique-se de que ninguém está te observando.</p>
+        <p aria-live="polite">Sua senha é sigilosa, seus dados não são enviados a servidor algum. Certifique-se de que ninguém está te observando.</p>
     </main>
     <footer>
         <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
