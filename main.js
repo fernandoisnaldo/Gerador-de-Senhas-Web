@@ -58,7 +58,7 @@ function numAleatorio(max) {
 }
 function setASCII(){
     tipoElemento = 0;
-    atualizarAriaPressed(event?.target);
+    atualizarAriaPressed(tipoElemento);
     ascii_span.style.display="inline";
     silabas_span.style.display="none";
     alfanum_span.style.display="none";
@@ -67,7 +67,7 @@ function setASCII(){
 }
 function setSilabas(){
     tipoElemento = 1;
-    atualizarAriaPressed(event?.target);
+    atualizarAriaPressed(tipoElemento);
     ascii_span.style.display="none";
     silabas_span.style.display="inline";
     alfanum_span.style.display="none";
@@ -77,7 +77,7 @@ function setSilabas(){
 }
 function setAlfanumerico(){
     tipoElemento = 2;
-    atualizarAriaPressed(event?.target);
+    atualizarAriaPressed(tipoElemento);
     ascii_span.style.display="none";
     silabas_span.style.display="none";
     alfanum_span.style.display="inline";
@@ -87,7 +87,7 @@ function setAlfanumerico(){
 }
 function setHexadecimal(){
     tipoElemento = 3;
-    atualizarAriaPressed(event?.target);
+    atualizarAriaPressed(tipoElemento);
     ascii_span.style.display="none";
     silabas_span.style.display="none";
     alfanum_span.style.display="none";
@@ -96,19 +96,22 @@ function setHexadecimal(){
 }
 function setDecimal(){
     tipoElemento = 4;
-    atualizarAriaPressed(event?.target);
+    atualizarAriaPressed(tipoElemento);
     ascii_span.style.display="none";
     silabas_span.style.display="none";
     alfanum_span.style.display="none";
     hexadecimal_span.style.display="none";
     numero_span.style.display="inline";
 }
-function atualizarAriaPressed(botaoClicado) {
-    let botoes = document.querySelectorAll('[id="tipo_senha"]');;
-    botoes.forEach(btn => btn.setAttribute("aria-pressed", "false"));
-    if (botaoClicado) {
-        botaoClicado.setAttribute("aria-pressed", "true");
-    }
+function atualizarAriaPressed(indiceAtivo) {
+    let botoes = document.querySelectorAll('[id="tipo_senha"]');
+    botoes.forEach((btn, index) => {
+        if (index === indiceAtivo) {
+            btn.setAttribute("aria-pressed", "true");
+        } else {
+            btn.setAttribute("aria-pressed", "false");
+        }
+    });
 }
 function gerarSenha(){
     senha.innerText="";
@@ -157,7 +160,7 @@ function copiar(){
         return;
     }
     navigator.clipboard.writeText(senha.innerText)
-        .catch(erro => alert("Clipboard object: " + erro));
+    .catch(erro => alert("Clipboard object: " + erro));
 }
 function inicializa(){
     if (window.crypto && window.crypto.getRandomValues) {
