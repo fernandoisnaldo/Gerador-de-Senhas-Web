@@ -19,7 +19,7 @@
     <main>
         <h1>密码生成器</h1>
         <section id="GerarSenha">
-            <label>密码类型：</label>
+            <label for="tipo_senha">密码类型：</label>
             <span id="tipo_ascii">ASCII</span>
             <span id="tipo_silabas">
                 音节
@@ -31,11 +31,11 @@
             <span id="tipo_numero">数字</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-pressed="true">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-pressed="false">音节</button>
-            <button type="button" onclick="setAlfanumerico()" aria-pressed="false">字母数字</button>
-            <button type="button" onclick="setHexadecimal()" aria-pressed="false">十六进制</button>
-            <button type="button" onclick="setDecimal()" aria-pressed="false">数字</button>
+            <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">音节</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">字母数字</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">十六进制</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">数字</button>
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
