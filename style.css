@@ -21,8 +21,12 @@ a {
 a:hover, button:hover {
     font-weight: bold;
 }
-#tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero, #exibe_ajuda, #copiar{
+#tipo_silabas, #tipo_alfanum, #tipo_hexadecimal, #tipo_numero, #copiar{
     display:none;
+}
+details {
+    display: inline-block;
+    margin: 0 auto;
 }
 #output {
     word-break: break-all;
@@ -36,9 +40,6 @@ body {
 footer, header {
     font-size: 10pt;
 }
-dialog {
-    z-index: 1;
-}
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #111;
@@ -47,7 +48,7 @@ dialog {
     header, main, footer, nav a, nav a:hover{
         border-color: #aaa;
     }
-    a, a:visited, dialog {
+    a, a:visited {
         filter: invert(0.9) hue-rotate(180deg);
     }
     input, button {
