@@ -19,7 +19,7 @@
     <main>
         <h1>パスワードジェネレーター</h1>
         <section id="GerarSenha">
-            <label>パスワードの種類： </label>
+            <label for="tipo_senha">パスワードの種類： </label>
             <span id="tipo_ascii">ASCII</span>
             <span id="tipo_silabas">
                 音節
@@ -31,11 +31,11 @@
             <span id="tipo_numero">数字</span>
             <br />
             <br />
-            <button type="button" onclick="setASCII()" aria-pressed="true">ASCII</button>
-            <button type="button" onclick="setSilabas()" aria-pressed="false">音節</button>
-            <button type="button" onclick="setAlfanumerico()" aria-pressed="false">英数字</button>
-            <button type="button" onclick="setHexadecimal()" aria-pressed="false">16進数</button>
-            <button type="button" onclick="setDecimal()" aria-pressed="false">数字</button>
+            <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">音節</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">英数字</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">16進数</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">数字</button>
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
