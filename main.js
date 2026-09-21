@@ -65,7 +65,6 @@ function setSilabas(){
 function setAlfanumerico(){
     tipoElemento = 2;
      atualizarBotoesSpan(tipoElemento);
-
 }
 function setHexadecimal(){
     tipoElemento = 3;
