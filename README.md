@@ -28,7 +28,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 
 [^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
 
-[^7]: Para o modo sílaba, uma "grande quantidade de caracteres" para os fins necessários para detectar vício em prng, seria a ordem de 200 milhões de elementos, o que seria impraticável. Recomendo fazer o teste de distribuição com as outras opções de seleção de caracteres, para ter uma forma viável de testar com apenas 100 mil elementos. Este teste é feito pra detectar vício do PRNG do ambiente em execução, e não falhas no programa.
+[^7]: Eu recomendo testar 100000 de caracteres nos modo "ASCII", "alfanumérico", "hexadecimal", "números" ou "base64". Devido à enorme quantidade de sílabas diferentes, um teste equivalente requer 200 milhões de caracteres e por isso seria impraticável. Este teste é feito pra detectar falhas no PRNG do ambiente de execução, e uma falha do ambiente de execução não implica em falha do código deste programa.
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
