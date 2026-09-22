@@ -130,7 +130,7 @@ function gerarSenha(){
             novaSenha.push(numAleatorio(10)); //emite número decimal
         }
         else if (tipoElemento == 5){//base64 made in gambiarra
-            let b64 = numAleatorio(64); //sorteia número de 0 a 64 para seleção "b64"
+            let b64 = numAleatorio(64); //sorteia número de 0 a 63 para seleção "b64"
             if (b64<10){
                 novaSenha.push(b64);
             }
