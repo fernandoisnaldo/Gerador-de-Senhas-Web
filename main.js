@@ -150,10 +150,10 @@ function gerarSenha(){
     }
     senha.textContent=novaSenha.join("");
     //sorteio de palheta de cores
-    let testeUnitario = {};
-        for (let caractere of novaSenha) {
-        if(caractere!=" "){
-            testeUnitario[caractere] = (testeUnitario[caractere] || 0) + 1;
+    let testeDistr= {};
+        for (let elemento of novaSenha) {
+        if(elemento!=" "){
+            testeDistr[elemento] = (testeDistr[elemento] || 0) + 1;
         }
     }
     console.log(testeUnitario);
