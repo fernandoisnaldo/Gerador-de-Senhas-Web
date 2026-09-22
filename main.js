@@ -74,6 +74,10 @@ function setDecimal(){
     tipoElemento = 4;
     atualizarBotoesSPan(tipoElemento);
 }
+function setBase64(){
+    tipoElemento = 5;
+    atualizarBotoesSPan(tipoElemento);
+}
 function atualizarBotoesSPan(indiceAtivo) {
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
     if(indiceAtivo == 1){
@@ -124,6 +128,24 @@ function gerarSenha(){
         }
         else if (tipoElemento == 4){ //número
             novaSenha.push(numAleatorio(10)); //emite número decimal
+        }
+        else if (tipoElemento == 5){//base64 made in gambiarra
+            let b64 = numAleatorio(64); //sorteia número de 0 a 64 para seleção "b64"
+            if (b64<10){
+                novaSenha.push(b64);
+            }
+            else if(b64<36){
+                novaSenha.push(String.fromCharCode(b64+55)); //emite A-Z
+            }
+            else if(b64<62){
+                novaSenha.push(String.fromCharCode(b64+61)); //emite a-z
+            }
+            else if(b64==62){
+                novaSenha.push("+");
+            }
+            else {
+                novaSenha.push("/");
+            }
         }
     }
     senha.innerText=novaSenha.join("");
