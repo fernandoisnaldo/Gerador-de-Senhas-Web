@@ -150,10 +150,10 @@ function gerarSenha(){
     }
     senha.textContent=novaSenha.join("");
     //gera relatório estatístico com saída pra console, mostra a distribuição de cada elemento
-    let testeDistr= {};
-        for (let elemento of novaSenha) {
-        if(elemento!=" "){
-            testeDistr[elemento] = (testeDistr[elemento] || 0) + 1;
+    let testeDistr = {};
+    for (let elemento of novaSenha) {
+        if (elemento !== " ") {
+            testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
         }
     }
     console.log(testeDistr);
