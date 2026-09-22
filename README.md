@@ -8,7 +8,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.[^1]
 2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
 3) Emite senhas em formato ASCII[^2], sílabas[^3], alfanumérico, hexadecimal, decimal e base64.
-4) Este programa vem com teste unitário ativado com saída pra console, abra o Inspecionar Elementos e descubra a distribuição de cada caractere gerado. Isso é útil pra testar grandes quantidades de caracteres e descobrir se o CSRNG do seu computador tá viciado.
+4) Este programa vem com teste unitário ativado com saída pra console, abra o Inspecionar Elementos e descubra a distribuição de cada caractere gerado. Isso é útil pra testar grandes quantidades de caracteres e descobrir se o PRNG do seu computador tá viciado.
    
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
