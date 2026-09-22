@@ -152,7 +152,9 @@ function gerarSenha(){
     //sorteio de palheta de cores
     let testeUnitario = {};
         for (let caractere of novaSenha) {
-        testeUnitario[caractere] = (testeUnitario[caractere] || 0) + 1;
+        if(caractere!=" "){
+            testeUnitario[caractere] = (testeUnitario[caractere] || 0) + 1;
+        }
     }
     console.log("Frequência dos elementos:", testeUnitario);
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
