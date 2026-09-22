@@ -11,7 +11,7 @@ Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web
 4) This program includes a unit test with console output, to detect biased PRNG. Open the Inspection tool of your browser in the Console and discover the quantitative distribution of each generated item.
 
 # Key Design, Architecture, and Accessibility Features
-1) Available in multiple languages, with localization [extensible via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
+1) Available in multiple languages, with localization [extensible via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web) (in Portuguese).
 2) Built with semantic HTML to improve accessibility for visually impaired users.[^6]
 3) Generated passwords feature randomized styling colors[^4] within a palette that favors the green channel for text and borders[^5], as defined in the codebase.
 4) Maximum simplicity: written as purely as possible using native capabilities delivered by modern web browsers. No external APIs or third-party libraries imported.
