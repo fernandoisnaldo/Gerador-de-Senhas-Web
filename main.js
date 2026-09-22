@@ -148,7 +148,7 @@ function gerarSenha(){
             }
         }
     }
-    senha.innerText=novaSenha.join("");
+    senha.textContent=novaSenha.join("");
     //sorteio de palheta de cores
     let testeUnitario = {};
         for (let caractere of novaSenha) {
