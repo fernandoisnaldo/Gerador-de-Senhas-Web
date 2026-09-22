@@ -1,3 +1,5 @@
+[English version of this README](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/blob/main/README_en_US.md)
+
 # Gerador de Senhas versão web
 Baseado na lógica do meu gerador de senhas em Java, porém com requisitos de acessibilidade que eu me sinto mais confortável de implementar em uma aplicação web.
 
