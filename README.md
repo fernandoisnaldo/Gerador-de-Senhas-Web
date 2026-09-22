@@ -8,7 +8,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.[^1]
 2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
 3) Emite senhas em formato ASCII[^2], sílabas[^3], alfanumérico, hexadecimal, decimal e base64.
-4) Este programa vem com teste unitário ativado com saída pra console, abra o Inspecionar Elementos e descubra a distribuição de cada elemento gerado. Isso é útil pra testar grandes quantidades de elementos e descobrir se o PRNG do seu computador ou navegador tá viciado.
+4) Este programa vem com teste unitário ativado com saída pra console, abra o Inspecionar Elementos e descubra a distribuição de cada elemento gerado. Isso é útil pra testar grandes quantidades de elementos e descobrir se o PRNG do seu computador ou navegador tá viciado.[^7]
    
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
@@ -27,6 +27,8 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 [^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado prejuízo à legibilidade, mesmo com perda de contraste (no nível simulado pelo navegador), com ausência total de cones verdes ou com ausência total de todos os cones.
 
 [^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
+
+[^7]: Para o modo sílaba, uma "grande quantidade de caracteres" para os fins necessários para detectar vício em prng, seria a ordem de 200 milhões de elementos, o que seria impraticável. Recomendo fazer o teste de distribuição com as outras opções de seleção de caracteres, para ter uma forma viável de testar com apenas 100 mil elementos. Este teste é feito pra detectar vício em PRNG, e não falhas no meu programa.
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
