@@ -22,7 +22,7 @@ Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web
 
 [^2]: Applies strictly to the decimal range 33 to 126 of the [ASCII](https://en.wikipedia.org/wiki/ASCII) table.
 
-[^3]: Read the [syllables specifications](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo) to learn more. The implementation of these specs can be found in `main.js`.
+[^3]: Read the [syllables specifications](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo) (in Portuguese) to learn more. The implementation of these specs can be found in `main.js`.
 
 [^4]: Certain purely decorative functions also pull randomness via `window.crypto.getRandomValues()` for project scoping reasons. Any vulnerable PRNG is considered suspect and forbidden in this codebase for any purpose.
 
