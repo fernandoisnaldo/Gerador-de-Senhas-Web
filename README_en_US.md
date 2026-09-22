@@ -8,7 +8,7 @@ Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web
 1) Uses a cryptographically secure pseudorandom number generator with modulo bias elimination.[^1]
 2) Web application format: runs directly in the browser from any of these HTML documents.
 3) Generates passwords in ASCII[^2], syllabic[^3], alphanumeric, hexadecimal, decimal, and base64 formats.
-4) This program includes a unit test with console output, to detect biased PRNG. Open the Inspection tool of your browser in the Console and discover the distribution of each generated item.
+4) This program includes a unit test with console output, to detect biased PRNG. Open the Inspection tool of your browser in the Console and discover the quantitative distribution of each generated item.
 
 # Key Design, Architecture, and Accessibility Features
 1) Available in multiple languages, with localization [extensible via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
