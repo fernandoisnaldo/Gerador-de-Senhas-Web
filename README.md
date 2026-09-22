@@ -28,7 +28,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 
 [^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
 
-[^7]:Um teste unitário razoável envolve 100 milhões de elementos no modo sílabas ou 50 mil elementos nos demais modos. O teste unitário é feito pra detectar falhas no PRNG do ambiente de execução, e uma falha do ambiente de execução NÂO É uma falha do código deste programa.
+[^7]:Um teste unitário razoável envolve 100 milhões de elementos no modo sílabas ou 50 mil elementos nos demais modos. O teste unitário é feito pra detectar falhas no PRNG do ambiente de execução, e uma falha do ambiente de execução NÃO É uma falha do código deste programa.
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
