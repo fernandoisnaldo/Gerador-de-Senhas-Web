@@ -149,13 +149,13 @@ function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
-    //sorteio de palheta de cores
     let testeDistr= {};
         for (let elemento of novaSenha) {
         if(elemento!=" "){
             testeDistr[elemento] = (testeDistr[elemento] || 0) + 1;
         }
     }
+    //sorteio de palheta de cores
     console.log(testeUnitario);
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
