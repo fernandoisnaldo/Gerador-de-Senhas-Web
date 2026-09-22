@@ -8,7 +8,7 @@ Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web
 1) Uses a cryptographically secure pseudorandom number generator with modulo bias elimination.[^1]
 2) Web application format: runs directly in the browser from any of these HTML documents.
 3) Generates passwords in ASCII[^2], syllabic[^3], alphanumeric, hexadecimal, decimal, and base64 formats.
-4) Includes built-in unit testing outputted to the console—open Developer Tools / Inspect Element to inspect the distribution of each generated element. This is useful for testing large batches of elements to check whether your computer's or browser's PRNG is biased.[^7]
+4) This program comes with a unit test enabled with console output. Open the Inspect Elements tool and discover the distribution of each generated element; this is a feature for those who want to analyze and detect biased PRNGs.
 
 # Key Design, Architecture, and Accessibility Features
 1) Available in multiple languages, with localization [extensible via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
@@ -29,8 +29,6 @@ Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web
 [^5]: Green channel dominance is chosen because green contributes most significantly to perceived luminance and offers optimal visual acuity for most people; it is also an aesthetic preference for this project. In tests using Mozilla Firefox's color vision deficiency simulator (protanopia, deuteranopia, tritanopia, achromatopsia, and contrast loss), legibility remained intact even with contrast reduction (at the level simulated by the browser), total absence of green cones, or total absence of all cones.
 
 [^6]: There has been no opportunity to perform testing with actual screen reader users. If you discover any issues or wish to suggest improvements, please open an issue.
-
-[^7]: A reasonable unit test involves 100 million elements in syllable mode or 50,000 elements in other modes. The unit test is designed to detect flaws in the runtime environment's PRNG—an environment failure is NOT a bug in this software's code.
 
 This program is free software: it can be modified, used, and redistributed under the terms of the GPL v3 or later.
 
