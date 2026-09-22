@@ -149,13 +149,22 @@ function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
-    //gera relatório estatístico com saída pra console, mostra a distribuição de cada elemento
+    //gera relatório estatístico com saída pra console para análise de PRNG
     let testeDistr = {};
     for (let elemento of novaSenha) {
         if (elemento !== " ") {
             testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
         }
     }
+    console.log(testeDistr);
+    const frequencias = Object.values(testeDistr);
+    let total=0;
+    console.log("MAX: " + Math.max(...frequencias));
+    console.log("MIN: " + Math.min(...frequencias));
+    for (let contador=0;contador<frequencias.length;contador++){
+        total+=frequencias[contador];
+    }
+    console.log("AVG: " +total/frequencias.length);
     console.log(testeDistr);
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
