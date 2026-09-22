@@ -149,6 +149,7 @@ function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
+    //gera relatório estatístico com saída pra console, mostra a distribuição de cada elemento
     let testeDistr= {};
         for (let elemento of novaSenha) {
         if(elemento!=" "){
