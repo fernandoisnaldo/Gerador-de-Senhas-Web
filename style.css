@@ -32,6 +32,18 @@ details {
     word-break: break-all;
     font-weight: bold;
     font-size: 10pt;
+    position: relative;
+    margin-top: 25px;
+}
+#output::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0a0;
+    width: 200px;
+    font-size: 9pt;
 }
 body {
     font-family: monospace;
