@@ -174,12 +174,12 @@ function gerarSenha(){
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         if(totalEntropy<64){ // aviso visual de entropia extremamente baixa
-            senha.style.textDecoration="yellow line-through double";
+            senha.style.textDecoration="line-through double yellow";
             senha.style.opacity = "0.3";
         }
         else if(totalEntropy<96){  // aviso visual de entropia baixa
-        senha.style.textDecoration="yellow line-through";
-        senha.style.opacity = "0.5";
+            senha.style.textDecoration="yellow line-through";
+            senha.style.opacity = "0.5";
         }
         else if(totalEntropy<128){  // aviso visual de entropia baixa
             senha.style.textDecoration="none";
