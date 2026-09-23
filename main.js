@@ -161,8 +161,6 @@ function gerarSenha(){
         }
     }
     //
-    const qtdCaracteres = Number(numChar) || 0;
-    // Garantir que a quantidade de sílabas está carregada
     const qtdSilabas = alfabeto?.silabas?.length || 0;
     const tamanhosConjunto = {
         0: 93,          // ASCII
@@ -172,15 +170,7 @@ function gerarSenha(){
         4: 10,          // Numérico
         5: 64           // Base64
     };
-    // Obtém o tamanho do conjunto garantindo a conversão do tipoElemento para número
-    const tamanhoConjunto = tamanhosConjunto[Number(tipoElemento)];
-
-    if (tamanhoConjunto && qtdCaracteres) {
-        const totalEntropy = qtdCaracteres * Math.log2(tamanhoConjunto);
-        console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
-    } else {
-    console.log("Entropy: 0.00 bits");
-    }
+    console.log("Entropy: " + Number(numChar) * Math.log2(tamanhosConjunto) + " bits");
     //
     console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
