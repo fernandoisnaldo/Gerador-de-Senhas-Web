@@ -17,10 +17,15 @@ nav a:hover {
 }
 a {
     text-decoration: none;
+    color: #070;
+}
+a:visited {
+    color:#036;
 }
 a:hover, button:hover {
     font-weight: bold;
 }
+
 #copiar{
     display:none;
 }
@@ -32,8 +37,19 @@ details {
     word-break: break-all;
     font-weight: bold;
     font-size: 10pt;
+    position: relative;
+    margin-top: 25px;
 }
-
+#output::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0a0;
+    width: 200px;
+    font-size: 9pt;
+}
 body {
     font-family: monospace;
     font-size: 12pt;
@@ -53,8 +69,11 @@ footer, header {
     header, main, footer, nav a, nav a:hover{
         border-color: #aaa;
     }
-    a, a:visited {
-        filter: invert(0.9) hue-rotate(180deg);
+    a {
+        color: #0f0!important;
+    }
+    a:visited {
+        color: #c60!important;
     }
     input, button {
         filter: invert(0.9);
