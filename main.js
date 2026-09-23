@@ -179,12 +179,12 @@ function gerarSenha(){
     console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
     let total=0;
-    console.log("Most in one selected element: " + Math.max(...frequencias));
-    console.log("Less in one selected element: " + Math.min(...frequencias));
+    console.log("Most elements with same selected value: " + Math.max(...frequencias));
+    console.log("Less elements with same selected value: " + Math.min(...frequencias));
     for (let contador=0;contador<frequencias.length;contador++){
         total+=frequencias[contador];
     }
-    console.log("Avarage per selected element: " +total/frequencias.length);
+    console.log("Avarage elements with same selected value " +total/frequencias.length);
     console.log("Total elements: "+quantidade);
     // FIM dos relatórios estatísticos
     //sorteio de palheta de cores
