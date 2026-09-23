@@ -23,6 +23,7 @@ let silabas_span = document.getElementById("tipo_silabas");
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
+let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
 let alfabeto = {
     consoantes: [
@@ -73,12 +74,12 @@ function setAlfanumerico(){
 function setHexadecimal(){
     tipoElemento = 3;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=39;
+    numChar.value=32;
 }
 function setDecimal(){
     tipoElemento = 4;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=39;
+    numChar.value=32;
 }
 function setBase64(){
     tipoElemento = 5;
@@ -180,22 +181,23 @@ function gerarSenha(){
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits";
-        exibirCopiar.dataset.label =  Math.floor(totalEntropy)+ " bits";
-        if(totalEntropy<64){ // aviso visual de entropia extremamente baixa
-            senha.style.textDecoration="line-through double yellow";
-            senha.style.opacity = "0.3";
+        let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
+        if(totalEntropy<128){
+            botaoCopiarIndice=0;
         }
-        else if(totalEntropy<96){  // aviso visual de entropia baixa
-            senha.style.textDecoration="yellow line-through";
-            senha.style.opacity = "0.5";
-        }
-        else if(totalEntropy<128){  // aviso visual de entropia baixa
-            senha.style.textDecoration="none";
-            senha.style.opacity = "0.8";
+        else if(totalEntropy<256){
+            botaoCopiarIndice=1;
         }
         else {
-            senha.style.textDecoration="none";
-            senha.style.opacity = "1";
+            botaoCopiarIndice=2;
+        }
+        for(let contador=0; contador<botoes_copiar.length;contador++){
+            if(contador== botaoCopiarIndice){
+                botoes_copiar[contador].style.display="inline-block";
+            }
+            else {
+                botoes_copiar[contador].style.display="none";
+            }
         }
     } else {
         console.log("Entropy: 0.00 bits");
