@@ -169,12 +169,12 @@ function gerarSenha(){
         4: 10,                          // Numérico
         5: 64                           // Base64
     };
-    const tamanhoConjunto = tamanhosConjunto[tipoElemento];
+    const tamanhoConjunto = tamanhosConjunto[tipoElemento]; // cálculo de entropia
     if (tamanhoConjunto && quantidade > 0) {
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         if(totalEntropy<128){
-        senha.style.textDecoration="red line-through";
+        senha.style.textDecoration="yellow line-through";
         }
         else {
             senha.style.textDecoration="none";
