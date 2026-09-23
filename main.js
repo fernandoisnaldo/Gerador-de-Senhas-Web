@@ -183,13 +183,13 @@ function gerarSenha(){
         senha.title = Math.floor(totalEntropy)+ " bits";
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
         if(totalEntropy<128){
-            botaoCopiarIndice=0;
+            botaoCopiarIndice=0; // senha fraca
         }
-        else if(totalEntropy<256){
-            botaoCopiarIndice=1;
+        else if(totalEntropy<192){
+            botaoCopiarIndice=1; // senha nível aceitável
         }
         else {
-            botaoCopiarIndice=2;
+            botaoCopiarIndice=2; // senha forte
         }
         for(let contador=0; contador<botoes_copiar.length;contador++){
             if(contador== botaoCopiarIndice){
