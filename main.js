@@ -149,7 +149,7 @@ function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
-    //gera relatório estatístico com saída pra console para análise de PRNG
+    // Gera relatório estatístico com saída pra console para análise de PRNG
     let testeDistr = {};
     let caractereExcluido;
     if(tipoElemento == 1){
@@ -176,7 +176,6 @@ function gerarSenha(){
     } else {
         console.log("Entropy: 0.00 bits");
     }
-    //
     console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
     let total=0;
@@ -186,6 +185,7 @@ function gerarSenha(){
         total+=frequencias[contador];
     }
     console.log("AVG: " +total/frequencias.length);
+    // FIM dos relatórios estatísticos
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
