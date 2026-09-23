@@ -17,7 +17,7 @@ nav a:hover {
 }
 a {
     text-decoration: none;
-    color:#048;
+    color:#06a;
 }
 a:hover, button:hover {
     font-weight: bold;
@@ -67,7 +67,7 @@ footer, header {
         border-color: #aaa;
     }
     a {
-        color: #c60!important;
+        color: #d60!important;
     }
     input, button {
         filter: invert(0.9);
