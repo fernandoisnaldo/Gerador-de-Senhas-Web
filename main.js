@@ -180,6 +180,7 @@ function gerarSenha(){
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits";
+        senha.dataset.label =  Math.floor(totalEntropy)+ " bits";
         if(totalEntropy<64){ // aviso visual de entropia extremamente baixa
             senha.style.textDecoration="line-through double yellow";
             senha.style.opacity = "0.3";
