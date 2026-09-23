@@ -78,12 +78,12 @@ function setHexadecimal(){
 function setDecimal(){
     tipoElemento = 4;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=64;
+    numChar.value=63;
 }
 function setBase64(){
     tipoElemento = 5;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=34
+    numChar.value=35;
 }
 function atualizarBotoesSPan(indiceAtivo) {
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
