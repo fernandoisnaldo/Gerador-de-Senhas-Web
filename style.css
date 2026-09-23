@@ -57,13 +57,13 @@ footer, header {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #111;
-        color: #aaa;
+        color: #fff;
     }
     header, main, footer, nav a, nav a:hover{
         border-color: #777;
     }
     a {
-        color: #fff!important;
+        color: #aaa!important;
     }
     input, button {
         filter: invert(0.9);
