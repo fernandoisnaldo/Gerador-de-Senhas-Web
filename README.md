@@ -17,7 +17,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 2) Uso de HTML semântico, para tentar facilitar para quem é deficiente visual.[^6]
 3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
 4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que um navegador moderno já entrega. Não há importação externa de APIs ou bibliotecas.
-5) Interface reativa: Configurações de senha fraca definidas pelo usuário resultam em perda de opacidade e em 1 ou 2 riscos amarelos. Isso não causa nenhuma perda de funcionalidade, mas é uma estética pra desencorajar o uso de senhas fracas, mesmo quando elas são geradas por este programa.
+5) Estilo reativo: Configurações de senha fraca definidas pelo usuário resultam em perda de opacidade e em 1 ou 2 riscos amarelos. Isso não causa nenhuma perda de funcionalidade, mas é uma estética pra desencorajar o uso de senhas fracas, mesmo quando elas são geradas por este programa.
 
 [^1]: O Gerador de Senhas versão web depende da função `window.crypto.getRandomValues()`, padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Interface web executada em ambiente desatualizado, adulterado e/ou não baseado nesses já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.
 
