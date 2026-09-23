@@ -177,9 +177,13 @@ function gerarSenha(){
             senha.style.textDecoration="yellow line-through double";
             senha.style.opacity = "0.3";
         }
-        else if(totalEntropy<128){  // aviso visual de entropia baixa
+        else if(totalEntropy<96){  // aviso visual de entropia baixa
         senha.style.textDecoration="yellow line-through";
         senha.style.opacity = "0.5";
+        }
+        else if(totalEntropy<96){  // aviso visual de entropia baixa
+            senha.style.textDecoration="none";
+            senha.style.opacity = "0.8";
         }
         else {
             senha.style.textDecoration="none";
