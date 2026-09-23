@@ -152,7 +152,7 @@ function gerarSenha(){
     //gera relatório estatístico com saída pra console para análise de PRNG
     let testeDistr = {};
     let caractereExcluido;
-    if(tipoElemento == 2){
+    if(tipoElemento == 1){
         caractereExcluido=" ";
     }
     for (let elemento of novaSenha) {
