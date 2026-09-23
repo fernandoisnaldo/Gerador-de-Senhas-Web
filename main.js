@@ -173,6 +173,12 @@ function gerarSenha(){
     if (tamanhoConjunto && quantidade > 0) {
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
+        if(totalEntropy<128){
+        senha.style.textDecoration="line-through";
+        }
+        else {
+            senha.style.textDecoration="none";
+        }
     } else {
         console.log("Entropy: 0.00 bits");
     }
@@ -187,13 +193,6 @@ function gerarSenha(){
     console.log("Avarage elements with same selected value " +total/frequencias.length);
     console.log("Total elements: "+quantidade);
     // FIM dos relatórios estatísticos
-    //decorações funcionais
-    if(totalEntropy<128){
-        senha.style.textDecoration="line-through";
-    }
-    else {
-        senha.style.textDecoration="none";
-    }
     //decorações meramente estéticas
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
