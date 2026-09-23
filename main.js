@@ -160,17 +160,22 @@ function gerarSenha(){
             testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
         }
     }
-    //
-    const qtdSilabas = alfabeto?.silabas?.length || 0;
+    // cálculo de entropia
     const tamanhosConjunto = {
-        0: 93,          // ASCII
-        1: qtdSilabas,  // Sílabas (169.650)
-        2: 62,          // Alfanumérico
-        3: 16,          // Hexadecimal
-        4: 10,          // Numérico
-        5: 64           // Base64
+        0: 94,                          // ASCII imprimível (33 a 126 inclusive)
+        1: alfabeto.silabas.length,     // Sílabas (169.650)
+        2: 62,                          // Alfanumérico
+        3: 16,                          // Hexadecimal
+        4: 10,                          // Numérico
+        5: 64                           // Base64
     };
-    console.log("Entropy: " + Number(numChar) * Math.log2(tamanhosConjunto) + " bits");
+    const tamanhoConjunto = tamanhosConjunto[tipoElemento];
+    if (tamanhoConjunto && quantidade > 0) {
+        const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
+        console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
+    } else {
+        console.log("Entropy: 0.00 bits");
+    }
     //
     console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
