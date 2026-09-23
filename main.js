@@ -68,22 +68,22 @@ function setSilabas(){
 function setAlfanumerico(){
     tipoElemento = 2;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=35;
+    numChar.value=32;
 }
 function setHexadecimal(){
     tipoElemento = 3;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=52;
+    numChar.value=39;
 }
 function setDecimal(){
     tipoElemento = 4;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=63;
+    numChar.value=39;
 }
 function setBase64(){
     tipoElemento = 5;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=35;
+    numChar.value=32;
 }
 function atualizarBotoesSPan(indiceAtivo) {
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
