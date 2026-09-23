@@ -185,6 +185,7 @@ function gerarSenha(){
         total+=frequencias[contador];
     }
     console.log("AVG: " +total/frequencias.length);
+    console.log("TOTAL: "+quantidade);
     // FIM dos relatórios estatísticos
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
