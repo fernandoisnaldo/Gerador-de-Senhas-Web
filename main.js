@@ -175,9 +175,11 @@ function gerarSenha(){
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         if(totalEntropy<128){
         senha.style.textDecoration="yellow line-through";
+        senha.style.opacity = "0.5";
         }
         else {
             senha.style.textDecoration="none";
+            senha.style.opacity = "1";
         }
     } else {
         console.log("Entropy: 0.00 bits");
