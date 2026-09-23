@@ -23,17 +23,6 @@ a:hover, button:hover {
 }
 #copiar{
     display:none;
-    position: relative;
-}
-#copiar::after {
-    content: attr(data-label);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #0a0;
-    width: 100%;
-    font-size: 11pt;
 }
 details {
     display: inline-block;
