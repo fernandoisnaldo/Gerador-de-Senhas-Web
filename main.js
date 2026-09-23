@@ -148,13 +148,13 @@ function gerarSenha(){
             }
         }
     }
+    senha.textContent=novaSenha.join("");
+    //gera relatório estatístico com saída pra console para análise de PRNG
+    let testeDistr = {};
     let caractereExcluido;
     if(tipoElemento == 2){
         caractereExcluido=" ";
     }
-    senha.textContent=novaSenha.join("");
-    //gera relatório estatístico com saída pra console para análise de PRNG
-    let testeDistr = {};
     for (let elemento of novaSenha) {
         if (elemento !== caractereExcluido) {
             testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
