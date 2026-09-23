@@ -83,6 +83,7 @@ function setDecimal(){
 function setBase64(){
     tipoElemento = 5;
     atualizarBotoesSPan(tipoElemento);
+    numChar.value=34
 }
 function atualizarBotoesSPan(indiceAtivo) {
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
