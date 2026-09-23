@@ -23,6 +23,7 @@ let silabas_span = document.getElementById("tipo_silabas");
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
+let numChar = document.getElementById("numel");
 let alfabeto = {
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f",
@@ -57,22 +58,27 @@ function numAleatorio(max) {
 function setASCII(){
     tipoElemento = 0;
     atualizarBotoesSPan(tipoElemento);
+    numChar.value(32);
 }
 function setSilabas(){
     tipoElemento = 1;
     atualizarBotoesSPan(tipoElemento);
+    numChar.value(12);
 }
 function setAlfanumerico(){
     tipoElemento = 2;
     atualizarBotoesSPan(tipoElemento);
+    numChar.value(35);
 }
 function setHexadecimal(){
     tipoElemento = 3;
     atualizarBotoesSPan(tipoElemento);
+    numChar.value(52);
 }
 function setDecimal(){
     tipoElemento = 4;
     atualizarBotoesSPan(tipoElemento);
+    numChar.value(64);
 }
 function setBase64(){
     tipoElemento = 5;
@@ -98,7 +104,6 @@ function atualizarBotoesSPan(indiceAtivo) {
 function gerarSenha(){
     senha.innerText="";
     let novaSenha=[];
-    let numChar = document.getElementById("numel");
     let quantidade = parseInt(numChar.value) || 0;
     exibirCopiar.style.display="block";
     for(let contador=0;contador<quantidade;contador++){
