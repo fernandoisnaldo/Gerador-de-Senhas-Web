@@ -161,25 +161,20 @@ function gerarSenha(){
         }
     }
     let totalEntropy;
-    if(tipoElemento==0){
-        totalEntropy=numChar*Math.log2(93);
+    const tamanhoConjunto = {
+        0: 93,                         // ASCII
+        1: alfabeto.silabas?.length,   // Sílabas
+        2: 62,                         // Alfanumérico
+        3: 16,                         // Hexadecimal
+        4: 10,                         // Numérico
+        5: 64                          // Base64
+    }[tipoElemento];
+    // Se existir o conjunto e o numChar for válido, calcula a entropia
+    if (tamanhoConjunto && numChar) {
+        const totalEntropy = numChar * Math.log2(tamanhoConjunto);
+        console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
     }
-    else if(tipoElemento==1){
-        totalEntropy=numChar*Math.log2(alfabeto.silabas.length);
-    }
-    else if(tipoElemento==2){
-        totalEntropy=numChar*Math.log2(62);
-    }
-    else if(tipoElemento==3){
-        totalEntropy=numChar*Math.log2(16);
-    }
-    else if(tipoElemento==4){
-        totalEntropy=numChar*Math.log2(10);
-    }
-    else if(tipoElemento==5){
-        totalEntropy=numChar*Math.log2(64);
-    }
-    console.log("Entropy: " + totalEntropy + "bits");
+    console.log("Entropy: " + totalEntropy + " bits");
     console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
     let total=0;
