@@ -176,16 +176,16 @@ function gerarSenha(){
     } else {
         console.log("Entropy: 0.00 bits");
     }
-    console.log(testeDistr);
+    console.log("All selected elements in one array: " + testeDistr);
     const frequencias = Object.values(testeDistr);
     let total=0;
-    console.log("MAX: " + Math.max(...frequencias));
-    console.log("MIN: " + Math.min(...frequencias));
+    console.log("Most in one selected element: " + Math.max(...frequencias));
+    console.log("Less in one selected element: " + Math.min(...frequencias));
     for (let contador=0;contador<frequencias.length;contador++){
         total+=frequencias[contador];
     }
-    console.log("AVG: " +total/frequencias.length);
-    console.log("TOTAL: "+quantidade);
+    console.log("Avarage per selected element: " +total/frequencias.length);
+    console.log("Total elements: "+quantidade);
     // FIM dos relatórios estatísticos
     //sorteio de palheta de cores
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
