@@ -170,8 +170,8 @@ function gerarSenha(){
         5: 64                          // Base64
     }[tipoElemento];
     // Se existir o conjunto e o numChar for válido, calcula a entropia
-    if (tamanhoConjunto && numChar) {
-        const totalEntropy = numChar * Math.log2(tamanhoConjunto);
+    if (tamanhoConjunto && Number(numChar)) {
+        const totalEntropy = Number(numChar) * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
     }
     console.log("Entropy: " + totalEntropy + " bits");
