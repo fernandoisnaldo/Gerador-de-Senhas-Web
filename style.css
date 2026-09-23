@@ -42,7 +42,7 @@ details {
     left: 50%;
     transform: translateX(-50%);
     color: #0a0;
-    width: 200px;
+    width: 100%;
     font-size: 9pt;
 }
 body {
