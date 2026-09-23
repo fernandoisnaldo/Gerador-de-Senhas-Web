@@ -174,7 +174,7 @@ function gerarSenha(){
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         if(totalEntropy<128){
-        senha.style.textDecoration="line-through";
+        senha.style.textDecoration="red line-through";
         }
         else {
             senha.style.textDecoration="none";
