@@ -19,10 +19,6 @@ a {
     text-decoration: none;
     color:#06a;
 }
-a:hover, button:hover {
-    font-weight: bold;
-}
-
 #copiar{
     display:none;
 }
