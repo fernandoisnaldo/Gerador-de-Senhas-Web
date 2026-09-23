@@ -187,7 +187,14 @@ function gerarSenha(){
     console.log("Avarage elements with same selected value " +total/frequencias.length);
     console.log("Total elements: "+quantidade);
     // FIM dos relatórios estatísticos
-    //sorteio de palheta de cores
+    //decorações funcionais
+    if(totalEntropy<100){
+        senha.style.textDecoration="line-through";
+    }
+    else {
+        senha.style.textDecoration="none";
+    }
+    //decorações meramente estéticas
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 1px";
