@@ -188,7 +188,7 @@ function gerarSenha(){
     console.log("Total elements: "+quantidade);
     // FIM dos relatórios estatísticos
     //decorações funcionais
-    if(totalEntropy<100){
+    if(totalEntropy<128){
         senha.style.textDecoration="line-through";
     }
     else {
