@@ -160,6 +160,26 @@ function gerarSenha(){
             testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
         }
     }
+    let totalEntropy;
+    if(tipoElemento==0){
+        totalEntropy=numChar*Math.log2(93);
+    }
+    else if(tipoElemento==1){
+        totalEntropy=numChar*Math.log2(alfabeto.silabas.length);
+    }
+    else if(tipoElemento==2){
+        totalEntropy=numChar*Math.log2(62);
+    }
+    else if(tipoElemento==3){
+        totalEntropy=numChar*Math.log2(16);
+    }
+    else if(tipoElemento==4){
+        totalEntropy=numChar*Math.log2(10);
+    }
+    else if(tipoElemento==5){
+        totalEntropy=numChar*Math.log2(64);
+    }
+    console.log("Entropy: " + totalEntropy + "bits");
     console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
     let total=0;
