@@ -176,7 +176,7 @@ function gerarSenha(){
     } else {
         console.log("Entropy: 0.00 bits");
     }
-    console.log("All selected elements in one array: " + testeDistr);
+    console.log(testeDistr);
     const frequencias = Object.values(testeDistr);
     let total=0;
     console.log("Most in one selected element: " + Math.max(...frequencias));
