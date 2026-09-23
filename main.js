@@ -141,10 +141,10 @@ function gerarSenha(){
                 novaSenha.push(String.fromCharCode(b64+61)); //emite a-z
             }
             else if(b64==62){
-                novaSenha.push("+");
+                novaSenha.push("-");
             }
             else {
-                novaSenha.push("/");
+                novaSenha.push("_");
             }
         }
     }
