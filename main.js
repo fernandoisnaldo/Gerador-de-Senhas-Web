@@ -58,27 +58,27 @@ function numAleatorio(max) {
 function setASCII(){
     tipoElemento = 0;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value(32);
+    numChar.value=32;
 }
 function setSilabas(){
     tipoElemento = 1;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value(12);
+    numChar.value=12;
 }
 function setAlfanumerico(){
     tipoElemento = 2;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value(35);
+    numChar.value=35;
 }
 function setHexadecimal(){
     tipoElemento = 3;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value(52);
+    numChar.value=52;
 }
 function setDecimal(){
     tipoElemento = 4;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value(64);
+    numChar.value=64;
 }
 function setBase64(){
     tipoElemento = 5;
