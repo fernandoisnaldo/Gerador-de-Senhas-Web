@@ -16,7 +16,7 @@ header, main, footer {
     margin: 0 auto;
 }
 button {
-    border: solid 2px #777;
+    border: solid 2px #ddd;
     background-color: #eee;
     border-radius: 2px;
 }
