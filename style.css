@@ -12,6 +12,8 @@ header, main, footer {
     border-top: solid 1pt #08a;
     padding: 5px;
     background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 button {
     border: solid 2px #777;
