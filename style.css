@@ -49,7 +49,6 @@ details {
 #output {
     word-break: break-all;
     font-weight: bold;
-    font-size: 10pt;
     position: relative;
     margin-top: 25px;
 }
@@ -64,15 +63,15 @@ details {
 }
 body {
     font-family: monospace;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     background-color: #000;
     border-radius: 5px;
 }
 footer, header {
-    font-size: 1rem;
+    font-size: .9rem;
 }
 #tipo_silabas {
-    font-size: 9pt;
+    font-size: .7rem;
     visibility: hidden
 }
 @media (prefers-color-scheme: dark) {
