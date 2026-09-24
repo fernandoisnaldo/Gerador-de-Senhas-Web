@@ -54,7 +54,7 @@ body {
     font-family: monospace;
     font-size: 1.0rem;
     background-color: #000;
-    background: repeating-linear-gradient( 45deg, #303, #033 1px, #000000 5px, #000000 25px);
+    background: repeating-linear-gradient( 45deg, #204, #003 1px, #000 8px, #000 15px);
     background-attachment: fixed;
     border-radius: 5px;
 }
