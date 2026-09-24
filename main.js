@@ -219,7 +219,7 @@ function gerarSenha(){
     //decorações meramente estéticas
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
-    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 1px";
+    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 2px";
 }
 function copiar(){
     if (!navigator.clipboard) {
