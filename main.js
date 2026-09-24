@@ -188,8 +188,11 @@ function gerarSenha(){
         else if(totalEntropy<192){
             botaoCopiarIndice=1; // senha nível aceitável
         }
-        else {
+        else  if(totalEntropy>=192{
             botaoCopiarIndice=2; // senha forte
+        }
+        else {
+            botaoCopiarIndice=4; // índice fantasma previnir que o botão copiar apareça indevidamente
         }
         for(let contador=0; contador<botoes_copiar.length;contador++){
             if(contador== botaoCopiarIndice){
