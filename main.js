@@ -201,7 +201,8 @@ function gerarSenha(){
         }
     } else {
         console.log("Entropy: 0.00 bits");
-        senha.innerText = "?";
+        senha.textContent = "?";
+        senha.title = "0 bit";
         exibirCopiar.style.display="none";
     }
     console.log(testeDistr);
