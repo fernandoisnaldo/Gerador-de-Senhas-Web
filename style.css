@@ -87,6 +87,6 @@ button {
         color: #da0!important;
     }
     input, button {
-        filter: invert(0.9);
+        filter: invert(1);
     }
 }
