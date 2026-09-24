@@ -37,7 +37,7 @@ a {
     font-weight: bold;
 }
 a:hover {
-    color:#0a0;
+    color:#3a3;
 }
 #copiar{
     display:none;
@@ -49,22 +49,13 @@ details {
 #output {
     word-break: break-all;
     font-weight: bold;
-    position: relative;
-    margin-top: 25px;
-}
-#output::after {
-    content: attr(data-label);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #0a0;
-    width: 200px;
 }
 body {
     font-family: monospace;
     font-size: 1.0rem;
     background-color: #000;
+    background: repeating-linear-gradient( 45deg, #303, #033 1px, #000000 5px, #000000 25px);
+    background-attachment: fixed;
     border-radius: 5px;
 }
 footer, header {
@@ -95,4 +86,3 @@ button {
         filter: invert(0.9);
     }
 }
-
