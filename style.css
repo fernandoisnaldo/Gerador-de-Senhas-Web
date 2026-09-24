@@ -51,7 +51,7 @@ details {
     font-weight: bold;
 }
 body {
-    font-family: "Noto Sans Mono",ui-monospace,"SF Mono","Roboto Mono","DejaVu Sans Mono","Courier New",monospace;
+    font-family: "Noto Sans Mono","Fira Mono","Roboto Mono",ui-monospace,"DejaVu Sans Mono",monospace;
     font-size: 1.0rem;
     background-color: #000;
     background: repeating-linear-gradient( 45deg, #204, #003 1px, #000 8px, #000 15px);
