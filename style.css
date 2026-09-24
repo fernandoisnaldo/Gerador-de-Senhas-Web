@@ -6,14 +6,28 @@
  */
 header, main, footer {
     text-align: center;
-    border: dashed 1px #000;
+    border-left: solid 2pt #08a;
+    border-right: solid 2pt #08a;
+    border-bottom: solid 1pt #08a;
+    border-top: solid 1pt #08a;
     padding: 5px;
+    background-color: #fff;
+}
+button {
+    border: solid 2px #777;
+    background-color: #eee;
+    border-radius: 2px;
+}
+button:hover {
+    border: solid 2px #79c;
+}
+header {
+    box-shadow: 0px 0px 150px #007, 0px 300px 200px 60px #03f , 0px 230px 200px 70px #0f0, 0px 350px 400px 150px #00f;
 }
 nav a {
-    border: outset 1px #000;
-}
-nav a:hover {
-    border: double 1px #000;
+    padding: 0px;
+    border: solid 2pt #08a;
+    background-color: #fff;
 }
 a {
     text-decoration: none;
@@ -50,6 +64,8 @@ details {
 body {
     font-family: monospace;
     font-size: 12pt;
+    background-color: #000;
+    border-radius: 5px;
 }
 footer, header {
     font-size: 10pt;
@@ -60,10 +76,10 @@ footer, header {
 }
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #111;
         color: #fff;
     }
-    header, main, footer, nav a, nav a:hover{
+    header, main, footer, nav a{
+        background-color: #111;
         border-color: #777;
     }
     a:hover {
