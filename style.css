@@ -25,6 +25,7 @@ button:hover {
 }
 header {
     box-shadow: 0px 0px 150px #007, 0px 300px 200px 60px #03f , 0px 230px 200px 70px #0f0, 0px 350px 400px 150px #00f;
+    margin-top: 0.3rem;
 }
 nav a {
     padding: 0px;
