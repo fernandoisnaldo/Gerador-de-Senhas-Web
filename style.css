@@ -18,6 +18,7 @@ nav a:hover {
 a {
     text-decoration: none;
     color:#08a;
+    font-weight: bold;
 }
 a:hover {
     color:#0a0;
@@ -64,9 +65,6 @@ footer, header {
     }
     header, main, footer, nav a, nav a:hover{
         border-color: #777;
-    }
-    a {
-        color: #a97!important;
     }
     a:hover {
         color: #da0!important;
