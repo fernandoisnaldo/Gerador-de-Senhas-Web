@@ -71,8 +71,11 @@ footer, header {
     font-size: .9rem;
 }
 #tipo_silabas {
-    font-size: .7rem;
+    font-size: .8rem;
     visibility: hidden
+}
+button {
+    font-size: 1rem;
 }
 @media (prefers-color-scheme: dark) {
     body {
