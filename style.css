@@ -33,7 +33,7 @@ nav a {
 }
 a {
     text-decoration: none;
-    color:#08a;
+    color:#068;
     font-weight: bold;
 }
 a:hover {
@@ -84,6 +84,9 @@ button {
     header, main, footer, nav a{
         background-color: #111;
         border-color: #777;
+    }
+    a {
+        color:#08a;
     }
     a:hover {
         color: #da0!important;
