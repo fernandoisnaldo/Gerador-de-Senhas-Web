@@ -17,7 +17,10 @@ nav a:hover {
 }
 a {
     text-decoration: none;
-    color:#06a;
+    color:#484;
+}
+a:hover {
+    color:#0a0;
 }
 #copiar{
     display:none;
@@ -64,6 +67,9 @@ footer, header {
     }
     a {
         color: #aaa!important;
+    }
+    a:hover {
+        color: #da0!important;
     }
     input, button {
         filter: invert(0.9);
