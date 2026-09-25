@@ -55,13 +55,13 @@ let alfabeto = {
     ],
     silabas: []//este array vai ser ocupado depois que o código inicializar
 };
-const PCSPRNG = new Uint32Array(1); //Ponteiro pra uso do CSPRNG
+const BCSPRNG = new Uint32Array(1); //Buffer pra uso do CSPRNG
 function numAleatorio(max) {
     const maxPermitido = Math.floor(4294967296 / max) * max;
     let valor;
     do {
-        window.crypto.getRandomValues(PCSPRNG);
-        valor = PCSPRNG[0];
+        window.crypto.getRandomValues(BCSPRNG);
+        valor = BCSPRNG[0];
     } while (valor >= maxPermitido); //rejeita viés de módulo
     return valor % max;
 }
