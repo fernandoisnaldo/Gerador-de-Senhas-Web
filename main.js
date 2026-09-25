@@ -21,7 +21,7 @@ let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
-const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
+const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve os problemas disso
     ASCII:0,
     SILABA:1,            
     ALFANUM:2,
