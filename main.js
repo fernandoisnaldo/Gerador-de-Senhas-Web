@@ -17,9 +17,12 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-const OPCAO = Object.freeze({//objeto para facilitar a manutenção dos botões de seleção
+
+//objeto para facilitar a manutenção dos botões de seleção
+//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
+const OPCAO = Object.freeze({
     ASCII:0,
-    SILABA:1,
+    SILABA:1,            
     ALFANUM:2,
     HEX:3,
     NUM:4,
