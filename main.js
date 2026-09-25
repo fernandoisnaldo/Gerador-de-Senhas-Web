@@ -231,8 +231,7 @@ function copiar(){
 }
 const encoder = new TextEncoder();
 async function filtro(c, v, t) { // filtro contra opressão, lista de palavras proibidas em sha256
-    const texto = alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t];
-    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(texto));
+    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
     if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f")
         return false;
