@@ -221,15 +221,6 @@ function gerarSenha(){
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 2px";
 }
-function filtro(c, v, t) { // filtro contra opressão
-    if(c===19 && v===1 && t===51) return false;
-    else if(c===14 && v===0 && t===10) return false;
-    else if(c===14 && v===0 && t===11) return false;
-    else if(c===39 && v===17 && t===10) return false;
-    else if(c===39 && v===17 && t===11) return false;
-    else if(c===19 && v===27 && t===15) return false;
-    return true;
-}
 function copiar(){
     if (!navigator.clipboard) {
         alert("Clipboard object: unavailable");
@@ -238,14 +229,36 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
-function inicializa(){
+const encoder = new TextEncoder();
+async function filtro(c, v, t) { // filtro contra opressão, lista de palavras proibidas em sha256
+    const texto = alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t];
+    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(texto));
+    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f")
+        return false;
+    else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea")
+        return false;
+    else if (hash === "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300")
+        return false;
+    else if (hash === "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd")
+        return false;
+    else if (hash === "e7b98c6aa5b944e0b315d350d423f895ac9e44fb84f1534b18c2572370a67b9e")
+        return false;
+    else if (hash === "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d")
+        return false;
+    else if (hash === "13d82727725175211d24061687494b5fc151db9eaea788156c228fb65f1f338c")
+        return false;
+    else
+        return true;
+}
+async function inicializa(){
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
-                if(filtro(c,v,t)){
+                if(await filtro(c,v,t)){
                     alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);//ocupa o vetor silabas
                 }
             }
