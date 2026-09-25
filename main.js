@@ -254,7 +254,3 @@ function inicializa(){
     }
 }
 inicializa();
-console.log(alfabeto.consoantes);
-console.log(alfabeto.vogais);
-console.log(alfabeto.terminacoes);
-
