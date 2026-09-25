@@ -17,7 +17,15 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-let tipoElemento = 0; //define tipo ASCII por padrão
+const OPCAO = Object.freeze({//objeto para facilitar a manutenção dos botões de seleção
+    ASCII:0,
+    SILABA:1,
+    ALFANUM:2,
+    HEX:3,
+    NUM:4,
+    BASE64:5
+});
+let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let ascii_span = document.getElementById("tipo_ascii");
 let silabas_span = document.getElementById("tipo_silabas");
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
@@ -57,32 +65,32 @@ function numAleatorio(max) {
     return valor % max;
 }
 function setASCII(){
-    tipoElemento = 0;
+    tipoElemento = OPCAO.ASCII;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=32;
 }
 function setSilabas(){
-    tipoElemento = 1;
+    tipoElemento = OPCAO.SILABA;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=12;
 }
 function setAlfanumerico(){
-    tipoElemento = 2;
+    tipoElemento = OPCAO.ALFANUM;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=32;
 }
 function setHexadecimal(){
-    tipoElemento = 3;
+    tipoElemento = OPCAO.HEX;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=32;
 }
 function setDecimal(){
-    tipoElemento = 4;
+    tipoElemento = OPCAO.NUM;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=32;
 }
 function setBase64(){
-    tipoElemento = 5;
+    tipoElemento = OPCAO.BASE64;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=32;
 }
@@ -109,16 +117,16 @@ function gerarSenha(){
     let quantidade = parseInt(numChar.value) || 0;
     exibirCopiar.style.display="block";
     for(let contador=0;contador<quantidade;contador++){
-        if (tipoElemento == 0){ //ASCII
+        if (tipoElemento == OPCAO.ASCII){
             novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
         }
-        else if (tipoElemento == 1){ //sílabas
+        else if (tipoElemento == OPCAO.SILABA){
             if(contador!=0){
                 novaSenha.push(" ");//adciona um espaço entre as sílabas
             }
             novaSenha.push(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
         }
-        else if (tipoElemento == 2){ //alfanumérico
+        else if (tipoElemento == OPCAO.ALFANUM){ //alfanumérico
             let base62 = numAleatorio(62); //sorteia número de 0 a 61 para seleção alfanumérica
             if (base62<10){
                 novaSenha.push(base62); //emite 0 a 9
@@ -130,13 +138,13 @@ function gerarSenha(){
                 novaSenha.push(String.fromCharCode(base62+61)); //emite a-z
             }
         }
-        else if (tipoElemento == 3){ //hexadecimal
+        else if (tipoElemento == OPCAO.HEX){ //hexadecimal
             novaSenha.push(numAleatorio(16).toString(16)); //emite hexadecimal
         }
-        else if (tipoElemento == 4){ //número
+        else if (tipoElemento == OPCAO.NUM){ //número
             novaSenha.push(numAleatorio(10)); //emite número decimal
         }
-        else if (tipoElemento == 5){//base64 made in gambiarra
+        else if (tipoElemento == OPCAO.BASE64){//base64 made in gambiarra
             let b64 = numAleatorio(64); //sorteia número de 0 a 63 para seleção "b64"
             if (b64<10){
                 novaSenha.push(b64);
@@ -159,7 +167,7 @@ function gerarSenha(){
     // Gera relatório de métricas para qualidade da senha
     let testeDistr = {};
     let caractereExcluido;
-    if(tipoElemento == 1){
+    if(tipoElemento == OPCAO.SILABA){
         caractereExcluido=" ";
     }
     for (let elemento of novaSenha) {
@@ -169,12 +177,12 @@ function gerarSenha(){
     }
     // cálculo de entropia
     const tamanhosConjunto = {
-        0: 94,                          // ASCII imprimível (33 a 126 inclusive)
-        1: alfabeto.silabas.length,     // Sílabas (169.650)
-        2: 62,                          // Alfanumérico
-        3: 16,                          // Hexadecimal
-        4: 10,                          // Numérico
-        5: 64                           // Base64
+        [OPCAO.ASCII]: 94,
+        [OPCAO.SILABA]: alfabeto.silabas.length,
+        [OPCAO.ALFANUM]: 62,
+        [OPCAO.HEX]: 16,
+        [OPCAO.NUM]: 10,
+        [OPCAO.BASE64]: 64
     };
     const tamanhoConjunto = tamanhosConjunto[tipoElemento]; // cálculo de entropia
     if (tamanhoConjunto && quantidade > 0) {
