@@ -227,6 +227,8 @@ function filtro(c, v, t) { // filtro contra opressão
     else if((c===14 && v===0 && t===11)) return false;
     else if((c===39 && v===17 && t===10)) return false;
     else if((c===39 && v===17 && t===11)) return false;
+    else if(c===5 && v===27 && t===20) return false;
+    else if(c===19 && v===27 && t===15) return false;
     return true;
 }
 function copiar(){
