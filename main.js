@@ -221,6 +221,12 @@ function gerarSenha(){
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 2px";
 }
+function filtro(c, v, t) { // filtro contra palavras de opressão
+    if(c===19 && v===1 && t===51) return false;
+    else if(c===14 && v===0 && t===10) return false;
+    else if((c===14 && v===0 && t===11)) return false;
+    return true;
+}
 function copiar(){
     if (!navigator.clipboard) {
         alert("Clipboard object: unavailable");
@@ -236,7 +242,9 @@ function inicializa(){
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
-                alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);//ocupa o vetor silabas
+                if(filtro(c,v,t)){
+                    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);//ocupa o vetor silabas
+                }
             }
         }
     }
