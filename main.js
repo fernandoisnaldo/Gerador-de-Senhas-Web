@@ -17,7 +17,6 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
@@ -30,6 +29,7 @@ const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleçã
     NUM:4,
     BASE64:5
 });
+let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
