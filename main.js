@@ -40,22 +40,20 @@ let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
 let alfabeto = {
     consoantes: [
-        "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f",
-        "fh", "fl", "fr", "fy", "g", "gl", "gh", "gr", "gy", "h", "hy", "j", "jy", "k",
-        "kh", "kl", "kr", "ky", "l", "ll", "lh", "ly", "m", "my", "n", "nt", "nh", "ny", "p",
-        "ph", "phr", "pl", "pr", "py", "q", "qy", "r", "ry", "s", "st", "str", "sy", "t", "th",
-        "tr", "ty", "v", "vr", "vy", "w", "wh", "wy", "x", "xy", "y", "z", "zz", "zh", "zy"
+        "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
+        "gh", "gr", "gy", "h", "hy", "j", "jy", "k","kh", "kl", "kr", "ky", "l", "ll", "lh", "ly", "m", "my", "n", "nt", "nh",
+        "ny", "p","ph", "phr", "pl", "pr", "py", "q", "qy", "r", "ry", "s", "st", "str", "sy", "t", "th","tr", "ty", "v", "vr",
+        "vy", "w", "wh", "wy", "x", "xy", "y", "z", "zz", "zh", "zy"
     ],
     vogais: [
-        "a", "aa", "ae", "ai", "ao", "aoe", "au", "aue", "e", "ea", "eai", "eao", "ee", "ei",
-        "eo", "eu", "eua", "i", "ia", "iao", "ie", "io", "iu", "o", "oa", "oe", "oi", "oo",
-        "ou", "u", "ua", "uai", "uao", "ue", "ui", "uia", "uo", "uoa", "uou"
+        "a", "aa", "ae", "ai", "ao", "aoe", "au", "aue", "e", "ea", "eai", "eao", "ee", "ei","eo", "eu", "eua", "i", "ia",
+        "iao", "ie", "io", "iu", "o", "oa", "oe", "oi", "oo","ou", "u", "ua", "uai", "uao", "ue", "ui", "uia", "uo", "uoa",
+        "uou"
     ],
     terminacoes: [
-        "", "b", "bb", "c", "cc", "ck", "d", "dd", "f", "ff", "g", "gg", "gl", "h", "j", "k", "l",
-        "ll", "m", "mp", "n", "nn", "nd", "ng", "p", "pp", "pt", "q", "qq", "r", "rn", "rr", "s", "sn",
-        "ss", "sd", "sh", "sk", "t", "tt", "th", "tk", "v", "vv", "w", "wd", "wm", "wn", "ww", "x",
-        "xx", "y", "yk", "yx", "yy", "yz", "z", "zz"
+        "", "b", "bb", "c", "cc", "ck", "d", "dd", "f", "ff", "g", "gg", "gl", "h", "j", "k", "l", "ll", "m", "mp", "n", "nn",
+        "nd", "ng", "p", "pp", "pt", "q", "qq", "r", "rn", "rr", "s", "sn","ss", "sd", "sh", "sk", "t", "tt", "th", "tk", "v",
+        "vv", "w", "wd", "wm", "wn", "ww", "x","xx", "y", "yk", "yx", "yy", "yz", "z", "zz"
     ],
     silabas: []//este array vai ser ocupado depois que o código inicializar
 };
@@ -232,7 +230,8 @@ function gerarSenha(){
     //decorações meramente estéticas
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
-    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 2px";
+    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
+        .toString(16) + " dashed 2px";
 }
 function copiar(){
     if (!navigator.clipboard) {
@@ -244,7 +243,8 @@ function copiar(){
 }
 const encoder = new TextEncoder();
 async function filtro(c, v, t) { // filtro de palavras proibidas pro gerador de sílabas, em sha256
-    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
+    const buffer = await crypto
+        .subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
     if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f") return false;
     else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea") return false;
@@ -261,7 +261,8 @@ async function inicializa(){
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
                 if(await filtro(c,v,t)){
-                    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);//ocupa o vetor silabas
+                    //ocupa o vetor silabas
+                    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
                 }
             }
         }
