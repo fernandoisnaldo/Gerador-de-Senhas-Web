@@ -156,7 +156,7 @@ function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
-    // Gera relatório estatístico com saída pra console para análise de PRNG
+    // Gera relatório de métricas para qualidade da senha
     let testeDistr = {};
     let caractereExcluido;
     if(tipoElemento == 1){
@@ -215,7 +215,7 @@ function gerarSenha(){
     }
     console.log("Avarage elements with same selected value " +total/frequencias.length);
     console.log("Total elements: "+quantidade);
-    // FIM dos relatórios estatísticos
+    // FIM dos relatórios
     //decorações meramente estéticas
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
