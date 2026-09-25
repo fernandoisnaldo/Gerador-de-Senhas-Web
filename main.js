@@ -233,18 +233,12 @@ const encoder = new TextEncoder();
 async function filtro(c, v, t) { // filtro de palavras em sha256
     const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-    if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f")
-        return false;
-    else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea")
-        return false;
-    else if (hash === "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300")
-        return false;
-    else if (hash === "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd")
-        return false;
-    else if (hash === "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d")
-        return false;
-    else
-        return true;
+    if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f") return false;
+    else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea") return false;
+    else if (hash === "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300") return false;
+    else if (hash === "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd") return false;
+    else if (hash === "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d") return false;
+    else return true;
 }
 async function inicializa(){
     if (window.crypto && window.crypto.getRandomValues) {
