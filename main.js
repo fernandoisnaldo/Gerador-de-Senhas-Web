@@ -221,10 +221,12 @@ function gerarSenha(){
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16).toString(16) + " dashed 2px";
 }
-function filtro(c, v, t) { // filtro contra palavras de opressão
+function filtro(c, v, t) { // filtro contra opressão
     if(c===19 && v===1 && t===51) return false;
     else if(c===14 && v===0 && t===10) return false;
     else if((c===14 && v===0 && t===11)) return false;
+    else if((c===39 && v===17 && t===10)) return false;
+    else if((c===39 && v===17 && t===11)) return false;
     return true;
 }
 function copiar(){
@@ -250,3 +252,7 @@ function inicializa(){
     }
 }
 inicializa();
+console.log(alfabeto.consoantes);
+console.log(alfabeto.vogais);
+console.log(alfabeto.terminacoes);
+
