@@ -94,7 +94,7 @@ function setBase64(){
     atualizarBotoesSPan(tipoElemento);
     numChar.value=32;
 }
-function atualizarBotoesSPan(indiceAtivo) {
+function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
     if(indiceAtivo == 1){
         silabas_span.style.visibility="visible";
@@ -102,7 +102,7 @@ function atualizarBotoesSPan(indiceAtivo) {
     else {
         silabas_span.style.visibility="hidden";
     }
-    botoes_senha.forEach((btn, index) => {
+    botoes_senha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
             btn.setAttribute("aria-pressed", "true");
         }
