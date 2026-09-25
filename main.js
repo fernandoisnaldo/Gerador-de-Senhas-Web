@@ -21,13 +21,17 @@ let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
-const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve os problemas disso
+const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
     ASCII:0,
-    SILABA:1,            
+    SILABA:1,
     ALFANUM:2,
     HEX:3,
     NUM:4,
     BASE64:5
+});
+const QtdePADRAO = Object.freeze({
+    CARACTERE:32,
+    PALAVRA:12
 });
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
@@ -55,49 +59,49 @@ let alfabeto = {
     ],
     silabas: []//este array vai ser ocupado depois que o código inicializar
 };
-const bufferAleatorio = new Uint32Array(1); //Buffer pra uso do CSPRNG
+const buffer = new Uint32Array(1); //ponteiro pra uso do CSPRNG
 function numAleatorio(max) {
     const maxPermitido = Math.floor(4294967296 / max) * max;
     let valor;
     do {
-        window.crypto.getRandomValues(bufferAleatorio);
-        valor = bufferAleatorio[0];
+        window.crypto.getRandomValues(buffer);
+        valor = buffer[0];
     } while (valor >= maxPermitido); //rejeita viés de módulo
     return valor % max;
 }
 function setASCII(){
     tipoElemento = OPCAO.ASCII;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=32;
+    numChar.value=QtdePADRAO.CARACTERE;
 }
 function setSilabas(){
     tipoElemento = OPCAO.SILABA;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=12;
+    numChar.value=QtdePADRAO.PALAVRA;
 }
 function setAlfanumerico(){
     tipoElemento = OPCAO.ALFANUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=32;
+    numChar.value=QtdePADRAO.CARACTERE;
 }
 function setHexadecimal(){
     tipoElemento = OPCAO.HEX;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=32;
+    numChar.value=QtdePADRAO.CARACTERE;
 }
 function setDecimal(){
     tipoElemento = OPCAO.NUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=32;
+    numChar.value=QtdePADRAO.CARACTERE;
 }
 function setBase64(){
     tipoElemento = OPCAO.BASE64;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=32;
+    numChar.value=QtdePADRAO.CARACTERE;
 }
 function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
-    if(indiceAtivo == 1){
+    if(indiceAtivo == OPCAO.SILABA){
         silabas_span.style.visibility="visible";
     }
     else {
