@@ -230,7 +230,7 @@ function copiar(){
     .catch(erro => alert("Clipboard object: " + erro));
 }
 const encoder = new TextEncoder();
-async function filtro(c, v, t) { // filtro de palavras em sha256
+async function filtro(c, v, t) { // filtro de palavras proibidas pro gerador de sílabas, em sha256
     const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
     if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f") return false;
