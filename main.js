@@ -243,8 +243,6 @@ async function filtro(c, v, t) { // filtro contra opressão, lista de palavras p
         return false;
     else if (hash === "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d")
         return false;
-    else if (hash === "13d82727725175211d24061687494b5fc151db9eaea788156c228fb65f1f338c")
-        return false;
     else
         return true;
 }
