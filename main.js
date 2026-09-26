@@ -36,6 +36,7 @@ const QtdePADRAO = Object.freeze({
     CARACTERE:32,
     PALAVRA:12
 });
+let separadorFrase = " ";
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
@@ -141,7 +142,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.SILABA){
             if(contador!=0){
-                novaSenha.push(" ");//adciona um espaço entre as sílabas
+                novaSenha.push(separadorFrase);
             }
             novaSenha.push(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
         }
@@ -183,7 +184,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.PALAVRA){
             if(contador!=0){
-                novaSenha.push(" ");//adciona um espaço entre as sílabas
+                novaSenha.push(separadorPalavraFrase);//adciona um espaço entre as sílabas
             }
             novaSenha.push(palavras[numAleatorio(palavras.length)]);
         }
@@ -193,7 +194,7 @@ function gerarSenha(){
     let testeDistr = {};
     let caractereExcluido;
     if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
-        caractereExcluido=" ";
+        caractereExcluido=separadorFrase;
     }
     for (let elemento of novaSenha) {
         if (elemento !== caractereExcluido) {
