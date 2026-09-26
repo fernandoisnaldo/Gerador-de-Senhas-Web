@@ -22,21 +22,9 @@ let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
-//Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
-const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
-    ASCII:0,
-    SILABA:1,
-    PALAVRA:2,
-    ALFANUM:3,
-    HEX:4,
-    NUM:5,
-    BASE64:6
-});
-const QtdePADRAO = Object.freeze({
-    CARACTERE:32,
-    DECIMAL:40,
-    PALAVRA:12
-});
+/Objeto para facilitar a manutenção dos botões de seleção
+const OPCAO = Object.freeze({ASCII:0, SILABA:1 ,PALAVRA:2, ALFANUM:3, HEX:4, NUM:5, BASE64:6});
+const QtdePADRAO = Object.freeze({CARACTERE:32, DECIMAL:40, PALAVRA:12});
 let separadorFrase = " ";
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
