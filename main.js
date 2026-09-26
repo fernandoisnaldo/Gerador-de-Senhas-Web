@@ -17,20 +17,37 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-//const palavras = [array]; encontra-se em arrayzão_eff.js
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
-//Objeto para facilitar a manutenção dos botões de seleção
-const OPCAO = Object.freeze({ASCII:0, SILABA:1 ,PALAVRA:2, ALFANUM:3, HEX:4, NUM:5, BASE64:6});
-const QtdePADRAO = Object.freeze({CARACTERE:32, DECIMAL:40, PALAVRA:12});
-let separadorFrase = "-";
+//Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
+const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
+    ASCII:0,
+    SILABA:1,
+    PALAVRA:2,
+    ALFANUM:3,
+    HEX:4,
+    NUM:5,
+    BASE64:6
+});
+const QtdePADRAO = Object.freeze({
+    CARACTERE:32,
+    PALAVRA:12
+});
+const PALAVRAS_PROIBIDAS = new Set([
+    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
+    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
+    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
+    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
+    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
+]);
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
+//const palavras = [array]; encontra-se em arrayzão_eff.js
 let alfabeto = {
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
@@ -83,7 +100,7 @@ function setHexadecimal(){
 function setDecimal(){
     tipoElemento = OPCAO.NUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.DECIMAL;
+    numChar.value=QtdePADRAO.CARACTERE;
 }
 function setBase64(){
     tipoElemento = OPCAO.BASE64;
@@ -111,7 +128,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
         silabas_span.style.display="inline-block";
         eff_span.style.display="none";
     }
-    botoes_senha.forEach((btn, index) => {//acessibilidade nos botões de seleção
+    botoes_senha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
             btn.setAttribute("aria-pressed", "true");
         }
@@ -131,7 +148,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.SILABA){
             if(contador!=0){
-                novaSenha.push(separadorFrase);
+                novaSenha.push(" ");//adciona um espaço entre as sílabas
             }
             novaSenha.push(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
         }
@@ -173,7 +190,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.PALAVRA){
             if(contador!=0){
-                novaSenha.push(separadorFrase);//adciona um espaço entre as sílabas
+                novaSenha.push(" ");//adciona um espaço entre as sílabas
             }
             novaSenha.push(palavras[numAleatorio(palavras.length)]);
         }
@@ -183,7 +200,7 @@ function gerarSenha(){
     let testeDistr = {};
     let caractereExcluido;
     if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
-        caractereExcluido=separadorFrase;
+        caractereExcluido=" ";
     }
     for (let elemento of novaSenha) {
         if (elemento !== caractereExcluido) {
@@ -206,18 +223,19 @@ function gerarSenha(){
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits";
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
-        if(totalEntropy<96){
+        if(totalEntropy<128){
             botaoCopiarIndice=0; // senha fraca
-            senha.style.filter = "grayscale(80%)";
+            senha.style.filter = "saturate(0%)";
         }
-        else if(totalEntropy<140){
+        else if(totalEntropy<192){
             botaoCopiarIndice=1; // senha nível aceitável
-            senha.style.filter = "grayscale(0%)";
+            senha.style.filter = "saturate(" + (totalEntropy-102) + "%)";
         }
-        else{
+        else  if(totalEntropy>=192){
             botaoCopiarIndice=2; // senha forte
-            senha.style.filter = "grayscale(0%)";
+            senha.style.filter = "saturate(100%)";
         }
+
         for(let contador=0; contador<botoes_copiar.length;contador++){
             if(contador== botaoCopiarIndice){
                 botoes_copiar[contador].style.display="inline-block";
@@ -258,30 +276,27 @@ function copiar(){
     .catch(erro => alert("Clipboard object: " + erro));
 }
 const encoder = new TextEncoder();
-async function filtro(c, v, t) { // filtro de palavras proibidas pro gerador de sílabas, em sha256
-    const buffer = await crypto
-    .subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
-    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-    if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f") return false;
-    else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea") return false;
-    else if (hash === "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300") return false;
-    else if (hash === "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd") return false;
-    else if (hash === "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d") return false;
-    else return true;
-}
-async function inicializa(){
+async function inicializa() {
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
+    const promessas = [];
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
-                if(await filtro(c,v,t)){
-                    //ocupa o vetor silabas
-                    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
-                }
+                const silaba = alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t];
+                promessas.push(
+                    crypto.subtle.digest('SHA-256', encoder.encode(silaba)).then(buffer => {
+                        const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+                        return { silaba, eValida: !PALAVRAS_PROIBIDAS.has(hash) };
+                    })
+                );
             }
         }
     }
+    const resultados = await Promise.all(promessas);
+    alfabeto.silabas = resultados
+    .filter(item => item.eValida)
+    .map(item => item.silaba);
 }
 inicializa();
