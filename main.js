@@ -270,6 +270,7 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
+const encoder = new TextEncoder();
  async function filtro(c, v, t) { // filtro de palavras proibidas pro gerador de sílabas, em sha256
     const buffer = await crypto
     .subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
