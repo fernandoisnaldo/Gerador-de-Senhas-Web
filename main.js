@@ -218,12 +218,15 @@ function gerarSenha(){
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
         if(totalEntropy<128){
             botaoCopiarIndice=0; // senha fraca
+            senha.style.filter = "saturate(0%)";
         }
         else if(totalEntropy<192){
             botaoCopiarIndice=1; // senha nível aceitável
+            senha.style.filter = "saturate(35%)";
         }
         else  if(totalEntropy>=192){
             botaoCopiarIndice=2; // senha forte
+            senha.style.filter = "saturate(100%)";
         }
         for(let contador=0; contador<botoes_copiar.length;contador++){
             if(contador== botaoCopiarIndice){
