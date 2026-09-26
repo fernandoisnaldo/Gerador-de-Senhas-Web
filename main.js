@@ -25,7 +25,7 @@ let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 //Objeto para facilitar a manutenção dos botões de seleção
 const OPCAO = Object.freeze({ASCII:0, SILABA:1 ,PALAVRA:2, ALFANUM:3, HEX:4, NUM:5, BASE64:6});
 const QtdePADRAO = Object.freeze({CARACTERE:32, DECIMAL:40, PALAVRA:12});
-let separadorFrase = " ";
+let separadorFrase = "-";
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
