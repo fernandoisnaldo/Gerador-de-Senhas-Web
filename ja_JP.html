@@ -3,6 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パスワード生成器 Web版</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <nav id="idiomas">
+        <a href="setLang.html" title="言語を選択">🌐 言語</a>
+    </nav>
+    <header>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">GitHubリポジトリ</a></p>
+        <p>このプログラムには<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">コマンドライン版</a>もあります。</p>
+    </header>
+    <main>
+        <h1>パスワード生成器</h1>
+        <section id="GerarSenha">
+            <label for="tipo_senha">パスワードの種類: </label>
+            <span id="tipo_ascii">ASCII</span>
+            <br />
+            <span id="tipo_silabas">
+                ⚠️ ランダム音節選択 ⚠️
+                <br />⚠️ 不適切な単語が表示される場合があります ⚠️
+            </span>
+            <span id="eff_cc">
+                Electronic Frontier Foundation <a href="https://www.eff.org/dice">Diceware</a>
+                <br /><a href="https://creativecommons.org/licenses/by/3.0/legalcode.en">Creative Commons CC BY 3.0</a>
+            </span>
+            <br />
+            <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">音節</button>
+            <button type="button" id="tipo_senha" onclick="setPalavra()" aria-pressed="false">単語</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">英数字</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">16進数</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">数字</button>
+            <button type="button" id="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
+            <br />
+            <br />
+            <details id="exibe_ajuda" style="text-align: left;">
+                <summary>ヘルプを表示</summary>
+                <p>ASCIIボタンは、ASCIIコード表の大文字、小文字、記号、数字から選択します。</p>
+                <p>音節ボタンは、ランダムな音節を選択します。</p>
+                <p>単語ボタンは、Electronic Frontier FoundationのDiceware単語リストから選択します。</p>
+                <p>英数字ボタンは、大文字、小文字、数字から選択します。</p>
+                <p>16進数ボタンは、16進数から選択します。</p>
+                <p>数字ボタンは、10進数の数字から選択します。</p>
+                <p>Base64ボタンは、Base64文字から選択します。</p>
+                <p>デフォルトでは、このプログラムはASCII文字を生成します。</p>
+            </details>
+            <br />
+            <br />
+            <label for="numel">要素数: </label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
+            <button type="button" onclick="gerarSenha()">パスワードを生成</button>
+            <br />
+            <br />
+            <section id="copiar">
+                <button type="button" onclick="copiar()">弱いパスワードをコピー</button>
+                <button type="button" onclick="copiar()">パスワードをコピー</button>
+                <button type="button" onclick="copiar()">強いパスワードをコピー</button>
+                <br />
+            </section>
+            <section>
+                <br />
+                <span id="output" role="status" aria-live="polite">非対応のブラウザか、JavaScriptが無効になっています</span>
+                <br />
+                <br />
+            </section>
+        </section>
+        <p aria-live="polite">パスワードは秘密情報です。データはいかなるサーバーにも送信されません。周りに人がいないことを確認してください。</p>
+    </main>
+    <footer>
+        <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>このプログラムはフリーソフトウェアです。GNU General Public License (GPL v3) 以降の条件に基づいて再配布できます。</p>
+        <p>このコードの配布にはいかなる保証もありません。詳細については <a href="LICENSE" target="_blank">LICENSE</a> ファイルを参照してください。</p>
+    </footer>
+    <script src="arrayzão_eff.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>のパスワードジェネレーター ウェブ版</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
