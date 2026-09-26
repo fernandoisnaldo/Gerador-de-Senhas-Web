@@ -50,6 +50,7 @@ details {
 #output {
     word-break: break-all;
     font-weight: bold;
+    font-size: 0.85rem;
 }
 body {
     font-family: "Noto Sans Mono","Fira Mono","Roboto Mono",ui-monospace,"DejaVu Sans Mono","Cascadia Mono",monospace;
