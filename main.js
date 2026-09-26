@@ -206,15 +206,15 @@ function gerarSenha(){
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits";
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
-        if(totalEntropy<128){
+        if(totalEntropy<96){
             botaoCopiarIndice=0; // senha fraca
             senha.style.filter = "grayscale(80%)";
         }
-        else if(totalEntropy<192){
+        else if(totalEntropy<140){
             botaoCopiarIndice=1; // senha nível aceitável
             senha.style.filter = "grayscale(0%)";
         }
-        else  if(totalEntropy>=192){
+        else{
             botaoCopiarIndice=2; // senha forte
             senha.style.filter = "grayscale(0%)";
         }
