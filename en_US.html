@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator web version</title>
+    <title>Web Password Generator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -12,8 +12,8 @@
         <a href="setLang.html" title="Select language">🌐 Languages</a>
     </nav>
     <header>
-        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Github repository</a></p>
-        <p>This program has also <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">command-line version.</a></p>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">GitHub Repository</a></p>
+        <p>This program also has a <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">command-line version.</a></p>
     </header>
     <main>
         <h1>Password Generator</h1>
@@ -25,23 +25,29 @@
                 ⚠️ random phonetic selection ⚠️
                 <br />⚠️ inappropriate words may appear ⚠️
             </span>
+            <span id="eff_cc">
+                Electronic Frontier Foundation <a href="https://www.eff.org/dice">Diceware</a>
+                <br /><a href="https://creativecommons.org/licenses/by/3.0/legalcode.en">Creative Commons CC BY 3.0</a>
+            </span>
             <br />
             <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
-            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Syllables</button>
-            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alphanumerics</button>
-            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimals</button>
-            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Numbers</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Syllable</button>
+            <button type="button" id="tipo_senha" onclick="setPalavra()" aria-pressed="false">Word</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alphanumeric</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimal</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Number</button>
             <button type="button" id="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
                 <summary>Show help</summary>
-                 <p>The ASCII button defines selection by uppercase letters, lowercase letters, symbols, and numbers from the ASCII table.</p>
-                <p>The syllables button defines selection of random syllables.</p>
-                <p>The alphanumeric button defines selection by uppercase letters, lowercase letters, and numbers.</p>
-                <p>The hexadecimal button defines selection by hexadecimal numbers.</p>
-                <p>The numbers button defines selection by decimal numbers.</p>
-                <p>The base64 button defines selection by base64 numbers.</p>
+                <p>The ASCII button sets selection using uppercase letters, lowercase letters, symbols, and numbers from the ASCII table.</p>
+                <p>The syllable button sets selection to random syllables.</p>
+                <p>The word button sets selection using words from the Electronic Frontier Foundation's Diceware list.</p>
+                <p>The alphanumeric button sets selection using uppercase letters, lowercase letters, and numbers.</p>
+                <p>The hexadecimal button sets selection using hexadecimal numbers.</p>
+                <p>The number button sets selection using decimal numbers.</p>
+                <p>The base64 button sets selection using base64 characters.</p>
                 <p>By default, this program generates ASCII characters.</p>
             </details>
             <br />
@@ -59,18 +65,19 @@
             </section>
             <section>
                 <br />
-                <span id="output" role="status" aria-live="polite">Browser not compatible or with JavaScript disabled.</span>
+                <span id="output" role="status" aria-live="polite">Browser not compatible or JavaScript disabled</span>
                 <br />
                 <br />
             </section>
         </section>
-        <p aria-live="polite">Your password is confidential; your data is not sent to any server. Make sure no one is watching you.</p>
+        <p aria-live="polite">Your password is confidential, your data is not sent to any server. Make sure no one is watching you.</p>
     </main>
     <footer>
         <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
-        <p>This is free software: you can redistribute it under the terms of GPL v3 or later.</p>
-        <p>This program comes with ABSOLUTELY NO WARRANTY; See the <a href="LICENSE" target="_blank">LICENSE</a> file for more details.</p>
+        <p>This is free software: you can redistribute it under the terms of the GNU General Public License (GPL v3) or later.</p>
+        <p>THERE IS NO WARRANTY for the distribution of this code. Check the <a href="LICENSE" target="_blank">LICENSE</a> file for more details.</p>
     </footer>
+    <script src="arrayzão_eff.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
