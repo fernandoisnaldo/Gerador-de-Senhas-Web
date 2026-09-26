@@ -295,8 +295,6 @@ async function inicializa() {
         }
     }
     const resultados = await Promise.all(promessas);
-    alfabeto.silabas = resultados
-    .filter(item => item.eValida)
-    .map(item => item.silaba);
+    alfabeto.silabas = resultados.filter(item => item.eValida).map(item => item.silaba);
 }
 inicializa();
