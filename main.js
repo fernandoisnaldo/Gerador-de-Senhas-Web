@@ -69,13 +69,13 @@ let alfabeto = {
     ],
     silabas: []//este array vai ser ocupado depois que o código inicializar
 };
-const buffer = new Uint32Array(1); //ponteiro pra uso do CSPRNG
+const randomBuffer = new Uint32Array(1);
 function numAleatorio(max) {
     const maxPermitido = Math.floor(4294967296 / max) * max;
     let valor;
     do {
-        window.crypto.getRandomValues(buffer);
-        valor = buffer[0];
+        window.crypto.getRandomValues(randomBuffer);
+        valor = randomBuffer[0];
     } while (valor >= maxPermitido); //rejeita viés de módulo
     return valor % max;
 }
@@ -225,15 +225,15 @@ function gerarSenha(){
         console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits";
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
-        if(totalEntropy<128){
+        if(totalEntropy<86){
             botaoCopiarIndice=0; // senha fraca
             senha.style.filter = "grayscale(30%)";
         }
-        else if(totalEntropy<192){
+        else if(totalEntropy<148){
             botaoCopiarIndice=1; // senha nível aceitável
             senha.style.filter = "grayscale(100%)";
         }
-        else  if(totalEntropy>=192){
+        else{
             botaoCopiarIndice=2; // senha forte
             senha.style.filter = "grayscale(100%)";
         }
