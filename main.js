@@ -19,15 +19,17 @@
  */
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
+let eff_span = document.getElementById("eff_cc");
 let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
 const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
     ASCII:0,
     SILABA:1,
-    ALFANUM:2,
-    HEX:3,
-    NUM:4,
-    BASE64:5
+    PALAVRA:2,
+    ALFANUM:3,
+    HEX:4,
+    NUM:5,
+    BASE64:6
 });
 const QtdePADRAO = Object.freeze({
     CARACTERE:32,
@@ -38,6 +40,7 @@ let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
+//const palavras = [array]; encontra-se em arrayzão_eff.js
 let alfabeto = {
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
@@ -97,6 +100,11 @@ function setBase64(){
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.CARACTERE;
 }
+function setPalavra(){
+    tipoElemento = OPCAO.PALAVRA;
+    atualizarBotoesSPan(tipoElemento);
+    numChar.value=QtdePADRAO.PALAVRA;
+}
 function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
     ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
     if(indiceAtivo == OPCAO.SILABA){
@@ -104,6 +112,14 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
     }
     else {
         silabas_span.style.visibility="hidden";
+    }
+    if(indiceAtivo == OPCAO.PALAVRA){
+        silabas_span.style.display="none";
+        eff_span.style.display="inline-block";
+    }
+    else {
+        silabas_span.style.display="inline-block";
+        eff_span.style.display="none";
     }
     botoes_senha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
@@ -165,12 +181,18 @@ function gerarSenha(){
                 novaSenha.push("_");
             }
         }
+        else if (tipoElemento == OPCAO.PALAVRA){
+            if(contador!=0){
+                novaSenha.push(" ");//adciona um espaço entre as sílabas
+            }
+            novaSenha.push(palavras[numAleatorio(palavras.length)]);
+        }
     }
     senha.textContent=novaSenha.join("");
     // Gera relatório de métricas para qualidade da senha
     let testeDistr = {};
     let caractereExcluido;
-    if(tipoElemento == OPCAO.SILABA){
+    if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
         caractereExcluido=" ";
     }
     for (let elemento of novaSenha) {
@@ -185,7 +207,8 @@ function gerarSenha(){
         [OPCAO.ALFANUM]: 62,
         [OPCAO.HEX]: 16,
         [OPCAO.NUM]: 10,
-        [OPCAO.BASE64]: 64
+        [OPCAO.BASE64]: 64,
+        [OPCAO.PALAVRA]: palavras.length
     };
     const tamanhoConjunto = tamanhosConjunto[tipoElemento]; // cálculo de entropia
     if (tamanhoConjunto && quantidade > 0) {
@@ -231,7 +254,7 @@ function gerarSenha(){
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
     senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
-        .toString(16) + " dashed 2px";
+    .toString(16) + " dashed 2px";
 }
 function copiar(){
     if (!navigator.clipboard) {
@@ -244,7 +267,7 @@ function copiar(){
 const encoder = new TextEncoder();
 async function filtro(c, v, t) { // filtro de palavras proibidas pro gerador de sílabas, em sha256
     const buffer = await crypto
-        .subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
+    .subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
     if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f") return false;
     else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea") return false;
