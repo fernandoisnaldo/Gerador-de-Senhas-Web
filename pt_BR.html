@@ -25,22 +25,28 @@
                 ⚠️ seleção fonética aleatória ⚠️
                 <br />⚠️ podem sair palavras inapropriadas ⚠️
             </span>
+            <span id="eff_cc">
+                Electronic Frontier Foundation <a href="https://www.eff.org/dice">Diceware</a>
+                <br /><a href="https://creativecommons.org/licenses/by/3.0/legalcode.en">Creative Commons CC BY 3.0</a>
+            </span>
             <br />
             <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
-            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Sílabas</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Sílaba</button>
+            <button type="button" id="tipo_senha" onclick="setPalavra()"  aria-pressed="false">Palavra</button>
             <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alfanumérico</button>
             <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimal</button>
-            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Números</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Número</button>
             <button type="button" id="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
                 <summary>Exibe ajuda</summary>
                 <p>O botão ASCII define seleção por letras com caixa alta, letras com caixa baixa, símbolos e números da tabela ASCII.</p>
-                <p>O botão sílabas define seleção de sílabas aleatórias.</p>
+                <p>O botão sílaba define seleção de sílabas aleatórias.</p>
+                <p>O botão palavra define seleção por palavras do Diceware da Electronic Frontier Foundation.</p>
                 <p>O botão alfanumérico define seleção por letras caixa alta, letras caixa baixa e números.</p>
                 <p>O botão hexadecimal define seleção por números hexadecimais.</p>
-                <p>O botão números define seleção por números decimais.</p>
+                <p>O botão número define seleção por números decimais.</p>
                 <p>O botão base64 define seleção por números base64.</p>
                 <p>Por padrão este programa gera caracteres ASCII.</p>
             </details>
@@ -71,6 +77,7 @@
         <p>Este é um software livre: você pode redistribuí-lo sob as condições da GPL v3 ou posterior.</p>
         <p>NÃO HÁ GARANTIA vinculada à distribuição deste código. Veja o arquivo <a href="LICENSE" target="_blank">LICENSE</a> para mais detalhes.</p>
     </footer>
+    <script src="arrayzão_eff.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
