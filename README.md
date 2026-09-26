@@ -9,7 +9,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 # Principais características funcionais
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.[^1]
 2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
-3) Emite senhas em formato ASCII[^2], sílabas[^3], Palavras[^7], alfanumérico, hexadecimal, decimal e base64.
+3) Emite senhas em formato ASCII[^2], sílabas[^3], palavras[^7], alfanumérico, hexadecimal, decimal e base64.
 4) Este programa inclui um teste quantitativo com saída pra console, relatório estatístico sobre a quantidade de elementos gerados. Abra a ferramenta de Inspecionar do seu navegador na aba Console e descubra a distribuição quantitativa de cada elemento gerado.
    
 # Principais características de design, arquitetura e acessibilidade
