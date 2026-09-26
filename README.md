@@ -30,7 +30,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 
 [^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
 
-[^7]: As palavras foram obtidas da [lista Diceware](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da (Creative Commons By 3.0)[https://creativecommons.org/licenses/by/3.0/legalcode.en];
+[^7]: As palavras foram obtidas da [lista Diceware](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da [Creative Commons By 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
