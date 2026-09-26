@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>密码生成器网页版</title>
+    <title>网页版密码生成器</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -11,10 +11,9 @@
     <nav id="idiomas">
         <a href="setLang.html" title="选择语言">🌐 语言</a>
     </nav>
-    <!-- TODO: 请中文母语者校对：确认“不当词汇”是否合适，标点是否应放在链接外，以及帮助文本的措辞。 -->
     <header>
-        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Github 仓库</a></p>
-        <p>本程序还有<a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">命令行版本</a>。</p>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">GitHub 仓库</a></p>
+        <p>本程序还提供 <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">命令行版本。</a></p>
     </header>
     <main>
         <h1>密码生成器</h1>
@@ -23,12 +22,17 @@
             <span id="tipo_ascii">ASCII</span>
             <br />
             <span id="tipo_silabas">
-                ⚠️ 随机音节选择 ⚠️
-                <br />⚠️ 可能生成不当词汇 ⚠️
+                ⚠️ 随机发音选择 ⚠️
+                <br />⚠️ 可能会生成不雅词汇 ⚠️
+            </span>
+            <span id="eff_cc">
+                电子前哨基金会 <a href="https://www.eff.org/dice">Diceware</a>
+                <br /><a href="https://creativecommons.org/licenses/by/3.0/legalcode.en">知识共享 CC BY 3.0</a>
             </span>
             <br />
             <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
             <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">音节</button>
+            <button type="button" id="tipo_senha" onclick="setPalavra()" aria-pressed="false">单词</button>
             <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">字母数字</button>
             <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">十六进制</button>
             <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">数字</button>
@@ -36,14 +40,15 @@
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
-            <summary>显示帮助</summary>
-                <p>ASCII 按钮定义按 ASCII 表中的大写字母、小写字母、符号和数字进行选择。</p>
-                <p>音节按钮定义随机音节的选择。</p>
-                <p>字母数字按钮定义按大写字母、小写字母和数字进行选择。</p>
-                <p>十六进制按钮定义按十六进制数字进行选择。</p>
-                <p>数字按钮定义按十进制数字进行选择。</p>
-                <p>Base64按钮定义基于64进制数值的选择。</p>
-                <p>默认情况下，此程序生成 ASCII 字符。</p>
+                <summary>显示帮助</summary>
+                <p>“ASCII”按钮设置为从 ASCII 字符集（包括大写字母、小写字母、符号和数字）中进行选择。</p>
+                <p>“音节”按钮设置为选择随机音节。</p>
+                <p>“单词”按钮设置为从电子前哨基金会（EFF）的 Diceware 词表中选择单词。</p>
+                <p>“字母数字”按钮设置为从大写字母、小写字母和数字中进行选择。</p>
+                <p>“十六进制”按钮设置为从十六进制字符中进行选择。</p>
+                <p>“数字”按钮设置为从十进制数字中进行选择。</p>
+                <p>“Base64”按钮设置为从 Base64 字符集（Base64 编码）中进行选择。</p>
+                <p>默认情况下，本程序生成 ASCII 字符。</p>
             </details>
             <br />
             <br />
@@ -60,18 +65,19 @@
             </section>
             <section>
                 <br />
-                <span id="output" role="status" aria-live="polite">浏览器不兼容或未启用 JavaScript</span>
+                <span id="output" role="status" aria-live="polite">浏览器不兼容或 JavaScript 已禁用</span>
                 <br />
                 <br />
             </section>
         </section>
-        <p aria-live="polite">您的密码属于机密信息；您的数据不会发送到任何服务器。请确保没有人正在偷看您的屏幕。</p>
+        <p aria-live="polite">您的密码属于保密信息，数据不会上传至任何服务器。请确保周围没有人窥视。</p>
     </main>
     <footer>
         <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
-        <p>这是自由软件：你可以根据 GPL v3 或更高版本的条款重新分发它。</p>
-        <p>本程序不提供任何担保；详情请参阅 <a href="LICENSE" target="_blank">LICENSE</a> 文件。</p>
+        <p>本软件为自由软件：您可以根据 GNU 通用公共许可证（GPL v3）或更新版本的条款重新分发它。</p>
+        <p>分发此代码不提供任何担保。详情请参阅 <a href="LICENSE" target="_blank">LICENSE</a> 文件。</p>
     </footer>
+    <script src="arrayzão_eff.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
