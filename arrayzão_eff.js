@@ -1,20 +1,18 @@
 /*
- * Lista de Palavras EFF (Large Wordlist)
+ * Lista de Palavras EFF (EFF's Long Wordlist)
  *
- * As palavras contidas neste arrayzão pertencem à Electronic Frontier Foundation (EFF)
- * e estão licenciadas sob a Licença Creative Commons Attribution 3.0 Unported (CC BY 3.0).
+ * As palavras contidas neste array foram criadas pela Electronic Frontier Foundation (EFF)
+ * e estão sob a licença Creative Commons Zero v1.0 Universal (CC0 1.0 - Domínio Público).
  * Fonte Original: https://www.eff.org/dice
- * Texto legal da licença: https://creativecommons.org/licenses/by/3.0/legalcode.en
  *
- * A integração, formatação em código JavaScript e o restante deste software
- * são distribuídos sob os termos da Licença Pública Geral GNU (GNU GPL) versão 3
- * ou posterior sob o Copyright (C) de Fernando Isnaldo Silva de Faria, com as mesmas
- * cláusulas de isenção de garnatia
+ * A estrutura, formatação em código JavaScript e a integração deste arquivo
+ * são distribuídas sob os termos da Licença Pública Geral GNU (GNU GPL) versão 3
+ * ou posterior.
  *
- * Estas palavras estão neste arquivo separado pra não poluir o main.js com excesso
- * de linhas de código.
+ * Copyright (C) Fernando Isnaldo Silva de Faria
+ * Este programa é distribuído SEM QUALQUER GARANTIA.
  *
- * SPDX-License-Identifier: CC-BY-3.0 AND GPL-3.0-or-later
+ * SPDX-License-Identifier: CC0-1.0 AND GPL-3.0-or-later
  */
 const palavras = [
     "abacus",
