@@ -37,13 +37,6 @@ const QtdePADRAO = Object.freeze({
     DECIMAL:40
 });
 const separadorPalavras = "-";
-const PALAVRAS_PROIBIDAS = new Set([
-    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
-    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
-    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
-    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
-    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
-]);
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
@@ -277,26 +270,27 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
-const encoder = new TextEncoder();
-async function inicializa() {
+ async function filtro(c, v, t) { // filtro de palavras proibidas pro gerador de sílabas, em sha256
+    const buffer = await crypto
+    .subtle.digest('SHA-256', encoder.encode(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]));
+    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    if (hash === "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f") return;
+    else if (hash === "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea") return;
+    else if (hash === "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300") return;
+    else if (hash === "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd") return;
+    else if (hash === "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d") return;
+    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
+}
+async function inicializa(){
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
-    const promessas = [];
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
             for (let t = 0; t < alfabeto.terminacoes.length; t++) {
-                const silaba = alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t];
-                promessas.push(
-                    crypto.subtle.digest('SHA-256', encoder.encode(silaba)).then(buffer => {
-                        const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-                        return { silaba, eValida: !PALAVRAS_PROIBIDAS.has(hash) };
-                    })
-                );
+                await filtro(c,v,t));
             }
         }
     }
-    const resultados = await Promise.all(promessas);
-    alfabeto.silabas = resultados.filter(item => item.eValida).map(item => item.silaba);
 }
-inicializa();
+inicializa(); 
