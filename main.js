@@ -231,11 +231,11 @@ function gerarSenha(){
         }
         else if(totalEntropy<148){
             botaoCopiarIndice=1; // senha nível aceitável
-            senha.style.filter = "grayscale(100%)";
+            senha.style.filter = "grayscale(0%)";
         }
         else{
             botaoCopiarIndice=2; // senha forte
-            senha.style.filter = "grayscale(100%)";
+            senha.style.filter = "grayscale(0%)";
         }
 
         for(let contador=0; contador<botoes_copiar.length;contador++){
