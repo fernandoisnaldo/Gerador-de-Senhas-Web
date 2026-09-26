@@ -43,13 +43,6 @@ let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
 //const palavras = [array]; encontra-se em arrayzão_eff.js
-const Palavras_PROIBIDAS = [
-    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
-    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
-    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
-    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
-    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
-];
 let alfabeto = {
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
@@ -69,6 +62,13 @@ let alfabeto = {
     ],
     silabas: []//este array vai ser ocupado depois que o código inicializar
 };
+const PALAVRAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador de sílabas
+    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
+    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
+    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
+    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
+    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
+]);
 const randomBuffer = new Uint32Array(1);
 function numAleatorio(max) {
     const maxPermitido = Math.floor(4294967296 / max) * max;
@@ -277,71 +277,28 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
-//testando implementação multi threads para ocupar o array albabeto.silabas (depois eu ajeito este código pra ficar bonito)
-function criarWorkerWorker() {
-    const workerScript = `
-    const encoder = new TextEncoder();
-    async function filtro(c, v, t, consoantes, vogais, terminacoes, hashesProibidos) {
-        const silaba = consoantes[c] + vogais[v] + terminacoes[t];
-        const buffer = await self.crypto.subtle.digest('SHA-256', encoder.encode(silaba));
-        const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-        for (let i = 0; i < hashesProibidos.length; i++) {
-            if (hash === hashesProibidos[i]) return false;
-        }
-        return true;
-    }
-    self.onmessage = async (e) => {
-        const { consoantes, vogais, terminacoes, hashesProibidos, cInicio, cFim } = e.data;
-        const silabas = []; // Array do Worker acumulado na hora
-        for (let c = cInicio; c < cFim; c++) {
-            for (let v = 0; v < vogais.length; v++) {
-                for (let t = 0; t < terminacoes.length; t++) {
-                    // 2. Ocupa o array LOGO APÓS o teste booleano retornar true
-                    if (await filtro(c, v, t, consoantes, vogais, terminacoes, hashesProibidos)) {
-                        silabas.push(consoantes[c] + vogais[v] + terminacoes[t]);
-                    }
-                }
-            }
-        }
-        // Retorna o bloco de sílabas filtradas já pronto
-        self.postMessage(silabas);
-    };
-    `;
-    const blob = new Blob([workerScript], { type: 'application/javascript' });
-    return new Worker(URL.createObjectURL(blob));
+const encoder = new TextEncoder();
+async function filtro(c, v, t) {
+    const silaba = alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t];
+    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
+    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    return !PALAVRAS_PROIBIDAS.has(hash);
 }
-async function inicializaMultiThread() {
-    botoes_senha[OPCAO.SILABA].style.display="none";
+async function inicializa() {
+    botoes_senha[OPCAO.SILABA].style.display = "none";
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
-    const totalConsoantes = alfabeto.consoantes.length;
-    const numThreads = navigator.hardwareConcurrency || 4;
-    const tamanhoFatia = Math.ceil(totalConsoantes / numThreads);
-    const promessasWorkers = [];
-    for (let i = 0; i < numThreads; i++) {
-        const cInicio = i * tamanhoFatia;
-        const cFim = Math.min(cInicio + tamanhoFatia, totalConsoantes);
-        if (cInicio >= totalConsoantes) break;
-        const workerPromessa = new Promise((resolve) => {
-            const worker = criarWorkerWorker();
-            worker.onmessage = (e) => {
-                resolve(e.data);
-                worker.terminate();
-            };
-            worker.postMessage({
-                consoantes: alfabeto.consoantes,
-                vogais: alfabeto.vogais,
-                terminacoes: alfabeto.terminacoes,
-                hashesProibidos: Palavras_PROIBIDAS,
-                cInicio,
-                cFim
-            });
-        });
-        promessasWorkers.push(workerPromessa);
+    alfabeto.silabas = [];
+    for (let c = 0; c < alfabeto.consoantes.length; c++) {
+        for (let v = 0; v < alfabeto.vogais.length; v++) {
+            for (let t = 0; t < alfabeto.terminacoes.length; t++) {
+                if (await filtro(c, v, t)) {
+                    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
+                }
+            }
+        }
     }
-    const resultados = await Promise.all(promessasWorkers);
-    alfabeto.silabas = resultados.flat();
-    botoes_senha[OPCAO.SILABA].style.display="inline-block";
+    botoes_senha[OPCAO.SILABA].style.display = "inline-block";
 }
-inicializaMultiThread();
+inicializa();
