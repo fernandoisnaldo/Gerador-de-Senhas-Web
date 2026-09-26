@@ -184,7 +184,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.PALAVRA){
             if(contador!=0){
-                novaSenha.push(separadorPalavraFrase);//adciona um espaço entre as sílabas
+                novaSenha.push(separadorFrase);//adciona um espaço entre as sílabas
             }
             novaSenha.push(palavras[numAleatorio(palavras.length)]);
         }
