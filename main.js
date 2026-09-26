@@ -33,8 +33,10 @@ const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleçã
 });
 const QtdePADRAO = Object.freeze({
     CARACTERE:32,
-    PALAVRA:12
+    PALAVRA:12,
+    DECIMAL:40
 });
+const separadorPalavras = "-";
 const PALAVRAS_PROIBIDAS = new Set([
     "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
     "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
@@ -100,7 +102,7 @@ function setHexadecimal(){
 function setDecimal(){
     tipoElemento = OPCAO.NUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.CARACTERE;
+    numChar.value=QtdePADRAO.DECIMAL;
 }
 function setBase64(){
     tipoElemento = OPCAO.BASE64;
@@ -148,7 +150,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.SILABA){
             if(contador!=0){
-                novaSenha.push(" ");//adciona um espaço entre as sílabas
+                novaSenha.push(separadorPalavras);//adciona um espaço entre as sílabas
             }
             novaSenha.push(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
         }
@@ -190,7 +192,7 @@ function gerarSenha(){
         }
         else if (tipoElemento == OPCAO.PALAVRA){
             if(contador!=0){
-                novaSenha.push(" ");//adciona um espaço entre as sílabas
+                novaSenha.push(separadorPalavras);//adciona um espaço entre as sílabas
             }
             novaSenha.push(palavras[numAleatorio(palavras.length)]);
         }
@@ -200,7 +202,7 @@ function gerarSenha(){
     let testeDistr = {};
     let caractereExcluido;
     if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
-        caractereExcluido=" ";
+        caractereExcluido=separadorPalavras;
     }
     for (let elemento of novaSenha) {
         if (elemento !== caractereExcluido) {
