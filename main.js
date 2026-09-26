@@ -311,8 +311,9 @@ function criarWorkerWorker() {
     return new Worker(URL.createObjectURL(blob));
 }
 async function inicializaMultiThread() {
+    botoes_senha[OPCAO.SILABA].style.display="none";
     if (window.crypto && window.crypto.getRandomValues) {
-        senha.innerText = "Loading...";
+        senha.innerText = "Powered by Web Crypto API";
     }
     const totalConsoantes = alfabeto.consoantes.length;
     const numThreads = navigator.hardwareConcurrency || 4;
@@ -341,6 +342,6 @@ async function inicializaMultiThread() {
     }
     const resultados = await Promise.all(promessasWorkers);
     alfabeto.silabas = resultados.flat();
-    senha.innerText = "Powered by Web Crypto API";
+    botoes_senha[OPCAO.SILABA].style.display="inline-block";
 }
 inicializaMultiThread();
