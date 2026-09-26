@@ -28,8 +28,7 @@ header {
     margin-top: 0.3rem;
 }
 main {
-    box-shadow:  0rem -10rem 25rem 7rem #04f3, 0rem -10rem 25rem 7rem #0ff2, 0rem 30rem 30rem 20rem #f0f2, 0rem 20rem 50rem 10rem #0003;
-
+    box-shadow:  0rem -10rem 25rem 7rem #04f3, 0rem -10rem 25rem 7rem #0882, 0rem 20rem 50rem 5rem #4046, 0rem 20rem 50rem 10rem #0003;
 }
 nav a {
     padding: 0px;
