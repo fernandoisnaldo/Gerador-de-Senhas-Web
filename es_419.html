@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-419">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de contraseñas versión web</title>
+    <title>Generador de Contraseñas versión web</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -12,40 +12,47 @@
         <a href="setLang.html" title="Seleccionar idioma">🌐 Idiomas</a>
     </nav>
     <header>
-        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Repositorio en GitHub</a></p>
-        <p>Este programa también tiene una <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versión de línea de comandos.</a></p>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Repositorio de GitHub</a></p>
+        <p>Este programa también tiene una <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">versión en línea de comandos.</a></p>
     </header>
     <main>
-        <h1>Generador de contraseñas</h1>
+        <h1>Generador de Contraseñas</h1>
         <section id="GerarSenha">
             <label for="tipo_senha">Tipo de contraseña: </label>
             <span id="tipo_ascii">ASCII</span>
             <br />
-            <span id="tipo_silabas">⚠️ selección fonética aleatoria ⚠️
-                <br />⚠️ pueden aparecer palabras inapropiadas ⚠️
+            <span id="tipo_silabas">
+                ⚠️ selección fonética aleatoria ⚠️
+                <br />⚠️ pueden salir palabras inapropiadas ⚠️
+            </span>
+            <span id="eff_cc">
+                Electronic Frontier Foundation <a href="https://www.eff.org/dice">Diceware</a>
+                <br /><a href="https://creativecommons.org/licenses/by/3.0/legalcode.en">Creative Commons CC BY 3.0</a>
             </span>
             <br />
             <button type="button" id="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
-            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Sílabas</button>
-            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alfanuméricos</button>
-            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimales</button>
-            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Números</button>
+            <button type="button" id="tipo_senha" onclick="setSilabas()" aria-pressed="false">Sílaba</button>
+            <button type="button" id="tipo_senha" onclick="setPalavra()" aria-pressed="false">Palabra</button>
+            <button type="button" id="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alfanumérico</button>
+            <button type="button" id="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadecimal</button>
+            <button type="button" id="tipo_senha" onclick="setDecimal()" aria-pressed="false">Número</button>
             <button type="button" id="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
             <br />
             <br />
             <details id="exibe_ajuda" style="text-align: left;">
                 <summary>Mostrar ayuda</summary>
-                <p>El botón ASCII define la selección por letras mayúsculas, letras minúsculas, símbolos y números de la tabla ASCII.</p>
-                <p>El botón sílabas define la selección de sílabas aleatorias.</p>
-                <p>El botón alfanumérico define la selección por letras mayúsculas, letras minúsculas y números.</p>
-                <p>El botón hexadecimal define la selección por números hexadecimales.</p>
-                <p>El botón números define la selección por números decimales.</p>
-                <p>El botón base64 define la selección por números base64</p>
+                <p>El botón ASCII define la selección mediante letras mayúsculas, letras minúsculas, símbolos y números de la tabla ASCII.</p>
+                <p>El botón sílaba define la selección de sílabas aleatorias.</p>
+                <p>El botón palabra define la selección mediante palabras del Diceware de la Electronic Frontier Foundation.</p>
+                <p>El botón alfanumérico define la selección mediante letras mayúsculas, letras minúsculas y números.</p>
+                <p>El botón hexadecimal define la selección mediante números hexadecimales.</p>
+                <p>El botón número define la selección mediante números decimales.</p>
+                <p>El botón base64 define la selección mediante caracteres base64.</p>
                 <p>Por defecto, este programa genera caracteres ASCII.</p>
             </details>
             <br />
             <br />
-            <label for="numel">Número de elementos: </label>
+            <label for="numel">Cantidad de elementos: </label>
             <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
             <button type="button" onclick="gerarSenha()">Generar contraseña</button>
             <br />
@@ -53,23 +60,24 @@
             <section id="copiar">
                 <button type="button" onclick="copiar()">Copiar contraseña débil</button>
                 <button type="button" onclick="copiar()">Copiar contraseña</button>
-                <button type="button" onclick="copiar()">Copiar contraseña segura</button>
+                <button type="button" onclick="copiar()">Copiar contraseña fuerte</button>
                 <br />
             </section>
             <section>
                 <br />
-                <span id="output"  role="status" aria-live="polite">Navegador no compatible o con JavaScript desactivado.</span>
+                <span id="output" role="status" aria-live="polite">Navegador no compatible o con JavaScript desactivado</span>
                 <br />
                 <br />
             </section>
         </section>
-        <p aria-live="polite">Tu contraseña es confidencial; tus datos no se envían a ningún servidor. Asegúrate de que nadie te esté viendo.</p>
+        <p aria-live="polite">Tu contraseña es confidencial, tus datos no se envían a ningún servidor. Asegúrate de que nadie te esté observando.</p>
     </main>
     <footer>
         <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
-        <p>Este es software libre: puedes redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU (GPL) versión 3 o posterior.</p>
-        <p>Este programa se distribuye SIN NINGUNA GARANTÍA. Consulta el archivo <a href="LICENSE" target="_blank">LICENSE</a> para obtener más detalles.</p>
+        <p>Este es un software libre: puedes redistribuirlo bajo los términos de la Licencia Pública General GNU (GPL v3) o posterior.</p>
+        <p>NO HAY GARANTÍA vinculada a la distribución de este código. Consulta el archivo <a href="LICENSE" target="_blank">LICENSE</a> para obtener más detalles.</p>
     </footer>
+    <script src="arrayzão_eff.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
