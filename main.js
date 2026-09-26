@@ -17,6 +17,7 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+//const palavras = [array]; encontra-se em arrayzão_eff.js
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
@@ -40,7 +41,6 @@ let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
-//const palavras = [array]; encontra-se em arrayzão_eff.js
 let alfabeto = {
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
