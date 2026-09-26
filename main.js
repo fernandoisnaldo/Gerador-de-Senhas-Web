@@ -43,6 +43,13 @@ let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
 //const palavras = [array]; encontra-se em arrayzão_eff.js
+const Palavras_PROIBIDAS = [
+    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
+    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
+    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
+    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
+    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
+];
 let alfabeto = {
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
@@ -271,13 +278,6 @@ function copiar(){
     .catch(erro => alert("Clipboard object: " + erro));
 }
 //testando implementação multi threads para ocupar o array albabeto.silabas (depois eu ajeito este código pra ficar bonito)
-const HASHES_PROIBIDOS = [
-    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
-    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
-    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
-    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
-    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
-];
 function criarWorkerWorker() {
     const workerScript = `
     const encoder = new TextEncoder();
@@ -312,7 +312,7 @@ function criarWorkerWorker() {
 }
 async function inicializaMultiThread() {
     if (window.crypto && window.crypto.getRandomValues) {
-        senha.innerText = "Powered by Web Crypto API";
+        senha.innerText = "Loading...";
     }
     const totalConsoantes = alfabeto.consoantes.length;
     const numThreads = navigator.hardwareConcurrency || 4;
@@ -332,7 +332,7 @@ async function inicializaMultiThread() {
                 consoantes: alfabeto.consoantes,
                 vogais: alfabeto.vogais,
                 terminacoes: alfabeto.terminacoes,
-                hashesProibidos: HASHES_PROIBIDOS,
+                hashesProibidos: Palavras_PROIBIDAS,
                 cInicio,
                 cFim
             });
@@ -341,7 +341,6 @@ async function inicializaMultiThread() {
     }
     const resultados = await Promise.all(promessasWorkers);
     alfabeto.silabas = resultados.flat();
-    console.log(`Concluído com inserção direta pós-booleano: ${alfabeto.silabas.length} sílabas.`);
+    senha.innerText = "Powered by Web Crypto API";
 }
-
 inicializaMultiThread();
