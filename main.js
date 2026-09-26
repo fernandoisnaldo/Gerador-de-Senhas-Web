@@ -222,7 +222,7 @@ function gerarSenha(){
         }
         else if(totalEntropy<192){
             botaoCopiarIndice=1; // senha nível aceitável
-            senha.style.filter = "saturate(35%)";
+            senha.style.filter = "saturate(100%)";
         }
         else  if(totalEntropy>=192){
             botaoCopiarIndice=2; // senha forte
