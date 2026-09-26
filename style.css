@@ -50,8 +50,6 @@ details {
 #output {
     word-break: break-all;
     font-weight: bold;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
 }
 body {
     font-family: "Noto Sans Mono","Fira Mono","Roboto Mono",ui-monospace,"DejaVu Sans Mono","Cascadia Mono",monospace;
@@ -67,6 +65,10 @@ footer, header {
 #tipo_silabas {
     font-size: .8rem;
     visibility: hidden
+}
+#eff_cc {
+    font-size: .8rem;
+    display: none;
 }
 button {
     font-size: 0.9rem;
