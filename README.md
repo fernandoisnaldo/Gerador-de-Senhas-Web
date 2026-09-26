@@ -9,14 +9,14 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 # Principais características funcionais
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.[^1]
 2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
-3) Emite senhas em formato ASCII[^2], sílabas[^3], alfanumérico, hexadecimal, decimal e base64.
+3) Emite senhas em formato ASCII[^2], sílabas[^3], Palavras[^7], alfanumérico, hexadecimal, decimal e base64.
 4) Este programa inclui um teste quantitativo com saída pra console, relatório estatístico sobre a quantidade de elementos gerados. Abra a ferramenta de Inspecionar do seu navegador na aba Console e descubra a distribuição quantitativa de cada elemento gerado.
    
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
 2) Uso de HTML semântico, para tentar facilitar para quem é deficiente visual.[^6]
 3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
-4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que um navegador moderno já entrega. Não há importação externa de APIs ou bibliotecas.
+4) Simplicidade máxima: Escrito da forma mais pura possível, baseado em tecnologias que um navegador moderno já entrega. Não há importação externa de APIs ou bibliotecas para programação.
 
 [^1]: O Gerador de Senhas versão web depende da função `window.crypto.getRandomValues()`, padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Interface web executada em ambiente desatualizado, adulterado e/ou não baseado nesses já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.
 
@@ -29,6 +29,8 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 [^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado prejuízo à legibilidade, mesmo com perda de contraste (no nível simulado pelo navegador), com ausência total de cones verdes ou com ausência total de todos os cones.
 
 [^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
+
+[^7]: As palavras foram obtidas da [lista Diceware](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da (Creative Commons By 3.0)[https://creativecommons.org/licenses/by/3.0/legalcode.en];
 
 Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
 # Ver também
