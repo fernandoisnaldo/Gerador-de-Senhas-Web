@@ -34,6 +34,7 @@ const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleçã
 });
 const QtdePADRAO = Object.freeze({
     CARACTERE:32,
+    DECIMAL:40,
     PALAVRA:12
 });
 let separadorFrase = " ";
@@ -94,7 +95,7 @@ function setHexadecimal(){
 function setDecimal(){
     tipoElemento = OPCAO.NUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.CARACTERE;
+    numChar.value=QtdePADRAO.DECIMAL;
 }
 function setBase64(){
     tipoElemento = OPCAO.BASE64;
