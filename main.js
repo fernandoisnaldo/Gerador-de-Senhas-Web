@@ -218,7 +218,7 @@ function gerarSenha(){
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
         if(totalEntropy<128){
             botaoCopiarIndice=0; // senha fraca
-            senha.style.filter = "grayscale(100%)";
+            senha.style.filter = "grayscale(80%)";
         }
         else if(totalEntropy<192){
             botaoCopiarIndice=1; // senha nível aceitável
