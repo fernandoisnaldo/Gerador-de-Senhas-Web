@@ -123,7 +123,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
         silabas_span.style.display="inline-block";
         eff_span.style.display="none";
     }
-    botoes_senha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
+    botoes_senha.forEach((btn, index) => {//acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
             btn.setAttribute("aria-pressed", "true");
         }
