@@ -10,6 +10,8 @@ Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web
 1) Uses a cryptographically secure pseudo-random number generator, with modulo bias rejection.[^1]
 2) Web application format: runs directly in the browser from any of these HTML documents.
 3) Outputs passwords in ASCII[^2], syllable[^3], word[^7], alphanumeric, hexadecimal, decimal and base64 formats.
+   
+By default, this program supports generating a password with up to 10,000 elements. If you want to unlock this limit to torture the browser engine and test the limits of PRNG, enable DEBUG mode in main.js.
 
 # Main design, architecture and accessibility features
 1) It is available in multiple languages, and localization is [extensible via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
