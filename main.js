@@ -307,7 +307,7 @@ const worker = new Worker(URL.createObjectURL(blob));
 function inicializa() {
     /* 
      * vulnerabilidade corrigida: se o usuário gerar sílabas antes da hora, ele pode 
-     * gerar uma senha  com entropia inferior ao projetado para o elemento tipo sílaba
+     * gerar uma senha com entropia inferior ao projetado para o elemento tipo sílaba
      * solução: O botão de seleção de sílabas fica oculto até o array ser finalizado.
      */
     botoes_senha[OPCAO.SILABA].style.display = "none";
