@@ -35,7 +35,8 @@ const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleçã
 const QtdePADRAO = Object.freeze({
     CARACTERE:32,
     PALAVRA:12,
-    DECIMAL:40
+    DECIMAL:40,
+    MAX: 10000
 });
 const separadorPalavras = "-";
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
@@ -141,10 +142,17 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
     });
 }
 function gerarSenha(){
-    senha.innerText="";
+    senha.textContent="";
     let novaSenha=[];
     let quantidade = parseInt(numChar.value) || 0;
     exibirCopiar.style.display="block";
+    if(!DEBUG) {
+        if (quantidade > QtdePADRAO.MAX){
+            numChar.value = QtdePADRAO.MAX
+        }
+        quantidade = QtdePADRAO.MAX;
+
+    }
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == OPCAO.ASCII){
             novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
@@ -313,8 +321,9 @@ function inicializa() {
     // o botão de silabas deve sumir até o array estar pronto
     botoes_senha[OPCAO.SILABA].style.display = "none";
     if (window.crypto && window.crypto.getRandomValues) {
-        senha.innerText = "Powered by Web Crypto API";
+        senha.textContent = "Powered by Web Crypto API";
     }
+    if (!DEBUG) numChar.max = QtdePADRAO.MAX;
     worker.onmessage = function(e) {
         alfabeto.silabas = e.data;
         botoes_senha[OPCAO.SILABA].style.display = "inline-block";
