@@ -312,11 +312,9 @@ function inicializa() {
     worker.onmessage = function(e) {
         alfabeto.silabas = e.data;
         botoes_senha[OPCAO.SILABA].style.display = "inline-block";
-
         worker.terminate();
         URL.revokeObjectURL(blob);
     };
-
     worker.postMessage({
         consoantes: alfabeto.consoantes,
         vogais: alfabeto.vogais,
@@ -324,5 +322,4 @@ function inicializa() {
         proibidas: PALAVRAS_PROIBIDAS
     });
 }
-
 inicializa();
