@@ -291,7 +291,6 @@ async function inicializa() {
         senha.innerText = "Powered by Web Crypto API";
     }
     await forcarRenderizacaoUI();
-    const isGecko = navigator.userAgent.includes("Gecko/") && !navigator.userAgent.includes("Like Gecko");
     alfabeto.silabas = [];
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
