@@ -240,7 +240,7 @@ async function gerarSenha(){
     const tamanhoConjunto = tamanhosConjunto[tipoElemento]; // cálculo de entropia
     if (tamanhoConjunto && quantidade > 0) {
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
-        if (DEBUG) console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
+        if (DEBUG) {console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);}
         senha.title = Math.floor(totalEntropy)+ " bits";
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
         if(totalEntropy<86){
@@ -264,8 +264,9 @@ async function gerarSenha(){
                 botoes_copiar[contador].style.display="none";
             }
         }
-    } else {
-        if (DEBUG) console.log("Entropy: 0.00 bits");
+    }
+    else {
+        if (DEBUG) {console.log("Entropy: 0.00 bits");}
         senha.textContent = "?";
         senha.title = "0 bit";
         exibirCopiar.style.display="none";
