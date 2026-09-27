@@ -147,7 +147,7 @@ async function gerarSenha(){
     exibirCopiar.style.display="block";
     if(!DEBUG) {
         if (quantidade > QtdePADRAO.MAX){
-            numChar.value = QtdePADRAO.MAX
+            numChar.value = QtdePADRAO.MAX;
             quantidade = QtdePADRAO.MAX;
         }
     }
