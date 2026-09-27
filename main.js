@@ -301,7 +301,6 @@ async function inicializa() {
             }
         }
     }
-    // 4. Exibe o botão de volta após terminar
     botoes_senha[OPCAO.SILABA].style.display = "inline-block";
 }
 inicializa();
