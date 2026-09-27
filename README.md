@@ -1,36 +1,36 @@
-### [Portuguese version](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/blob/main/README.md)
+### [English version](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/blob/main/README_en_US.md)
 
-# Web Password Generator
-Based on the logic of my password generator written in Java, but with accessibility requirements I feel more comfortable implementing in a web application.
+# Gerador de Senhas versão web
+Baseado na lógica do meu gerador de senhas em Java, porém com requisitos de acessibilidade que eu me sinto mais confortável de implementar em uma aplicação web.
 
-# Usage instructions
-Simply open [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/) and run it in your browser.
+# Instruções de uso
+Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Senhas-Web/) e execute no seu navegador.
 
-# Main functional features
-1) Uses a cryptographically secure pseudo-random number generator, with modulo bias rejection.[^1]
-2) Web application format: runs directly in the browser from any of these HTML documents.
-3) Outputs passwords in ASCII[^2], syllable[^3], word[^7], alphanumeric, hexadecimal, decimal and base64 formats.
+# Principais características funcionais
+1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.[^1]
+2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
+3) Emite senhas em formato ASCII[^2], sílabas[^3], palavras[^7], alfanumérico, hexadecimal, decimal e base64.
+   
+# Principais características de design, arquitetura e acessibilidade
+1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
+2) Uso de HTML semântico, para tentar facilitar para quem é deficiente visual.[^6]
+3) As senhas geradas possuem estilo com cores aleatórias[^4], dentro de uma paleta com canal verde predominante para texto e borda[^5] conforme definido em código.
+4) Simplicidade máxima: Escrito da forma mais pura possível, com programação baseada apenas em código JavaScript nativo dos padrões W3C. 
 
-# Main design, architecture and accessibility features
-1) It is available in multiple languages, and localization is [extensible via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
-2) Uses semantic HTML, to try to make things easier for visually impaired users.[^6]
-3) Generated passwords are styled with random colors[^4], within a palette with a predominant green channel for text and border[^5] as defined in code.
-4) Maximum simplicity: written as purely as possible, with programming based only on native JavaScript code from W3C standards.
+[^1]: O Gerador de Senhas versão web depende da função `window.crypto.getRandomValues()`, padronizada na especificação API WebCrypto do W3C, que exige saída criptograficamente segura. Os navegadores modernos (nomeadamente: Mozilla Firefox, Chromium, Apple Safari) implementam essa exigência apoiando-se nos geradores de entropia do sistema operacional. Interface web executada em ambiente desatualizado, adulterado e/ou não baseado nesses já citados nesta nota podem não cumprir a especificação, e nesse caso as descrições do nível de segurança deste README não são aplicáveis.
 
-[^1]: The Web Password Generator depends on the `window.crypto.getRandomValues()` function, standardized in the W3C WebCrypto API specification, which requires cryptographically secure output. Modern browsers (namely: Mozilla Firefox, Chromium, Apple Safari) implement this requirement by relying on the operating system's entropy generators. A web interface running in an outdated, tampered and/or non-compliant environment — that is, not based on the ones already mentioned in this note — may not meet the specification, in which case the security level descriptions in this README do not apply.
+[^2]: Se aplica estritamente à faixa decimal de 33 até 126 da tabela [ASCII](https://pt.wikipedia.org/wiki/ASCII).
 
-[^2]: Applies strictly to the decimal range from 33 to 126 of the [ASCII](https://en.wikipedia.org/wiki/ASCII) table.
+[^3]: Leia as [especificações das sílabas](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo) para saber mais. A implementação destas especificações se encontra no arquivo main.js.
 
-[^3]: Read the [syllable specifications](https://github.com/fernandoisnaldo/Gerador-de-Senhas/wiki/Especifica%C3%A7%C3%B5es-das-s%C3%ADlabas-aleat%C3%B3rias,-Gerador-de-Senhas-do-Fernando-Isnaldo) (in Portuguese) to learn more. The implementation of these specifications can be found in the main.js file.
+[^4]: Algumas funções meramente decorativas também são sorteadas via `window.crypto.getRandomValues()`, por razões de escopo de projeto. Qualquer PRNG vulneravel será considerado suspeito e está proibido no código deste projeto, para qualquer finalidade que seja.
 
-[^4]: Some purely decorative functions are also drawn via `window.crypto.getRandomValues()`, for project scope reasons. Any vulnerable PRNG will be considered suspect and is forbidden in this project's code, for any purpose whatsoever.
+[^5]: A predominância do canal verde se baseia no fato de ele ser o canal de maior contribuição para a luminância percebida e de melhor resolução visual para a maioria das pessoas, e também é uma questão de preferência estética para o projeto. Em testes com o simulador de deficiências de visão de cores do Mozilla Firefox (protanopia, deuteranopia, tritanopia, acromatopsia e perda de contraste), não foi observado prejuízo à legibilidade, mesmo com perda de contraste (no nível simulado pelo navegador), com ausência total de cones verdes ou com ausência total de todos os cones.
 
-[^5]: The predominance of the green channel is based on the fact that it is the channel with the greatest contribution to perceived luminance and the best visual resolution for most people, and it is also a matter of aesthetic preference for the project. In tests with Mozilla Firefox's color vision deficiency simulator (protanopia, deuteranopia, tritanopia, achromatopsia and contrast loss), no harm to readability was observed, even with contrast loss (at the level simulated by the browser), with total absence of green cones or with total absence of all cones.
+[^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
 
-[^6]: There was no opportunity to conduct tests with real users of screen readers. If you find any problem or would like to offer a suggestion, please create an issue.
+[^7]: As palavras foram obtidas da lista de palavras em [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da [Creative Commons By 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
-[^7]: The words were obtained from the Electronic Frontier Foundation's [Dice](https://www.eff.org/dice) word list, and are licensed under the terms of [Creative Commons BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
-
-This program is free software: it can be modified, used and redistributed under the terms of the GPL v3 or later.
-# See also
- [Password Generator CLI version](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (in Portuguese) (Java)
+Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
+# Ver também
+ [Gerador de Senhas versão CLI](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
