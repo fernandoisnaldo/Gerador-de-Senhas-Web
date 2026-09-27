@@ -298,7 +298,7 @@ async function inicializa() {
                 if (await filtro(c, v, t)) {
                     alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
                 }
-                if (alfabeto.silabas.length > 0 && alfabeto.silabas.length % 5000 === 0) {
+                if (alfabeto.silabas.length > 0 && alfabeto.silabas.length % 20000 === 0) {
                      await forcarRenderizacaoUI(); //força o lixo do Chromium a ceder renderização antes das sílabas estarem prontas
                 }
             }
