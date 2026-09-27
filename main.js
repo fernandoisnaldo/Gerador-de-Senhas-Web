@@ -62,7 +62,6 @@ let alfabeto = {
         "nd", "ng", "p", "pp", "pt", "q", "qq", "r", "rn", "rr", "s", "sn","ss", "sd", "sh", "sk", "t", "tt", "th", "tk", "v",
         "vv", "w", "wd", "wm", "wn", "ww", "x","xx", "y", "yk", "yx", "yy", "yz", "z", "zz"
     ],
-    silabas: []//este array vai ser ocupado depois que o código inicializar
 };
 const PALAVRAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador de sílabas
     "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
@@ -141,7 +140,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
         }
     });
 }
-function gerarSenha(){
+async function gerarSenha(){
     senha.textContent="";
     let novaSenha=[];
     let quantidade = parseInt(numChar.value) || 0;
@@ -157,10 +156,19 @@ function gerarSenha(){
             novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
         }
         else if (tipoElemento == OPCAO.SILABA){
-            if(contador!=0){
-                novaSenha.push(separadorPalavras);//adciona um espaço entre as sílabas
+            let c = alfabeto.consoantes[numAleatorio(alfabeto.consoantes.length)];
+            let v = alfabeto.vogais[numAleatorio(alfabeto.vogais.length)];
+            let t = alfabeto.terminacoes[numAleatorio(alfabeto.terminacoes.length)];
+            let silaba = c + v + t;
+            if (await filtro(silaba)) {
+                novaSenha.push(silaba);
+                if (contador != quantidade - 1) {
+                    novaSenha.push(separadorPalavras);
+                }
             }
-            novaSenha.push(alfabeto.silabas[numAleatorio(alfabeto.silabas.length)]); //pega sílaba aleatória e imprime
+            else {
+                contador--;
+            }
         }
         else if (tipoElemento == OPCAO.ALFANUM){ //alfanumérico
             let base62 = numAleatorio(62); //sorteia número de 0 a 61 para seleção alfanumérica
@@ -222,7 +230,7 @@ function gerarSenha(){
     // cálculo de entropia
     const tamanhosConjunto = {
         [OPCAO.ASCII]: 94,
-        [OPCAO.SILABA]: alfabeto.silabas.length,
+        [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - PALAVRAS_PROIBIDAS.size),
         [OPCAO.ALFANUM]: 62,
         [OPCAO.HEX]: 16,
         [OPCAO.NUM]: 10,
@@ -287,51 +295,12 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
-//bloco de inicialização em thread separada
-const workerCode = `
 const encoder = new TextEncoder();
-self.onmessage = async function(e) {
-    const { consoantes, vogais, terminacoes, proibidas } = e.data;
-    const palavrasProibidas = new Set(proibidas);
-    const silabasValidas = [];
-    async function filtro(silaba) {
-        const buffer = await self.crypto.subtle.digest('SHA-256', encoder.encode(silaba));
-        const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-        return !palavrasProibidas.has(hash);
-    }
-    for (let c = 0; c < consoantes.length; c++) {
-        for (let v = 0; v < vogais.length; v++) {
-            for (let t = 0; t < terminacoes.length; t++) {
-                const silaba = consoantes[c] + vogais[v] + terminacoes[t];
-                if (await filtro(silaba)) {
-                    silabasValidas.push(silaba);
-                }
-            }
-        }
-    }
-    self.postMessage(silabasValidas);
-};
-`;
-const blob = new Blob([workerCode], { type: 'application/javascript' });
-const worker = new Worker(URL.createObjectURL(blob));
-function inicializa() {
-    // o botão de silabas deve sumir até o array estar pronto
-    botoes_senha[OPCAO.SILABA].style.display = "none";
-    if (window.crypto && window.crypto.getRandomValues) {
-        senha.textContent = "Powered by Web Crypto API";
-    }
-    if (!DEBUG) numChar.max = QtdePADRAO.MAX;
-    worker.onmessage = function(e) {
-        alfabeto.silabas = e.data;
-        botoes_senha[OPCAO.SILABA].style.display = "inline-block";
-        worker.terminate();
-        URL.revokeObjectURL(blob);
-    };
-    worker.postMessage({
-        consoantes: alfabeto.consoantes,
-        vogais: alfabeto.vogais,
-        terminacoes: alfabeto.terminacoes,
-        proibidas: PALAVRAS_PROIBIDAS
-    });
+async function filtro(silaba) {
+    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
+    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    return !PALAVRAS_PROIBIDAS.has(hash);
 }
-inicializa();
+if (window.crypto && window.crypto.getRandomValues) {
+    senha.textContent = "Powered by Web Crypto API";
+}
