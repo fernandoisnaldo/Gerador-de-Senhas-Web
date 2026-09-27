@@ -11,7 +11,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
 3) Emite senhas em formato ASCII[^2], sílabas[^3], palavras[^7], alfanumérico, hexadecimal, decimal e base64.
 
-Por padrão, este programa suporta a emissão de até 10 mil elementos. Se você quiser desbloquear este limite pra torturar a engine do navegador e o RNG, ative o modo DEBUG no main.js
+Por padrão, este programa suporta a emissão de até 10 mil elementos. Se você quiser desbloquear este limite pra torturar a engine do navegador e testar os limites do PRNG, ative o modo DEBUG no main.js
 
 # Principais características de design, arquitetura e acessibilidade
 1) Está disponível em vários idiomas, e a localização é [extensível via HTML](https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web/wiki/Como-criar-uma-nova-tradu%C3%A7%C3%A3o-do-Gerador-de-Senhas-vers%C3%A3o-web).
