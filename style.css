@@ -19,6 +19,10 @@ button {
     border: solid 2px #999;
     background-color: #eee;
     border-radius: 2px;
+    font-size: 0.9rem;
+    padding: 0.1rem;
+    margin-bottom: 0.025rem;
+    margin-top: 0.025rem;
 }
 button:hover {
     border: solid 2px #79c;
@@ -74,12 +78,6 @@ footer, header {
 #eff_cc {
     font-size: .8rem;
     display: none;
-}
-button {
-    font-size: 0.9rem;
-    padding: 0.1rem;
-    margin-bottom: 0.025rem;
-    margin-top: 0.025rem;
 }
 @media (prefers-color-scheme: dark) {
     body {
