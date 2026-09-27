@@ -17,6 +17,7 @@
  * junto com este programa. Se não, veja <https://www.gnu.org/licenses/>.
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+let DEBUG=false;
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
@@ -63,11 +64,11 @@ let alfabeto = {
     silabas: []//este array vai ser ocupado depois que o código inicializar
 };
 const PALAVRAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador de sílabas
-    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
-    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
-    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
-    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
-    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
+"9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
+"40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
+"038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
+"7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
+"cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
 ]);
 const randomBuffer = new Uint32Array(1);
 function numAleatorio(max) {
@@ -200,13 +201,15 @@ function gerarSenha(){
     senha.textContent=novaSenha.join("");
     // Gera relatório de métricas para qualidade da senha
     let testeDistr = {};
-    let caractereExcluido;
-    if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
-        caractereExcluido=separadorPalavras;
-    }
-    for (let elemento of novaSenha) {
-        if (elemento !== caractereExcluido) {
-            testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
+    if (DEBUG) {
+        let caractereExcluido;
+        if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
+            caractereExcluido=separadorPalavras;
+        }
+        for (let elemento of novaSenha) {
+            if (elemento !== caractereExcluido) {
+                testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
+            }
         }
     }
     // cálculo de entropia
@@ -252,16 +255,18 @@ function gerarSenha(){
         senha.title = "0 bit";
         exibirCopiar.style.display="none";
     }
-    console.log(testeDistr);
-    const frequencias = Object.values(testeDistr);
-    let total=0;
-    console.log("Most elements with same selected value: " + Math.max(...frequencias));
-    console.log("Less elements with same selected value: " + Math.min(...frequencias));
-    for (let contador=0;contador<frequencias.length;contador++){
-        total+=frequencias[contador];
+    if (DEBUG) {
+        console.log(testeDistr);
+        const frequencias = Object.values(testeDistr);
+        let total=0;
+        console.log("Most elements with same selected value: " + Math.max(...frequencias));
+        if (DEBUG) console.log("Less elements with same selected value: " + Math.min(...frequencias));
+        for (let contador=0;contador<frequencias.length;contador++){
+            total+=frequencias[contador];
+        }
+        console.log("Avarage elements with same selected value " +total/frequencias.length);
+        console.log("Total elements: "+quantidade);
     }
-    console.log("Avarage elements with same selected value " +total/frequencias.length);
-    console.log("Total elements: "+quantidade);
     // FIM dos relatórios
     //decorações meramente estéticas
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
