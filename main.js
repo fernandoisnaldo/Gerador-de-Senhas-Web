@@ -20,7 +20,7 @@
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
-let botoes_senha = document.querySelectorAll('[id="tipo_senha"]');
+let botoes_senha = document.querySelectorAll('.tipo_senha');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
 const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
     ASCII:0,
