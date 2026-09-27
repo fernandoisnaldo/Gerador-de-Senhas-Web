@@ -290,7 +290,7 @@ async function inicializa() {
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
-    await forcarRenderizacaoUI();
+    await forcarRenderizacaoUI(); //força o lixo do blink a ceder renderização antes das sílabas estarem prontas
     alfabeto.silabas = [];
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
