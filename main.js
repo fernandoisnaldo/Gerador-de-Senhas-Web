@@ -290,7 +290,7 @@ async function inicializa() {
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
-    await forcarRenderizacaoUI(); //força o lixo do blink a ceder renderização antes das sílabas estarem prontas
+    await forcarRenderizacaoUI(); //força o lixo do Chromium a ceder renderização antes das sílabas estarem prontas
     alfabeto.silabas = [];
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
@@ -299,7 +299,7 @@ async function inicializa() {
                     alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
                 }
                 if (alfabeto.silabas.length > 0 && alfabeto.silabas.length % 5000 === 0) {
-                     await forcarRenderizacaoUI(); //força o lixo do blink a ceder renderização antes das sílabas estarem prontas
+                     await forcarRenderizacaoUI(); //força o lixo do Chromium a ceder renderização antes das sílabas estarem prontas
                 }
             }
         }
