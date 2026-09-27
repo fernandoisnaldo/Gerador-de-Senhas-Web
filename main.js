@@ -305,11 +305,7 @@ self.onmessage = async function(e) {
 const blob = new Blob([workerCode], { type: 'application/javascript' });
 const worker = new Worker(URL.createObjectURL(blob));
 function inicializa() {
-    /* 
-     * vulnerabilidade corrigida: se o usuário gerar sílabas antes da hora, ele pode 
-     * gerar uma senha com entropia inferior ao projetado para o elemento tipo sílaba
-     * solução: O botão de seleção de sílabas fica oculto até o array ser finalizado.
-     */
+    // o botão de silabas deve sumir até o array estar pronto
     botoes_senha[OPCAO.SILABA].style.display = "none";
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
