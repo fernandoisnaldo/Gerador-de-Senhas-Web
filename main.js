@@ -265,12 +265,8 @@ function gerarSenha(){
     if (DEBUG) {
         console.log(testeDistr);
         const frequencias = Object.values(testeDistr);
-        let total=0;
         console.log("Most elements with same selected value: " + Math.max(...frequencias));
         console.log("Less elements with same selected value: " + Math.min(...frequencias));
-        for (let contador=0;contador<frequencias.length;contador++){
-            total+=frequencias[contador];
-        }
         console.log("Avarage elements with same selected value " +total/frequencias.length);
         console.log("Total elements: "+quantidade);
     }
