@@ -284,11 +284,13 @@ async function filtro(c, v, t) {
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
     return !PALAVRAS_PROIBIDAS.has(hash);
 }
+const forcarRenderizacaoUI = () => new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 0)));
 async function inicializa() {
     botoes_senha[OPCAO.SILABA].style.display = "none";
     if (window.crypto && window.crypto.getRandomValues) {
         senha.innerText = "Powered by Web Crypto API";
     }
+    await forcarRenderizacaoUI();
     alfabeto.silabas = [];
     for (let c = 0; c < alfabeto.consoantes.length; c++) {
         for (let v = 0; v < alfabeto.vogais.length; v++) {
@@ -299,6 +301,7 @@ async function inicializa() {
             }
         }
     }
+    // 4. Exibe o botão de volta após terminar
     botoes_senha[OPCAO.SILABA].style.display = "inline-block";
 }
 inicializa();
