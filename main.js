@@ -149,9 +149,8 @@ function gerarSenha(){
     if(!DEBUG) {
         if (quantidade > QtdePADRAO.MAX){
             numChar.value = QtdePADRAO.MAX
+            quantidade = QtdePADRAO.MAX;
         }
-        quantidade = QtdePADRAO.MAX;
-
     }
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == OPCAO.ASCII){
