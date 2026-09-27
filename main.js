@@ -277,33 +277,52 @@ function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
+//bloco de inicialização em thread separada
+const workerCode = `
 const encoder = new TextEncoder();
-async function filtro(c, v, t) {
-    const silaba = alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t];
-    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
-    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-    return !PALAVRAS_PROIBIDAS.has(hash);
-}
-const forcarRenderizacaoUI = () => new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 0)));
-async function inicializa() {
-    botoes_senha[OPCAO.SILABA].style.display = "none";
-    if (window.crypto && window.crypto.getRandomValues) {
-        senha.innerText = "Powered by Web Crypto API";
+self.onmessage = async function(e) {
+    const { consoantes, vogais, terminacoes, proibidas } = e.data;
+    const palavrasProibidas = new Set(proibidas);
+    const silabasValidas = [];
+    async function filtro(silaba) {
+        const buffer = await self.crypto.subtle.digest('SHA-256', encoder.encode(silaba));
+        const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+        return !palavrasProibidas.has(hash);
     }
-    await forcarRenderizacaoUI();
-    alfabeto.silabas = [];
-    for (let c = 0; c < alfabeto.consoantes.length; c++) {
-        for (let v = 0; v < alfabeto.vogais.length; v++) {
-            for (let t = 0; t < alfabeto.terminacoes.length; t++) {
-                if (await filtro(c, v, t)) {
-                    alfabeto.silabas.push(alfabeto.consoantes[c] + alfabeto.vogais[v] + alfabeto.terminacoes[t]);
-                }
-                if (alfabeto.silabas.length > 0 && alfabeto.silabas.length % 2500 === 0 ) {
-                     await forcarRenderizacaoUI(); //força o lixo do blink a ceder renderização antes das sílabas estarem prontas
+    for (let c = 0; c < consoantes.length; c++) {
+        for (let v = 0; v < vogais.length; v++) {
+            for (let t = 0; t < terminacoes.length; t++) {
+                const silaba = consoantes[c] + vogais[v] + terminacoes[t];
+                if (await filtro(silaba)) {
+                    silabasValidas.push(silaba);
                 }
             }
         }
     }
-    botoes_senha[OPCAO.SILABA].style.display = "inline-block";
+    self.postMessage(silabasValidas);
+};
+`;
+const blob = new Blob([workerCode], { type: 'application/javascript' });
+const worker = new Worker(URL.createObjectURL(blob));
+function inicializa() {
+    botoes_senha[OPCAO.SILABA].style.display = "none";
+    if (window.crypto && window.crypto.getRandomValues) {
+        senha.innerText = "Powered by Web Crypto API";
+    }
+    worker.onmessage = function(e) {
+        alfabeto.silabas = e.data;
+        botoes_senha[OPCAO.SILABA].style.display = "inline-block";
+
+        worker.terminate();
+        URL.revokeObjectURL(blob);
+    };
+
+    worker.postMessage({
+        consoantes: alfabeto.consoantes,
+        vogais: alfabeto.vogais,
+        terminacoes: alfabeto.terminacoes,
+        proibidas: PALAVRAS_PROIBIDAS
+    });
 }
+
 inicializa();
