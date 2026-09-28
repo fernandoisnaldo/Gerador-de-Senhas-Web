@@ -63,12 +63,12 @@ const alfabeto = Object.freeze({
         "vv", "w", "wd", "wm", "wn", "ww", "x","xx", "y", "yk", "yx", "yy", "yz", "z", "zz"
     ],
 });
-const PALAVRAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador de sílabas
-    "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
-    "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
-    "038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
-    "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
-    "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
+const SILABAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador de sílabas
+"9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
+"40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
+"038c9ccdd226f5728bd0a945bdbb0a25c0f877f2f36f4092ee8c004e810aa300",
+"7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
+"cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
 ]);
 const randomBuffer = new Uint32Array(1);
 function numAleatorio(max) {
@@ -230,7 +230,7 @@ async function gerarSenha(){
     // cálculo de entropia
     const tamanhosConjunto = {
         [OPCAO.ASCII]: 94,
-        [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - PALAVRAS_PROIBIDAS.size),
+        [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
         [OPCAO.ALFANUM]: 62,
         [OPCAO.HEX]: 16,
         [OPCAO.NUM]: 10,
@@ -300,7 +300,7 @@ const encoder = new TextEncoder();
 async function filtro(silaba) {
     const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
     const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-    return !PALAVRAS_PROIBIDAS.has(hash);
+    return !SILABAS_PROIBIDAS.has(hash);
 }
 if (window.crypto && window.crypto.getRandomValues) {
     senha.textContent = "Powered by Web Crypto API";
