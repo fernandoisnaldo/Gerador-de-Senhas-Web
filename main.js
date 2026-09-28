@@ -220,20 +220,16 @@ async function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
-    // Gera relatório de métricas para qualidade da senha
-    let testeDistr = {};
-    if (DEBUG) {
-        let caractereExcluido;
-        if(tipoElemento == OPCAO.SILABA || tipoElemento == OPCAO.PALAVRA){
-            caractereExcluido=separadorPalavras;
-        }
-        for (let elemento of novaSenha) {
-            if (elemento !== caractereExcluido) {
-                testeDistr[elemento] = (testeDistr[elemento] ?? 0) + 1;
-            }
-        }
-    }
-    // cálculo de entropia
+    relatorioEntropia(quantidade);
+    decoracaoSenha();
+}
+function decoracaoSenha(){
+    senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
+    senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
+    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
+    .toString(16) + " dashed 2px";
+}
+function relatorioEntropia(quantidade){
     const tamanhosConjunto = {
         [OPCAO.ASCII]: 94,
         [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
@@ -246,7 +242,7 @@ async function gerarSenha(){
     const tamanhoConjunto = tamanhosConjunto[tipoElemento]; // cálculo de entropia
     if (tamanhoConjunto && quantidade > 0) {
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
-        if (DEBUG) {console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);}
+        DEBUG && console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits";
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
         if(totalEntropy<86){
@@ -272,27 +268,11 @@ async function gerarSenha(){
         }
     }
     else {
-        if (DEBUG) {console.log("Entropy: 0.00 bits");}
+        DEBUG && console.log("Entropy: 0.00 bit")
         senha.textContent = "?";
         senha.title = "0 bit";
         exibirCopiar.style.display="none";
     }
-    if (DEBUG) {
-        console.log(testeDistr);
-        const frequencias = Object.values(testeDistr);
-        const total = frequencias.reduce((a, b) => a + b, 0);
-        console.log("Average elements with same selected value: " + (total / frequencias.length));
-        console.log("Most elements with same selected value: " + Math.max(...frequencias));
-        console.log("Less elements with same selected value: " + Math.min(...frequencias));
-        console.log("Avarage elements with same selected value " +total/frequencias.length);
-        console.log("Total elements: "+quantidade);
-    }
-    // FIM dos relatórios
-    //decorações meramente estéticas
-    senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
-    senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
-    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
-    .toString(16) + " dashed 2px";
 }
 function copiar(){
     if (!navigator.clipboard) {
