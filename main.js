@@ -70,6 +70,12 @@ const SILABAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador
 "7d2969e37aa4ff6030ee5b5b9e60f8689a5bab0a4a24b432d7ee4be157e5f6bd",
 "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
 ]);
+const encoder = new TextEncoder();
+async function filtro(silaba) {
+    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
+    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    return !SILABAS_PROIBIDAS.has(hash);
+}
 const randomBuffer = new Uint32Array(1);
 function numAleatorio(max) {
     const maxPermitido = Math.floor(4294967296 / max) * max;
@@ -295,12 +301,6 @@ function copiar(){
     }
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
-}
-const encoder = new TextEncoder();
-async function filtro(silaba) {
-    const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
-    const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-    return !SILABAS_PROIBIDAS.has(hash);
 }
 if (window.crypto && window.crypto.getRandomValues) {
     senha.textContent = "Powered by Web Crypto API";
