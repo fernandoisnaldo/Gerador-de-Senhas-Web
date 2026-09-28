@@ -221,7 +221,7 @@ async function gerarSenha(){
     }
     senha.textContent=novaSenha.join("");
     exibirCopiar.style.display="block";
-    relatorioEntropia(quantidade);
+    sobreEntropia(quantidade);
     decoracaoSenha();
 }
 function decoracaoSenha(){
@@ -230,7 +230,7 @@ function decoracaoSenha(){
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
     .toString(16) + " dashed 2px";
 }
-function relatorioEntropia(quantidade){
+function sobreEntropia(quantidade){
     const tamanhosConjunto = {
         [OPCAO.ASCII]: 94,
         [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
