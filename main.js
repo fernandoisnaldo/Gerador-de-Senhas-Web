@@ -165,9 +165,8 @@ async function gerarSenha(){
             let c = alfabeto.consoantes[numAleatorio(alfabeto.consoantes.length)];
             let v = alfabeto.vogais[numAleatorio(alfabeto.vogais.length)];
             let t = alfabeto.terminacoes[numAleatorio(alfabeto.terminacoes.length)];
-            let silaba = c + v + t;
-            if (await filtro(silaba)) {
-                novaSenha.push(silaba);
+            if (await filtro(c+v+t)) {
+                novaSenha.push(c+v+t);
                 if (contador != quantidade - 1) {
                     novaSenha.push(separadorPalavras);
                 }
