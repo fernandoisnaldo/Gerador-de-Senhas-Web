@@ -221,7 +221,7 @@ async function gerarSenha(){
     }
     senha.textContent=novaSenha.join("");
     exibirCopiar.style.visibility="visible";
-    sobreEntropia(quantidade);
+    mostraEntropia(quantidade);
     decoracaoSenha();
 }
 function decoracaoSenha(){
@@ -230,7 +230,7 @@ function decoracaoSenha(){
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
     .toString(16) + " dashed 2px";
 }
-function sobreEntropia(quantidade){
+function mostraEntropia(quantidade){
     const tamanhosConjunto = {
         [OPCAO.ASCII]: 94,
         [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
@@ -276,13 +276,16 @@ function sobreEntropia(quantidade){
     }
 }
 function copiar(){
-    if (!navigator.clipboard) {
-        alert("Clipboard object: unavailable");
-        return;
-    }
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => alert("Clipboard object: " + erro));
 }
-if (window.crypto && window.crypto.getRandomValues) {
-    senha.textContent = "Powered by Web Crypto API";
+function inicializa(){
+    if (window.crypto && window.crypto.getRandomValues) {
+        senha.textContent = "Powered by Web Crypto API";
+    }
+    if (!navigator.clipboard) {
+        exibirCopiar.remove();
+    }
 }
+inicializa();
+
