@@ -45,7 +45,7 @@ let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
 //const palavras = [array]; encontra-se em arrayzão_eff.js
-let alfabeto = {
+const alfabeto = Object.freeze({
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
         "gh", "gr", "gy", "h", "hy", "j", "jy", "k","kh", "kl", "kr", "ky", "l", "ll", "lh", "ly", "m", "my", "n", "nt", "nh",
@@ -62,7 +62,7 @@ let alfabeto = {
         "nd", "ng", "p", "pp", "pt", "q", "qq", "r", "rn", "rr", "s", "sn","ss", "sd", "sh", "sk", "t", "tt", "th", "tk", "v",
         "vv", "w", "wd", "wm", "wn", "ww", "x","xx", "y", "yk", "yx", "yy", "yz", "z", "zz"
     ],
-};
+});
 const PALAVRAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador de sílabas
     "9915ba2d822280f22c283df4e76584a40e0119fc58f73c5f84d4fdb04d04fa6f",
     "40582c4d824a2660172b89d7ea9a3bdf6236e4b3661313552a71c66ddbbddeea",
