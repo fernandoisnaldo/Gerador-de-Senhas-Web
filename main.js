@@ -71,7 +71,6 @@ const SILABAS_PROIBIDAS = new Set([ //hashs de palavras proibidas para o gerador
     "cc02032349c833ac5e97bac094560ed40e09acf34cb1978ab7a9840b9bf15b4d"
 ]);
 const encoder = new TextEncoder();
-
 const randomBuffer = new Uint32Array(1);
 async function filtro(silaba) {
     const buffer = await crypto.subtle.digest('SHA-256', encoder.encode(silaba));
