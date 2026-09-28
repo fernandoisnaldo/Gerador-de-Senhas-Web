@@ -13,7 +13,7 @@
  *
  * SPDX-License-Identifier: CC-BY-3.0 AND GPL-3.0-or-later
  */
-const palavras = {
+const palavras = [
     "abacus",
 	"abdomen",
 	"abdominal",
@@ -7790,4 +7790,4 @@ const palavras = {
 	"zoologist",
 	"zoology",
 	"zoom"
-}
+];
