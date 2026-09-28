@@ -150,13 +150,13 @@ async function gerarSenha(){
     senha.textContent="";
     let novaSenha=[];
     let quantidade = parseInt(numChar.value) || 0;
-    exibirCopiar.style.display="block";
     if(!DEBUG) {
         if (quantidade > QtdePADRAO.MAX){
             numChar.value = QtdePADRAO.MAX;
             quantidade = QtdePADRAO.MAX;
         }
     }
+    exibirCopiar.style.display="none";
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == OPCAO.ASCII){
             novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
@@ -220,6 +220,7 @@ async function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
+    exibirCopiar.style.display="block";
     relatorioEntropia(quantidade);
     decoracaoSenha();
 }
