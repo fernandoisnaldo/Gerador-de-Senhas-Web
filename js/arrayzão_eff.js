@@ -13,7 +13,7 @@
  *
  * SPDX-License-Identifier: CC-BY-3.0 AND GPL-3.0-or-later
  */
-const QtdePADRAO = Object.freeze([
+const palavras = Object.freeze([
     "abacus",
 	"abdomen",
 	"abdominal",
