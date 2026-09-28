@@ -147,6 +147,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
     });
 }
 async function gerarSenha(){
+    exibirCopiar.style.display="block";
     senha.textContent="";
     let novaSenha=[];
     let quantidade = parseInt(numChar.value) || 0;
@@ -156,7 +157,7 @@ async function gerarSenha(){
             quantidade = QtdePADRAO.MAX;
         }
     }
-    exibirCopiar.style.display="none";
+    exibirCopiar.style.visibility="hidden";
     for(let contador=0;contador<quantidade;contador++){
         if (tipoElemento == OPCAO.ASCII){
             novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
@@ -219,7 +220,7 @@ async function gerarSenha(){
         }
     }
     senha.textContent=novaSenha.join("");
-    exibirCopiar.style.display="block";
+    exibirCopiar.style.visibility="visible";
     sobreEntropia(quantidade);
     decoracaoSenha();
 }
