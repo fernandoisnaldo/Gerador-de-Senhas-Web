@@ -39,6 +39,11 @@ nav a {
     border: solid 2pt #08a;
     background-color: #fff;
 }
+nav li, ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 0.5rem;
+}
 a {
     text-decoration: none;
     color:#068;
