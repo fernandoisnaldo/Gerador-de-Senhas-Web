@@ -284,12 +284,14 @@ function copiar(){
     });
 }
 function inicializa(){
-    if (window.crypto && window.crypto.getRandomValues) {
+    if (window.crypto?.getRandomValues) {
         senha.textContent = "Powered by Web Crypto API";
+    }
+    if (!window.crypto?.subtle?.digest){
+        botoesTipoSenha[OPCAO.SILABA].style.display="none";
     }
     if (!navigator.clipboard) {
         exibirCopiar.remove();
     }
 }
 inicializa();
-
