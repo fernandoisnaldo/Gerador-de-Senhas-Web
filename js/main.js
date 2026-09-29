@@ -242,11 +242,11 @@ function mostraEntropia(quantidade){
         [OPCAO.BASE64]: 64,
         [OPCAO.PALAVRA]: palavras.length
     };
-    const tamanhoConjunto = tamanhosConjunto[tipoElemento]; // cálculo de entropia
+    const tamanhoConjunto = tamanhosConjunto[tipoElemento];
     if (tamanhoConjunto && quantidade > 0) {
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
         DEBUG && console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
-        senha.title = Math.floor(totalEntropy)+ " bits";
+        senha.title = Math.floor(totalEntropy)+ " bits"; // cálculo de entropia
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
         if(totalEntropy<86){
             botaoCopiarIndice=0; // senha fraca
