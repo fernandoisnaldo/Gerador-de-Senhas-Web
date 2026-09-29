@@ -36,7 +36,7 @@ Por padrão, este programa suporta a emissão de senhas com até 10 mil elemento
 
 # Licenças e aviso de Copyright:
 1) © 2026 Fernando Isnaldo Silva de Faria.
-2) Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
+2) Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da [GNU GENERAL PUBLIC LICENSE v3](https://www.gnu.org/licenses/gpl-3.0.pt-br.html) ou posterior.
 3) Este README pode reproduzido nos termos da [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
 
 # Ver também
