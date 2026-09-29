@@ -33,6 +33,8 @@ By default, this program supports generating a password with up to 10,000 elemen
 
 [^7]: The words were obtained from the Electronic Frontier Foundation's [Dice](https://www.eff.org/dice) word list, and are licensed under the terms of [Creative Commons BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
-This program is free software: it can be modified, used and redistributed under the terms of the GPL v3 or later.
-# See also
+# Licenses and Copyright Notice:
+1) © 2026 Fernando Isnaldo Silva de Faria.
+2) The program is free software: it can be modified, used, and redistributed under the terms of GPL v3 or later.
+3) This README may be reproduced under the Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International license (https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).# See also
  [Password Generator CLI version](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
