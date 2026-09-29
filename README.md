@@ -9,7 +9,7 @@ Simplesmente abra o [index.html](https://fernandoisnaldo.github.io/Gerador-de-Se
 # Principais características funcionais
 1) Usa gerador de números pseudoaleatórios criptograficamente seguro, com rejeição de viés de módulo.[^1]
 2) Formato de aplicação web: executa direto no navegador a partir de qualquer destes documentos HTML.
-3) Emite senhas em formato ASCII[^2], sílabas[^3], palavras[^7], alfanumérico, hexadecimal, decimal e base64.
+3) Emite senhas em formato ASCII[^2], sílabas[^3], palavras, alfanumérico, hexadecimal, decimal e base64.
 
 Por padrão, este programa suporta a emissão de senhas com até 10 mil elementos. Se você quiser desbloquear este limite pra torturar o seu navegador e testar os limites do PRNG, ative o modo DEBUG no main.js
 
