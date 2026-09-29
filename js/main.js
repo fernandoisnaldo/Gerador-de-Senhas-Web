@@ -21,7 +21,7 @@ const DEBUG=false;
 let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo de execução
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
-let botoes_senha = document.querySelectorAll('.tipo_senha');
+let botoesTipoSenha = document.querySelectorAll('.tipo_senha');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
 const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
     ASCII:0,
@@ -122,7 +122,7 @@ function setPalavra(){
     numChar.value=QtdePADRAO.PALAVRA;
 }
 function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
-    ascii_span.textContent = botoes_senha[indiceAtivo].textContent;
+    ascii_span.textContent = botoesTipoSenha[indiceAtivo].textContent;
     if(indiceAtivo == OPCAO.SILABA){
         silabas_span.style.visibility="visible";
     }
@@ -137,7 +137,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
         silabas_span.style.display="inline-block";
         eff_span.style.display="none";
     }
-    botoes_senha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
+    botoesTipoSenha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
             btn.setAttribute("aria-pressed", "true");
         }
@@ -148,6 +148,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
 }
 async function gerarSenha(){
     exibirCopiar.style.display="block";
+    botoesTipoSenha.forEach(btn => btn.style.visibility = "hidden");
     senha.textContent="";
     let novaSenha=[];
     let quantidade = parseInt(numChar.value) || 0;
@@ -221,14 +222,9 @@ async function gerarSenha(){
     }
     senha.textContent=novaSenha.join("");
     exibirCopiar.style.visibility="visible";
+    botoesTipoSenha.forEach(btn => btn.style.visibility = "visible");
     mostraEntropia(quantidade);
     decoracaoSenha();
-}
-function decoracaoSenha(){
-    senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
-    senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(5)+11).toString(16) + numAleatorio(16).toString(16);
-    senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
-    .toString(16) + " dashed 2px";
 }
 function mostraEntropia(quantidade){
     const tamanhosConjunto = {
