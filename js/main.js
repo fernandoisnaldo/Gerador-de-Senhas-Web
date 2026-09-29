@@ -274,7 +274,7 @@ function mostraEntropia(quantidade){
 function copiar(){
     navigator.clipboard.writeText(senha.innerText)
     .catch(erro => {
-        exibirCopiar.textContent = erro.message;
+        exibirCopiar.append(erro.message);
     });
 }
 function inicializa(){
