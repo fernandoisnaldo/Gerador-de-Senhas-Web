@@ -33,6 +33,11 @@ Por padrão, este programa suporta a emissão de senhas com até 10 mil elemento
 
 [^7]: As palavras foram obtidas da lista de palavras em [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da [Creative Commons By 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
-Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
+
+# Avisos legais
+1) © Fernando Isnaldo Silva de Faria.
+2) Este programa é um software livre: pode ser modificado, usado e redistribuído nos termos da GPL v3 ou posterior.
+3) Este README pode reproduzido nos termos da [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
+
 # Ver também
  [Gerador de Senhas versão CLI](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
