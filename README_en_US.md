@@ -36,8 +36,8 @@ By default, this program supports generating a password with up to 10,000 elemen
 1) This program is free software: it is licensed under the terms of the [GNU GENERAL PUBLIC LICENSE v3](https://www.gnu.org/licenses/gpl-3.0.html) or later.
 2) This and other READMEs are licensed under the terms of the [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
 
- © Electronic Frontier Foundation:
+Credits:
 1) The words used in `arrayzão_eff.js` were obtained from an Electronic Frontier Foundation's [Dice](https://www.eff.org/dice) word list, and are licensed under the terms of [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
 
-  # See also
- [Password Generator CLI version](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
+# See also
+[Password Generator CLI version](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
