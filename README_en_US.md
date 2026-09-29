@@ -31,10 +31,13 @@ By default, this program supports generating a password with up to 10,000 elemen
 
 [^6]: There was no opportunity to conduct tests with real users of screen readers. If you find any problem or would like to offer a suggestion, please create an issue.
 
-# Licenses and Copyright Notice:
-1) The program is free software: it can be modified, used, and redistributed under the terms of [GNU GENERAL PUBLIC LICENSE v3](https://www.gnu.org/licenses/gpl-3.0.html) or later. © 2026 Fernando Isnaldo Silva de Faria. 
-2) This README may be reproduced under the [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).© 2026 Fernando Isnaldo Silva de Faria.
-3) The words used for this password generator were obtained from an Electronic Frontier Foundation's [Dice](https://www.eff.org/dice) word list, and are licensed under the terms of [Creative Commons BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
+# Copyright:
+© 2026 Fernando Isnaldo Silva de Faria:
+1) The program is free software: it can be modified, used, and redistributed under the terms of [GNU GENERAL PUBLIC LICENSE v3](https://www.gnu.org/licenses/gpl-3.0.html) or later. 
+2) This README may be reproduced under the [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)
+
+ © Electronic Frontier Foundation:
+1) The words used in `arrayzão.js` were obtained from an Electronic Frontier Foundation's [Dice](https://www.eff.org/dice) word list, and are licensed under the terms of [Creative Commons BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
   # See also
  [Password Generator CLI version](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
