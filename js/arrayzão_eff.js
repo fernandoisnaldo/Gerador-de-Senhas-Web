@@ -2,7 +2,7 @@
  * Lista de Palavras EFF (EFF's Long Wordlist)
  *
  * As palavras contidas neste array pertencem à Electronic Frontier Foundation (EFF)
- * e estão licenciadas sob a Licença Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+ * e estão licenciadas sob a Licença Creative Commons Attribution 3.0 Unported (CC BY 4.0)
  * ou posterior.
  * Fonte Original: https://www.eff.org/dice
  *
@@ -11,7 +11,7 @@
  * GNU (GNU GPL) versão 3 ou posterior, sob o Copyright (C) de Fernando Isnaldo Silva de Faria,
  * com as mesmas cláusulas de isenção de garantia.
  *
- * SPDX-License-Identifier: CC-BY-3.0 AND GPL-3.0-or-later
+ * SPDX-License-Identifier: CC-BY-4.0 AND GPL-3.0-or-later
  */
 const palavras = [
     "abacus",
