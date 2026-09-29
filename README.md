@@ -31,7 +31,7 @@ Por padrão, este programa suporta a emissão de senhas com até 10 mil elemento
 
 [^6]: Não houve oportunidade para realizar testes com usuários reais de leitores de tela. Se você encontrar algum problema ou quiser oferecer alguma sugestão, crie uma issue.
 
-[^7]: As palavras foram obtidas da lista de palavras em [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da [Creative Commons By 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
+[^7]: As palavras foram obtidas da lista de palavras em [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da [Creative Commons By 4.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
 
 # Direitos autorais:
@@ -40,7 +40,7 @@ Por padrão, este programa suporta a emissão de senhas com até 10 mil elemento
 2) Este e outros READMEs estão licenciado sob os termos da [Creative Commons BY-SA 4.0 Atribuição-CompartilhaIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
 
 © Electronic Frontier Foundation:
-1) As palavras usadas em `arrayzão.js` foram obtidas de uma lista de palavras [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation e estão licenciadas sob os termos da licença [Creative Commons BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
+1) As palavras usadas em `arrayzão.js` foram obtidas de uma lista de palavras [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation e estão licenciadas sob os termos da licença [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
 
 # Ver também
  [Gerador de Senhas versão CLI](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
