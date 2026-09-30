@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد رمز عبور - نسخه وب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <nav id="idiomas">
+        <a href="setLang.html" title="انتخاب زبان">🌐 زبان‌ها</a>
+    </nav>
+    <header>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">مخزن گیت‌هاب</a></p>
+        <p>این برنامه همچنین دارای یک <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">نسخه خط فرمان</a> است.</p>
+    </header>
+    <main>
+        <h1>مولد رمز عبور</h1>
+        <section id="GerarSenha">
+            <label>نوع رمز عبور: </label>
+            <span id="tipo_ascii">ASCII</span>
+            <br />
+            <span id="tipo_silabas">
+                ⚠️ انتخاب صوتی تصادفی ⚠️
+                <br />⚠️ ممکن است کلمات نامناسب ظاهر شوند ⚠️
+            </span>
+            <span id="eff_cc">
+                <a href="https://www.eff.org/dice" target="_blank">EFF Long Wordlist [.txt]</a>, <a href="https://creativecommons.org/licenses/by/4.0/legalcode.en" target="_blank">CC BY 4.0</a>
+                <br />با تغییراتی جهت ادغام در برنامه
+            </span>
+            <br />
+            <button type="button" class="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" class="tipo_senha" onclick="setSilabas()" aria-pressed="false">هجا</button>
+            <button type="button" class="tipo_senha" onclick="setPalavra()" aria-pressed="false">کلمه</button>
+            <button type="button" class="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">حروفی-عددی</button>
+            <button type="button" class="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">شانزده‌شانزدهی (Hex)</button>
+            <button type="button" class="tipo_senha" onclick="setDecimal()" aria-pressed="false">عددی</button>
+            <button type="button" class="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
+            <br />
+            <br />
+            <details id="exibe_ajuda">
+                <summary>نمایش راهنما</summary>
+                <p>دکمه ASCII انتخاب را بر اساس حروف بزرگ، حروف کوچک، نمادها و اعداد جدول ASCII تنظیم می‌کند.</p>
+                <p>دکمه هجا انتخاب را روی هجاهای تصادفی تنظیم می‌کند.</p>
+                <p>دکمه کلمه انتخاب را بر اساس کلمات فهرست Diceware بنیاد مرزهای الکترونیکی (EFF) تنظیم می‌کند.</p>
+                <p>دکمه حروفی-عددی انتخاب را بر اساس حروف بزرگ، حروف کوچک و اعداد تنظیم می‌کند.</p>
+                <p>دکمه شانزده‌شانزدهی انتخاب را بر اساس اعداد سیستم شانزده‌شانزدهی تنظیم می‌کند.</p>
+                <p>دکمه عددی انتخاب را بر اساس اعداد دهدهی تنظیم می‌کند.</p>
+                <p>دکمه base64 انتخاب را بر اساس کاراکترهای base64 تنظیم می‌کند.</p>
+                <p>به طور پیش‌فرض، این برنامه کاراکترهای ASCII تولید می‌کند.</p>
+            </details>
+            <br />
+            <br />
+            <label for="numel">تعداد عناصر: </label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
+            <button type="button" onclick="gerarSenha()">تولید رمز عبور</button>
+            <br />
+            <br />
+            <section id="copiar">
+                <button type="button" onclick="copiar()">کپی رمز عبور ضعیف</button>
+                <button type="button" onclick="copiar()">کپی رمز عبور</button>
+                <button type="button" onclick="copiar()">کپی رمز عبور قوی</button>
+                <br />
+            </section>
+            <section>
+                <br />
+                <span id="output" role="status" aria-live="polite">مرورگر سازگار نیست یا جاوااسکریپت غیرفعال است</span>
+                <br />
+                <br />
+            </section>
+        </section>
+        <p aria-live="polite">رمز عبور شما محرمانه است، اطلاعات شما به هیچ سروری ارسال نمی‌شود. مطمئن شوید که کسی شما را تماشا نمی‌کند.</p>
+    </main>
+    <footer>
+        <p lang="pt-br" id="copyright_notice" dir="ltr">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>این یک نرم‌افزار آزاد است: شما می‌توانید آن را تحت شرایط پروانه عمومی همگانی گنو (GPL v3) یا نسخه‌های بعدی بازتوزیع کنید.</p>
+        <p>هیچ تضمینی برای توزیع این کد وجود ندارد. برای اطلاعات بیشتر فایل <a href="LICENSE" target="_blank">LICENSE</a> را ببینید.</p>
+    </footer>
+    <script src="js/arrayzão_eff.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
