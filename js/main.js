@@ -228,7 +228,7 @@ async function gerarSenha(){
 }
 function decoracaoSenha(){
     senha.style.backgroundColor="#" + numAleatorio(3) + numAleatorio(3) + numAleatorio(3);
-    senha.style.color="#" + numAleatorio(256).toString(16) + (numAleatorio(56)+200).toString(16) + numAleatorio(256).toString(16);
+    senha.style.color="#" + numAleatorio(16).toString(16) + (numAleatorio(4)+12).toString(16) + numAleatorio(16).toString(16);
     senha.style.border="#" + numAleatorio(16).toString(16) + (numAleatorio(7)+9).toString(16) + numAleatorio(16)
     .toString(16) + " dashed 2px";
 }
