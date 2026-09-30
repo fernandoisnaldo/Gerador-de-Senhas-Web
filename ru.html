@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор паролей — веб-версия</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <nav id="idiomas">
+        <a href="setLang.html" title="Выбрать язык">🌐 Языки</a>
+    </nav>
+    <header>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Репозиторий GitHub</a></p>
+        <p>У этой программы также есть <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">версия для командной строки.</a></p>
+    </header>
+    <main>
+        <h1>Генератор паролей</h1>
+        <section id="GerarSenha">
+            <label>Тип пароля: </label>
+            <span id="tipo_ascii">ASCII</span>
+            <br />
+            <span id="tipo_silabas">
+                ⚠️ случайный фонетический выбор ⚠️
+                <br />⚠️ могут появляться неприемлемые слова ⚠️
+            </span>
+            <span id="eff_cc">
+                <a href="https://www.eff.org/dice" target="_blank">EFF Long Wordlist [.txt]</a>, <a href="https://creativecommons.org/licenses/by/4.0/legalcode.en" target="_blank">CC BY 4.0</a>
+                <br />с изменениями для интеграции в программу
+            </span>
+            <br />
+            <button type="button" class="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" class="tipo_senha" onclick="setSilabas()" aria-pressed="false">Слог</button>
+            <button type="button" class="tipo_senha" onclick="setPalavra()" aria-pressed="false">Слово</button>
+            <button type="button" class="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Буквы и цифры</button>
+            <button type="button" class="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Шестнадцатеричный</button>
+            <button type="button" class="tipo_senha" onclick="setDecimal()" aria-pressed="false">Число</button>
+            <button type="button" class="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
+            <br />
+            <br />
+            <details id="exibe_ajuda">
+                <summary>Показать справку</summary>
+                <p>Кнопка ASCII задаёт выбор из заглавных и строчных букв, символов и цифр таблицы ASCII.</p>
+                <p>Кнопка «Слог» задаёт выбор случайных слогов.</p>
+                <p>Кнопка «Слово» задаёт выбор слов из списка Diceware Фонда электронных рубежей (EFF).</p>
+                <p>Кнопка «Буквы и цифры» задаёт выбор из заглавных и строчных букв и цифр.</p>
+                <p>Кнопка «Шестнадцатеричный» задаёт выбор из шестнадцатеричных чисел.</p>
+                <p>Кнопка «Число» задаёт выбор из десятичных чисел.</p>
+                <p>Кнопка base64 задаёт выбор из символов base64.</p>
+                <p>По умолчанию эта программа генерирует символы ASCII.</p>
+            </details>
+            <br />
+            <br />
+            <label for="numel">Количество элементов: </label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
+            <button type="button" onclick="gerarSenha()">Сгенерировать пароль</button>
+            <br />
+            <br />
+            <section id="copiar">
+                <button type="button" onclick="copiar()">Скопировать слабый пароль</button>
+                <button type="button" onclick="copiar()">Скопировать пароль</button>
+                <button type="button" onclick="copiar()">Скопировать надежный пароль</button>
+                <br />
+            </section>
+            <section>
+                <br />
+                <span id="output" role="status" aria-live="polite">Браузер не поддерживается или JavaScript отключен</span>
+                <br />
+                <br />
+            </section>
+        </section>
+        <p aria-live="polite">Ваш пароль конфиденциален, ваши данные не отправляются ни на какой сервер. Убедитесь, что за вами никто не наблюдает.</p>
+    </main>
+    <footer>
+        <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>Это свободное программное обеспечение: вы можете распространять его на условиях Стандартной общественной лицензии GNU (GPL v3) или более поздней версии.</p>
+        <p>ГАРАНТИЯ НЕ Предоставляется при распространении этого кода. Для получения подробной информации см. файл <a href="LICENSE" target="_blank">LICENSE</a>.</p>
+    </footer>
+    <script src="js/arrayzão_eff.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
