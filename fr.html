@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Mots de Passe version web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <nav id="idiomas">
+        <a href="setLang.html" title="Sélectionner la langue">🌐 Langues</a>
+    </nav>
+    <header>
+        <p><a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas-Web" target="_blank">Dépôt GitHub</a></p>
+        <p>Ce programme dispose également d'une <a href="https://github.com/fernandoisnaldo/Gerador-de-Senhas" target="_blank">version en ligne de commande.</a></p>
+    </header>
+    <main>
+        <h1>Générateur de Mots de Passe</h1>
+        <section id="GerarSenha">
+            <label>Type de mot de passe : </label>
+            <span id="tipo_ascii">ASCII</span>
+            <br />
+            <span id="tipo_silabas">
+                ⚠️ sélection phonétique aléatoire ⚠️️
+                <br />⚠️ des mots inappropriés peuvent apparaître ⚠️
+            </span>
+            <span id="eff_cc">
+                <a href="https://www.eff.org/dice" target="_blank">EFF Long Wordlist [.txt]</a>, <a href="https://creativecommons.org/licenses/by/4.0/legalcode.en" target="_blank">CC BY 4.0</a>
+                <br />avec des modifications pour l'intégration au programme
+            </span>
+            <br />
+            <button type="button" class="tipo_senha" onclick="setASCII()" aria-pressed="true">ASCII</button>
+            <button type="button" class="tipo_senha" onclick="setSilabas()" aria-pressed="false">Syllable</button>
+            <button type="button" class="tipo_senha" onclick="setPalavra()" aria-pressed="false">Mot</button>
+            <button type="button" class="tipo_senha" onclick="setAlfanumerico()" aria-pressed="false">Alphanumérique</button>
+            <button type="button" class="tipo_senha" onclick="setHexadecimal()" aria-pressed="false">Hexadécimal</button>
+            <button type="button" class="tipo_senha" onclick="setDecimal()" aria-pressed="false">Nombre</button>
+            <button type="button" class="tipo_senha" onclick="setBase64()" aria-pressed="false">Base64</button>
+            <br />
+            <br />
+            <details id="exibe_ajuda">
+                <summary>Afficher l'aide</summary>
+                <p>Le bouton ASCII définit la sélection à partir de lettres majuscules, lettres minuscules, symboles et chiffres de la table ASCII.</p>
+                <p>Le bouton syllable définit la sélection de syllabes aléatoires.</p>
+                <p>Le bouton mot définit la sélection à partir de mots de la liste Diceware de l'Electronic Frontier Foundation.</p>
+                <p>Le bouton alphanumérique définit la sélection à partir de lettres majuscules, lettres minuscules et chiffres.</p>
+                <p>Le bouton hexadécimal définit la sélection à partir de nombres hexadécimaux.</p>
+                <p>Le bouton nombre définit la sélection à partir de chiffres décimaux.</p>
+                <p>Le bouton base64 définit la sélection à partir de caractères base64.</p>
+                <p>Par défaut, ce programme génère des caractères ASCII.</p>
+            </details>
+            <br />
+            <br />
+            <label for="numel">Nombre d'éléments : </label>
+            <input type="number" name="numero-de-elementos" id="numel" min="1" value="32" onkeydown="if(event.key === 'Enter') gerarSenha()">
+            <button type="button" onclick="gerarSenha()">Générer le mot de passe</button>
+            <br />
+            <br />
+            <section id="copiar">
+                <button type="button" onclick="copiar()">Copier le mot de passe faible</button>
+                <button type="button" onclick="copiar()">Copier le mot de passe</button>
+                <button type="button" onclick="copiar()">Copiar le mot de passe fort</button>
+                <br />
+            </section>
+            <section>
+                <br />
+                <span id="output" role="status" aria-live="polite">Navigateur non compatible ou JavaScript désactivé</span>
+                <br />
+                <br />
+            </section>
+        </section>
+        <p aria-live="polite">Votre mot de passe est confidentiel, vos données ne sont envoyées à aucun serveur. Assurez-vous que personne ne vous regarde.</p>
+    </main>
+    <footer>
+        <p lang="pt-br" id="copyright_notice">Gerador de Senhas versão web <span lang="en-us">Copyright ©</span> 2026 Fernando Isnaldo Silva de Faria.</p>
+        <p>Ceci est un logiciel libre : vous pouvez le redistribuer selon les termes de la Licence Publique Générale GNU (GPL v3) ou ultérieure.</p>
+        <p>IL N'Y A AUCUNE GARANTIE liée à la distribution de ce code. Consultez le fichier <a href="LICENSE" target="_blank">LICENSE</a> pour plus de détails.</p>
+    </footer>
+    <script src="js/arrayzão_eff.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
