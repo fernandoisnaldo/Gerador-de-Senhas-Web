@@ -38,7 +38,7 @@ const QtdePADRAO = Object.freeze({
     DECIMAL:40,
     MAX: 10000
 });
-const separadorPalavras = "_";
+let separadorPalavras = "_";
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
