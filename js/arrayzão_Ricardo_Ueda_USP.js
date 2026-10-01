@@ -16,6 +16,8 @@
  *
  * SPDX-License-Identifier: CC-BY-4.0 AND GPL-3.0-or-later
  */
+
+//TODO remover colisões e palavras redundantes
 const palavras = [
 	"a",
 	"à",
