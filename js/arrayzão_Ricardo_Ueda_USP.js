@@ -7,7 +7,7 @@
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
  * Houve uma redução drástica em relação à fonte original, porque o código estava grande demais
- * pra ser editável. Foi optado por fazer este corte, pra facilitar qualquer correção futura
+ * pra ser editável.
  *
  * A integração, a formatação em código JavaScript e os demais componentes
  * deste software são distribuídos sob os termos da Licença Pública Geral
