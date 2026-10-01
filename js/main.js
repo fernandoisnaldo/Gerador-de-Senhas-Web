@@ -25,7 +25,7 @@ let botoesTipoSenha = document.querySelectorAll('.tipo_senha');
 let botoesPalavras = document.querySelectorAll('.seletor_palavras');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
 let PALAVRASCONFIG  = Object.freeze({//se precisar mudar a ordem dos botões de configuração de palavras, é aqui que resolve
-    CAPITALIZA:0,
+    CAPITALIZA:0,OPCAO
     SEPARADOR:1
 });
 const TIPOSENHA = Object.freeze({//se precisar mudar a ordem dos botões de tipo de senha, é aqui que resolve
@@ -37,7 +37,7 @@ const TIPOSENHA = Object.freeze({//se precisar mudar a ordem dos botões de tipo
     NUM:5,
     BASE64:6
 });
-const QtdePADRAO = Object.freeze({
+const QTDE_PADRAO = Object.freeze({
     CARACTERE:32,
     PALAVRA:12,
     DECIMAL:40,
@@ -95,37 +95,37 @@ function numAleatorio(max) {
 function setASCII(){
     tipoElemento = TIPOSENHA.ASCII;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.CARACTERE;
+    numChar.value=QTDE_PADRAO.CARACTERE;
 }
 function setSilabas(){
     tipoElemento = TIPOSENHA.SILABA;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.PALAVRA;
+    numChar.value=QTDE_PADRAO.PALAVRA;
 }
 function setAlfanumerico(){
     tipoElemento = TIPOSENHA.ALFANUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.CARACTERE;
+    numChar.value=QTDE_PADRAO.CARACTERE;
 }
 function setHexadecimal(){
     tipoElemento = TIPOSENHA.HEX;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.CARACTERE;
+    numChar.value=QTDE_PADRAO.CARACTERE;
 }
 function setDecimal(){
     tipoElemento = TIPOSENHA.NUM;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.DECIMAL;
+    numChar.value=QTDE_PADRAO.DECIMAL;
 }
 function setBase64(){
     tipoElemento = TIPOSENHA.BASE64;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.CARACTERE;
+    numChar.value=QTDE_PADRAO.CARACTERE;
 }
 function setPalavra(){
     tipoElemento = TIPOSENHA.PALAVRA;
     atualizarBotoesSPan(tipoElemento);
-    numChar.value=QtdePADRAO.PALAVRA;
+    numChar.value=QTDE_PADRAO.PALAVRA;
 }
 function caixaAltaBaixa(){
     if (botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent === "a↓"){
@@ -198,9 +198,9 @@ async function gerarSenha(){
     let novaSenha=[];
     let quantidade = parseInt(numChar.value) || 0;
     if(!DEBUG) {
-        if (quantidade > QtdePADRAO.MAX){
-            numChar.value = QtdePADRAO.MAX;
-            quantidade = QtdePADRAO.MAX;
+        if (quantidade > QTDE_PADRAO.MAX){
+            numChar.value = QTDE_PADRAO.MAX;
+            quantidade = QTDE_PADRAO.MAX;
         }
     }
     exibirCopiar.style.visibility="hidden";
