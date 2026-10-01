@@ -38,6 +38,7 @@ By default, this program supports generating a password with up to 10,000 elemen
 
 Credits:
 1) The words used in `arrayzão_eff.js` were obtained from an Electronic Frontier Foundation's [Dice](https://www.eff.org/dice) word list, and are licensed under the terms of [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+2) The words used in arrayzão_Ricardo_Ueda_USP.js were obtained from the website of the Institute of Mathematics and Statistics of USP, were organized by Ricardo Ueda Karpischek, and are licensed under the terms of the Creative Commons BY 4.0 license.
 
 # See also
 [Password Generator CLI version](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
