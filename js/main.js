@@ -360,7 +360,7 @@ function mostraEntropia(quantidade){
     }
 }
 function copiar(){
-    navigator.clipboard.writeText(senha.innerText)
+    navigator.clipboard.writeText(senha.textContent)
     .catch(erro => {
         exibirCopiar.append(erro.message);
     });
