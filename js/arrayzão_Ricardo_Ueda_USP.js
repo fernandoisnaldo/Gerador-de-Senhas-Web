@@ -14,7 +14,7 @@
  * A integração, a formatação em código JavaScript e os demais componentes
  * deste software são distribuídos sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, sob o Copyright (C) de Fernando Isnaldo Silva de Faria,
- * com as mesmas cláusulas de isenção de garantia.
+ * SEM QUALQUER GARANTIA
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
