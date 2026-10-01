@@ -40,7 +40,7 @@ const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleçã
 const QtdePADRAO = Object.freeze({
     CARACTERE:32,
     PALAVRA:12,
-    DECIMAL:40,
+    DECIMAL:40,c
     MAX: 10000
 });
 let separadorPalavras = " ";
@@ -128,12 +128,12 @@ function setPalavra(){
     numChar.value=QtdePADRAO.PALAVRA;
 }
 function caixaAltaBaixa(){
-    if (botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent === "a"){
-        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "Abc";
+    if (botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent === "a⬇️"){
+        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "A⬆️";
         capitalCase=true;
     }
     else{
-        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "a";
+        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "a⬇️";
         capitalCase=false;
     }
 }
