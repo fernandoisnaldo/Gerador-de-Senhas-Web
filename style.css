@@ -87,7 +87,7 @@ footer, header {
 }
 .seletor_palavras{
     min-width: 2rem;
-    visibility: hidden;
+    display: none;
 }
 input {
     width: 10ch;
