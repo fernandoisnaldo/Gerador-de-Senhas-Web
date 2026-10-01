@@ -34,7 +34,7 @@ Por padrão, este programa suporta a emissão de senhas com até 10 mil elemento
 [^7]: As palavras foram obtidas da lista de palavras em [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation, e estão licenciadas sob os termos da [Creative Commons By 4.0](https://creativecommons.org/licenses/by/3.0/legalcode.en).
 
 
-# Direitos autorais:
+# Direitos autorais
 © 2026 Fernando Isnaldo Silva de Faria:
 1) Este programa é software livre: está licenciado sob os termos da [GNU GENERAL PUBLIC LICENSE v3](https://www.gnu.org/licenses/gpl-3.0.html) ou posterior.
 2) Este e outros READMEs estão licenciado sob os termos da [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
