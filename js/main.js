@@ -51,7 +51,7 @@ let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
 let numChar = document.getElementById("numel");
-//const palavras = [array]; encontra-se em arrayzão_eff.js
+//const palavras = [array]; encontra-se em arrayzão.js
 const alfabeto = Object.freeze({
     consoantes: [
         "", "b", "bl", "br", "by", "c", "ch", "cr", "cl", "cy", "d", "dr", "dh", "dy", "f","fh", "fl", "fr", "fy", "g", "gl",
