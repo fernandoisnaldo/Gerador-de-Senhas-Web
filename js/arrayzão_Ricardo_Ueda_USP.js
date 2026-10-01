@@ -1,7 +1,7 @@
 /*
  * Lista de Palavras do Ricardo Ueda Karpischek
  *
- * As palavras contidas neste array vieram de umma lista organizada pelo Ricardo Ueda Karpischek, 
+ * As palavras contidas neste array vieram de uma lista organizada pelo Ricardo Ueda Karpischek, 
  * foram encontrados em um site da USP e foram licenciadas sob a Licença Creative Commons 
  * Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
