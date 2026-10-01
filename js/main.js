@@ -177,10 +177,10 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
         eff_span.style.display="none";
     }
     if(indiceAtivo == OPCAO.SILABA || indiceAtivo == OPCAO.PALAVRA){
-          botoesPalavras.forEach(btn => btn.style.display = "none");
+          botoesPalavras.forEach(btn => btn.style.display = "inline-block");
     }
     else {
-        botoesPalavras.forEach(btn => btn.style.display = "inline-block");
+        botoesPalavras.forEach(btn => btn.style.display = "none");
     }
     botoesTipoSenha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
