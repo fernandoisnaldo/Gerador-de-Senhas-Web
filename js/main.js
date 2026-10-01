@@ -40,7 +40,7 @@ const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleçã
 const QtdePADRAO = Object.freeze({
     CARACTERE:32,
     PALAVRA:12,
-    DECIMAL:40,c
+    DECIMAL:40,
     MAX: 10000
 });
 let separadorPalavras = " ";
