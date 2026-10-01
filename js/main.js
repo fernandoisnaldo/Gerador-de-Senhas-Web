@@ -320,6 +320,10 @@ function mostraEntropia(quantidade){
         [TIPOSENHA.BASE64]: 64,
         [TIPOSENHA.PALAVRA]: palavras.length
     };
+    if(numeroEmPalavra){
+        tamanhosConjunto[TIPOSENHA.SILABA]*=10;
+        tamanhosConjunto[TIPOSENHA.PALAVRA]*=10;
+    }
     const tamanhoConjunto = tamanhosConjunto[tipoElemento];
     if (tamanhoConjunto && quantidade > 0) {
         const totalEntropy = quantidade * Math.log2(tamanhoConjunto);
