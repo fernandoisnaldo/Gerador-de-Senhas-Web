@@ -45,6 +45,7 @@ const QTDE_PADRAO = Object.freeze({
 });
 let separadorPalavras = " ";
 let capitalCase = false;
+let numeroEmPalavra = false;
 let tipoElemento = TIPOSENHA.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
@@ -131,10 +132,22 @@ function caixaAltaBaixa(){
     if (botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent === "a↓"){
         botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "A↑";
         capitalCase=true;
+        numeroEmPalavra=false;
+    }
+    else if(botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent === "A↑"){
+        botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "a↑#";
+        capitalCase=false;
+        numeroEmPalavra=true;
+    }
+    else if(botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent === "a↑#"){
+        botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "A↑#";
+        capitalCase=true;
+        numeroEmPalavra=true;
     }
     else{
         botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "a↓";
         capitalCase=false;
+        numeroEmPalavra=false;
     }
     gerarSenha();
 }
@@ -222,6 +235,9 @@ async function gerarSenha(){
                 else {
                     silaba=c+v+t;
                 }
+                if(numeroEmPalavra){
+                    silaba+=numAleatorio(10);
+                }
                 novaSenha.push(silaba);
                 if (contador != quantidade - 1) {
                     novaSenha.push(separadorPalavras);
@@ -271,6 +287,9 @@ async function gerarSenha(){
             let palavra=palavras[numAleatorio(palavras.length)];
             if (capitalCase){
                 palavra=palavra.charAt(0).toUpperCase() + palavra.slice(1);
+            }
+            if(numeroEmPalavra){
+                palavra+=numAleatorio(10);
             }
             if(contador!=0){
                 novaSenha.push(separadorPalavras);//adciona um espaço entre as sílabas
