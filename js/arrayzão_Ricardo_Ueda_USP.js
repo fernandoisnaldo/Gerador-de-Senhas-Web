@@ -6859,8 +6859,8 @@ const palavras = [
 	"sócia",
 	"social",
 	"socialismo",
-	"socialista"
-"sócio",
+	"socialista",
+	"sócio",
 	"soco",
 	"socos",
 	"socou",
