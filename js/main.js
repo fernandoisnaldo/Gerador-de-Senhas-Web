@@ -24,7 +24,7 @@ let eff_span = document.getElementById("eff_cc");
 let botoesTipoSenha = document.querySelectorAll('.tipo_senha');
 let botoesPalavras = document.querySelectorAll('.seletor_palavras');
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
-let PALAVRASCONFIG  = Object.freeze({//se precisar mudar a ordem dos botões de configuração de palavras, é aqui que resolve
+const PALAVRASCONFIG  = Object.freeze({//se precisar mudar a ordem dos botões de configuração de palavras, é aqui que resolve
     CAPITALIZA:0,
     SEPARADOR:1
 });
