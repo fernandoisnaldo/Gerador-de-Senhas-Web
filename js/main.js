@@ -23,12 +23,12 @@ let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fic
 let eff_span = document.getElementById("eff_cc");
 let botoesTipoSenha = document.querySelectorAll('.tipo_senha');
 let botoesPalavras = document.querySelectorAll('.seletor_palavras');
-let OPCAOPALAVRAS  = Object.freeze({
+//Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
+let PALAVRASCONFIG  = Object.freeze({//se precisar mudar a ordem dos botões de configuração de palavras, é aqui que resolve
     CAPITALIZA:0,
     SEPARADOR:1
 });
-//Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
-const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
+const TIPOSENHA = Object.freeze({//se precisar mudar a ordem dos botões de tipo de senha, é aqui que resolve
     ASCII:0,
     SILABA:1,
     PALAVRA:2,
@@ -45,7 +45,7 @@ const QtdePADRAO = Object.freeze({
 });
 let separadorPalavras = " ";
 let capitalCase = false;
-let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
+let tipoElemento = TIPOSENHA.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
 let botoes_copiar = document.querySelectorAll('#copiar button');
@@ -93,82 +93,82 @@ function numAleatorio(max) {
     return valor % max;
 }
 function setASCII(){
-    tipoElemento = OPCAO.ASCII;
+    tipoElemento = TIPOSENHA.ASCII;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.CARACTERE;
 }
 function setSilabas(){
-    tipoElemento = OPCAO.SILABA;
+    tipoElemento = TIPOSENHA.SILABA;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.PALAVRA;
 }
 function setAlfanumerico(){
-    tipoElemento = OPCAO.ALFANUM;
+    tipoElemento = TIPOSENHA.ALFANUM;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.CARACTERE;
 }
 function setHexadecimal(){
-    tipoElemento = OPCAO.HEX;
+    tipoElemento = TIPOSENHA.HEX;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.CARACTERE;
 }
 function setDecimal(){
-    tipoElemento = OPCAO.NUM;
+    tipoElemento = TIPOSENHA.NUM;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.DECIMAL;
 }
 function setBase64(){
-    tipoElemento = OPCAO.BASE64;
+    tipoElemento = TIPOSENHA.BASE64;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.CARACTERE;
 }
 function setPalavra(){
-    tipoElemento = OPCAO.PALAVRA;
+    tipoElemento = TIPOSENHA.PALAVRA;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.PALAVRA;
 }
 function caixaAltaBaixa(){
-    if (botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent === "a↓"){
-        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "A↑";
+    if (botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent === "a↓"){
+        botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "A↑";
         capitalCase=true;
     }
     else{
-        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "a↓";
+        botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "a↓";
         capitalCase=false;
     }
 }
 function selecionaSeparador(){
-    if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent === "space"){
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent=".";
+    if(botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent === "space"){
+        botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent=".";
         separadorPalavras=".";
     }
-    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent === "."){
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="_";
+    else if(botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent === "."){
+        botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent="_";
         separadorPalavras="_";
     }
-    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="_"){
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="-";
+    else if(botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent==="_"){
+        botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent="-";
         separadorPalavras="-";
     }
-    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="-"){
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="+";
+    else if(botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent==="-"){
+        botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent="+";
         separadorPalavras="+";
     }
     else {
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="space";
+        botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent="space";
         separadorPalavras=" ";
     }
 }
 function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
     ascii_span.textContent = botoesTipoSenha[indiceAtivo].textContent;
-    if(indiceAtivo == OPCAO.SILABA){
+    if(indiceAtivo == TIPOSENHA.SILABA){
         silabas_span.style.visibility="visible";
         //
     }
     else {
         silabas_span.style.visibility="hidden";
     }
-    if(indiceAtivo == OPCAO.PALAVRA){
+    if(indiceAtivo == TIPOSENHA.PALAVRA){
         silabas_span.style.display="none";
         eff_span.style.display="inline-block";
     }
@@ -176,7 +176,7 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
         silabas_span.style.display="inline-block";
         eff_span.style.display="none";
     }
-    if(indiceAtivo == OPCAO.SILABA || indiceAtivo == OPCAO.PALAVRA){
+    if(indiceAtivo == TIPOSENHA.SILABA || indiceAtivo == TIPOSENHA.PALAVRA){
           botoesPalavras.forEach(btn => btn.style.display = "inline-block");
     }
     else {
@@ -205,10 +205,10 @@ async function gerarSenha(){
     }
     exibirCopiar.style.visibility="hidden";
     for(let contador=0;contador<quantidade;contador++){
-        if (tipoElemento == OPCAO.ASCII){
+        if (tipoElemento == TIPOSENHA.ASCII){
             novaSenha.push(String.fromCharCode(numAleatorio(94)+33)); //emite ASCII
         }
-        else if (tipoElemento == OPCAO.SILABA){
+        else if (tipoElemento == TIPOSENHA.SILABA){
             let c = alfabeto.consoantes[numAleatorio(alfabeto.consoantes.length)];
             let v = alfabeto.vogais[numAleatorio(alfabeto.vogais.length)];
             let t = alfabeto.terminacoes[numAleatorio(alfabeto.terminacoes.length)];
@@ -229,7 +229,7 @@ async function gerarSenha(){
                 contador--;
             }
         }
-        else if (tipoElemento == OPCAO.ALFANUM){ //alfanumérico
+        else if (tipoElemento == TIPOSENHA.ALFANUM){ //alfanumérico
             let base62 = numAleatorio(62); //sorteia número de 0 a 61 para seleção alfanumérica
             if (base62<10){
                 novaSenha.push(base62); //emite 0 a 9
@@ -241,13 +241,13 @@ async function gerarSenha(){
                 novaSenha.push(String.fromCharCode(base62+61)); //emite a-z
             }
         }
-        else if (tipoElemento == OPCAO.HEX){ //hexadecimal
+        else if (tipoElemento == TIPOSENHA.HEX){ //hexadecimal
             novaSenha.push(numAleatorio(16).toString(16)); //emite hexadecimal
         }
-        else if (tipoElemento == OPCAO.NUM){ //número
+        else if (tipoElemento == TIPOSENHA.NUM){ //número
             novaSenha.push(numAleatorio(10)); //emite número decimal
         }
-        else if (tipoElemento == OPCAO.BASE64){//base64 made in gambiarra
+        else if (tipoElemento == TIPOSENHA.BASE64){//base64 made in gambiarra
             let b64 = numAleatorio(64); //sorteia número de 0 a 63 para seleção "b64"
             if (b64<10){
                 novaSenha.push(b64);
@@ -265,7 +265,7 @@ async function gerarSenha(){
                 novaSenha.push("_");
             }
         }
-        else if (tipoElemento == OPCAO.PALAVRA){
+        else if (tipoElemento == TIPOSENHA.PALAVRA){
             let palavra=palavras[numAleatorio(palavras.length)];
             if (capitalCase){
                 palavra=palavra.charAt(0).toUpperCase() + palavra.slice(1);
@@ -291,13 +291,13 @@ function decoracaoSenha(){
 }
 function mostraEntropia(quantidade){
     const tamanhosConjunto = {
-        [OPCAO.ASCII]: 94,
-        [OPCAO.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
-        [OPCAO.ALFANUM]: 62,
-        [OPCAO.HEX]: 16,
-        [OPCAO.NUM]: 10,
-        [OPCAO.BASE64]: 64,
-        [OPCAO.PALAVRA]: palavras.length
+        [TIPOSENHA.ASCII]: 94,
+        [TIPOSENHA.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
+        [TIPOSENHA.ALFANUM]: 62,
+        [TIPOSENHA.HEX]: 16,
+        [TIPOSENHA.NUM]: 10,
+        [TIPOSENHA.BASE64]: 64,
+        [TIPOSENHA.PALAVRA]: palavras.length
     };
     const tamanhoConjunto = tamanhosConjunto[tipoElemento];
     if (tamanhoConjunto && quantidade > 0) {
@@ -345,7 +345,7 @@ function inicializa(){
         senha.textContent = "Powered by Web Crypto API";
     }
     if (!window.crypto?.subtle?.digest){
-        botoesTipoSenha[OPCAO.SILABA].style.display="none";
+        botoesTipoSenha[TIPOSENHA.SILABA].style.display="none";
     }
     if (!navigator.clipboard) {
         exibirCopiar.remove();
