@@ -128,12 +128,12 @@ function setPalavra(){
     numChar.value=QtdePADRAO.PALAVRA;
 }
 function caixaAltaBaixa(){
-    if (botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent === "aa"){
-        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "Aa";
+    if (botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent === "a"){
+        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "Ab";
         capitalCase=true;
     }
     else{
-        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "aa";
+        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "a";
         capitalCase=false;
     }
 }
