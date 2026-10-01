@@ -89,6 +89,9 @@ footer, header {
     min-width: 2rem;
     visibility: hidden;
 }
+input {
+    width: 10ch;
+}
 @media (prefers-color-scheme: dark) {
     body {
         color: #fff;
