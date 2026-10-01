@@ -41,7 +41,7 @@ Por padrão, este programa suporta a emissão de senhas com até 10 mil elemento
 
 Créditos:
 1) As palavras usadas em `arrayzão_eff.js` foram obtidas de uma lista de palavras [Dice](https://www.eff.org/dice) da Electronic Frontier Foundation e estão licenciadas sob os termos da licença [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
-2) As palavras usadas em `arrayzão_Ricardo_Ueda_USP.js` foram adaptadas e modificadas a partir do [Instituto de Matemática e Estatística da USP](https://www.ime.usp.br/~pf/dicios/), cujo lista foi originalmente feita pelo Ricardo Ueda Karpischek e licenciadas sob os termos da licença [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+2) As palavras usadas em `arrayzão_Ricardo_Ueda_USP.js` foram adaptadas e modificadas a partir de lista do [Instituto de Matemática e Estatística da USP](https://www.ime.usp.br/~pf/dicios/), cujo lista foi originalmente feita pelo Ricardo Ueda Karpischek e licenciada sob os termos da licença [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en).
 
 # Ver também
  [Gerador de Senhas versão CLI](https://github.com/fernandoisnaldo/Gerador-de-Senhas) (Java)
