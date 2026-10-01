@@ -9,10 +9,7 @@
  * Houve uma redução drástica em relação à fonte original, porque o código estava grande demais
  * pra ser editável e porque foi necessário corrigir algumas colisões.
  *
- * Esta versão modificada está sob os termos da GPL v3 ou posterior.
- * 
- * A integração, a formatação em código JavaScript e os demais componentes
- * deste software são distribuídos sob os termos da Licença Pública Geral
+ * Este software é distribuído sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, sob o Copyright (C) de Fernando Isnaldo Silva de Faria,
  * SEM QUALQUER GARANTIA
  *
