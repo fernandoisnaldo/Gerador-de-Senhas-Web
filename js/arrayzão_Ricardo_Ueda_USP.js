@@ -1,17 +1,16 @@
 /*
- * Lista de Palavras do Ricardo Ueda Karpischek
+ * Lista de Palavras de Ricardo Ueda Karpischek
  *
- * As palavras contidas neste array vieram de uma lista organizada pelo Ricardo Ueda Karpischek, 
- * foram encontrados em um site da USP e foram licenciadas sob a Licença Creative Commons 
- * Attribution 4.0 International (CC BY 4.0).
+ * O conjunto de palavras contido neste arquivo foi adaptado de uma lista organizada por 
+ * Ricardo Ueda Karpischek (IME-USP), originalmente disponibilizada sob a licença 
+ * Creative Commons Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
- * Houve uma redução drástica em relação à fonte original, porque o código estava grande demais
- * pra ser editável e porque foi necessário corrigir algumas colisões.
+ * Modificações realizadas: Redução da lista original e correção de colisões.
  *
  * Este software é distribuído sob os termos da Licença Pública Geral
- * GNU (GNU GPL) versão 3 ou posterior, sob o Copyright (C) de Fernando Isnaldo Silva de Faria,
- * SEM QUALQUER GARANTIA
+ * GNU (GNU GPL) versão 3 ou posterior, Copyright (C) Fernando Isnaldo Silva de Faria,
+ * SEM QUALQUER GARANTIA.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
