@@ -22,6 +22,11 @@ let ascii_span = document.getElementById("tipo_ascii"); //span que muda em tempo
 let silabas_span = document.getElementById("tipo_silabas"); //span aviso que fica invisível quando não tá no módulo sílaba
 let eff_span = document.getElementById("eff_cc");
 let botoesTipoSenha = document.querySelectorAll('.tipo_senha');
+let botoesPalavras = document.querySelectorAll('.seletor_palavras');
+let OPCAOPALAVRAS  = Object.freeze({
+    CAPITALIZA:0,
+    SEPARADOR:1
+});
 //Logo abaixo, o objeto para facilitar a manutenção dos botões de seleção
 const OPCAO = Object.freeze({//se precisar mudar a ordem dos botões de seleção, é aqui que resolve
     ASCII:0,
@@ -38,7 +43,8 @@ const QtdePADRAO = Object.freeze({
     DECIMAL:40,
     MAX: 10000
 });
-let separadorPalavras = ".";
+let separadorPalavras = " ";
+let capitalCase = false;
 let tipoElemento = OPCAO.ASCII; //define tipo ASCII por padrão
 let senha = document.getElementById("output");
 let exibirCopiar  = document.getElementById("copiar");
@@ -121,10 +127,43 @@ function setPalavra(){
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QtdePADRAO.PALAVRA;
 }
+function caixaAltaBaixa(){
+    if (botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent === "aa"){
+        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "Aa";
+        capitalCase=true;
+    }
+    else{
+        botoesPalavras[OPCAOPALAVRAS.CAPITALIZA].textContent = "aa";
+        capitalCase=false;
+    }
+}
+function selecionaSeparador(){
+    if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent === "space"){
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent=".";
+        separadorPalavras=".";
+    }
+    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent === "."){
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="#";
+        separadorPalavras="#";
+    }
+    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="#"){
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="+";
+        separadorPalavras="+";
+    }
+    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="+"){
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="*";
+        separadorPalavras="*";
+    }
+    else {
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="space";
+        separadorPalavras=" ";
+    }
+}
 function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
     ascii_span.textContent = botoesTipoSenha[indiceAtivo].textContent;
     if(indiceAtivo == OPCAO.SILABA){
         silabas_span.style.visibility="visible";
+        //
     }
     else {
         silabas_span.style.visibility="hidden";
@@ -136,6 +175,12 @@ function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página 
     else {
         silabas_span.style.display="inline-block";
         eff_span.style.display="none";
+    }
+    if(indiceAtivo == OPCAO.SILABA || indiceAtivo == OPCAO.PALAVRA){
+          botoesPalavras.forEach(btn => btn.style.visibility = "visible");
+    }
+    else {
+        botoesPalavras.forEach(btn => btn.style.visibility = "hidden");
     }
     botoesTipoSenha.forEach((btn, index) => {//opção de acessibilidade nos botões de seleção
         if (index === indiceAtivo) {
@@ -167,8 +212,15 @@ async function gerarSenha(){
             let c = alfabeto.consoantes[numAleatorio(alfabeto.consoantes.length)];
             let v = alfabeto.vogais[numAleatorio(alfabeto.vogais.length)];
             let t = alfabeto.terminacoes[numAleatorio(alfabeto.terminacoes.length)];
+            let silaba;
             if (await filtro(c+v+t)) {
-                novaSenha.push(c+v+t);
+                if (capitalCase){
+                    silaba=((c+v+t).charAt(0).toUpperCase()) + (c+v+t).slice(1);
+                }
+                else {
+                    silaba=c+v+t;
+                }
+                novaSenha.push(silaba);
                 if (contador != quantidade - 1) {
                     novaSenha.push(separadorPalavras);
                 }
@@ -214,10 +266,14 @@ async function gerarSenha(){
             }
         }
         else if (tipoElemento == OPCAO.PALAVRA){
+            let palavra=palavras[numAleatorio(palavras.length)];
+            if (capitalCase){
+                palavra=palavra.charAt(0).toUpperCase() + palavra.slice(1);
+            }
             if(contador!=0){
                 novaSenha.push(separadorPalavras);//adciona um espaço entre as sílabas
             }
-            novaSenha.push(palavras[numAleatorio(palavras.length)]);
+            novaSenha.push(palavra);
         }
     }
     senha.textContent=novaSenha.join("");
