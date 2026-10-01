@@ -2,7 +2,7 @@
  * Lista de Palavras EFF (EFF's Long Wordlist)
  *
  * As palavras contidas neste array pertencem à Electronic Frontier Foundation (EFF)
- * e estão licenciadas sob a Licença Creative Commons Attribution 3.0 Unported (CC BY 4.0)
+ * e estão licenciadas sob a Licença Creative Commons Attribution 4.0 Internacional (CC BY 4.0)
  * ou posterior.
  * Fonte Original: https://www.eff.org/dice
  *
