@@ -311,7 +311,7 @@ function decoracaoSenha(){
     .toString(16) + " dashed 2px";
 }
 function mostraEntropia(quantidade){
-    const tamanhosConjunto = {
+    let tamanhosConjunto = {
         [TIPOSENHA.ASCII]: 94,
         [TIPOSENHA.SILABA]: (alfabeto.consoantes.length * alfabeto.vogais.length * alfabeto.terminacoes.length - SILABAS_PROIBIDAS.size),
         [TIPOSENHA.ALFANUM]: 62,
