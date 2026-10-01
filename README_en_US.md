@@ -31,7 +31,7 @@ By default, this program supports generating a password with up to 10,000 elemen
 
 [^6]: There was no opportunity to conduct tests with real users of screen readers. If you find any problem or would like to offer a suggestion, please create an issue.
 
-# Copyright:
+# Copyright
 © 2026 Fernando Isnaldo Silva de Faria:
 1) This program is free software: it is licensed under the terms of the [GNU GENERAL PUBLIC LICENSE v3](https://www.gnu.org/licenses/gpl-3.0.html) or later.
 2) This and other READMEs are licensed under the terms of the [Creative Commons BY-SA 4.0 Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
