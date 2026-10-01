@@ -1,20 +1,22 @@
 /*
  * Lista de Palavras do Ricardo Ueda Karpischek
  *
- * As palavras contidas neste array pertencem ao Ricardo Ueda Karpischek, foram encontrados em
- * um site da USP e estão licenciadas sob a Licença Creative Commons Attribution 4.0 International
- * (CC BY 4.0) ou posterior.
+ * As palavras contidas neste array vieram de umma lista organizada pelo Ricardo Ueda Karpischek, 
+ * foram encontrados em um site da USP e foram licenciadas sob a Licença Creative Commons 
+ * Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
  * Houve uma redução drástica em relação à fonte original, porque o código estava grande demais
- * pra ser editável.
+ * pra ser editável e porque foi necessário corrigir algumas colisões.
  *
+ * Esta versão modificada está sob os termos da GPL v3 ou posterior.
+ * 
  * A integração, a formatação em código JavaScript e os demais componentes
  * deste software são distribuídos sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, sob o Copyright (C) de Fernando Isnaldo Silva de Faria,
  * com as mesmas cláusulas de isenção de garantia.
  *
- * SPDX-License-Identifier: CC-BY-4.0 AND GPL-3.0-or-later
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 const palavras = [
 	"a",
