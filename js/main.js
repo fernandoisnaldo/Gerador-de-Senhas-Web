@@ -143,16 +143,16 @@ function selecionaSeparador(){
         separadorPalavras=".";
     }
     else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent === "."){
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="#";
-        separadorPalavras="#";
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="_";
+        separadorPalavras="_";
     }
-    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="#"){
+    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="_"){
+        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="-";
+        separadorPalavras="-";
+    }
+    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="-"){
         botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="+";
         separadorPalavras="+";
-    }
-    else if(botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent==="+"){
-        botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="*";
-        separadorPalavras="*";
     }
     else {
         botoesPalavras[OPCAOPALAVRAS.SEPARADOR].textContent="space";
