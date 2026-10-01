@@ -79,11 +79,15 @@ footer, header {
 }
 #tipo_silabas {
     font-size: .8rem;
-    visibility: hidden
+    visibility: hidden;
 }
 #eff_cc {
     font-size: .8rem;
     display: none;
+}
+.seletor_palavras{
+    min-width: 2rem;
+    visibility: hidden;
 }
 @media (prefers-color-scheme: dark) {
     body {
