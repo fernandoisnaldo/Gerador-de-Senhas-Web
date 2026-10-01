@@ -96,36 +96,43 @@ function setASCII(){
     tipoElemento = TIPOSENHA.ASCII;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.CARACTERE;
+    gerarSenha();
 }
 function setSilabas(){
     tipoElemento = TIPOSENHA.SILABA;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.PALAVRA;
+    gerarSenha();
 }
 function setAlfanumerico(){
     tipoElemento = TIPOSENHA.ALFANUM;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.CARACTERE;
+    gerarSenha();
 }
 function setHexadecimal(){
     tipoElemento = TIPOSENHA.HEX;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.CARACTERE;
+    gerarSenha();
 }
 function setDecimal(){
     tipoElemento = TIPOSENHA.NUM;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.DECIMAL;
+    gerarSenha();
 }
 function setBase64(){
     tipoElemento = TIPOSENHA.BASE64;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.CARACTERE;
+    gerarSenha();
 }
 function setPalavra(){
     tipoElemento = TIPOSENHA.PALAVRA;
     atualizarBotoesSPan(tipoElemento);
     numChar.value=QTDE_PADRAO.PALAVRA;
+    gerarSenha();
 }
 function caixaAltaBaixa(){
     if (botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent === "a↓"){
@@ -136,6 +143,7 @@ function caixaAltaBaixa(){
         botoesPalavras[PALAVRASCONFIG.CAPITALIZA].textContent = "a↓";
         capitalCase=false;
     }
+    gerarSenha();
 }
 function selecionaSeparador(){
     if(botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent === "space"){
@@ -158,6 +166,7 @@ function selecionaSeparador(){
         botoesPalavras[PALAVRASCONFIG.SEPARADOR].textContent="space";
         separadorPalavras=" ";
     }
+    gerarSenha();
 }
 function atualizarBotoesSPan(indiceAtivo) {//qual span pode aparecer na página HTML
     ascii_span.textContent = botoesTipoSenha[indiceAtivo].textContent;
