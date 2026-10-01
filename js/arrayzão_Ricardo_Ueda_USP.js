@@ -8242,5 +8242,5 @@ const palavras = [
 	"zurra",
 	"zurrá",
 	"zurre",
-	"zurro",
+	"zurro"
 ];
