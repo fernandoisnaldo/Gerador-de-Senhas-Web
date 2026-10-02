@@ -6,7 +6,8 @@
  * Creative Commons Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
- * Modificações realizadas: Redução da lista original e correção de colisões.
+ * Modificações realizadas: Redução da lista original, correção de colisões e adição de 
+ * algumas palavras próprias.
  *
  * Este software é distribuído sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, Copyright (C) Fernando Isnaldo Silva de Faria,
@@ -1114,6 +1115,7 @@ const palavras = [
 	"bicas",
 	"bicha",
 	"bicho",
+	"bicicleta",
 	"bico",
 	"bicos",
 	"bicou",
@@ -1305,6 +1307,7 @@ const palavras = [
 	"buliu",
 	"bulo",
 	"bumbo",
+	"bumbum",
 	"bunda",
 	"bundá",
 	"bunde",
@@ -3743,6 +3746,7 @@ const palavras = [
 	"ímpar",
 	"ímpia",
 	"ímpio",
+	"imperialismo",
 	"impô",
 	"impõe",
 	"impor",
@@ -4160,6 +4164,7 @@ const palavras = [
 	"liame",
 	"lias",
 	"libra",
+	"libertação",
 	"lição",
 	"liceu",
 	"licor",
@@ -5174,6 +5179,7 @@ const palavras = [
 	"onere",
 	"onero",
 	"ônix",
+	"ônibus",
 	"ontem",
 	"ônus",
 	"onze",
@@ -5200,6 +5206,7 @@ const palavras = [
 	"opor",
 	"oporá",
 	"opôs",
+	"opressão",
 	"opta",
 	"optá",
 	"optai",
