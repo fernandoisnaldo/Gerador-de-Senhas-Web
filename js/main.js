@@ -330,11 +330,11 @@ function mostraEntropia(quantidade){
         DEBUG && console.log(`Entropy: ${totalEntropy.toFixed(2)} bits`);
         senha.title = Math.floor(totalEntropy)+ " bits"; // cálculo de entropia
         let botaoCopiarIndice;//seleciona o botão certo para determinado nível de entropia
-        if(totalEntropy<86){
+        if(totalEntropy<64){
             botaoCopiarIndice=0; // senha fraca
             senha.style.filter = "grayscale(90%)";
         }
-        else if(totalEntropy<148){
+        else if(totalEntropy<128){
             botaoCopiarIndice=1; // senha nível aceitável
             senha.style.filter = "grayscale(0%)";
         }
