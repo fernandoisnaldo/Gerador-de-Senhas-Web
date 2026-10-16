@@ -1,16 +1,19 @@
 /*
  * Lista de Palavras EFF (EFF's Long Wordlist)
  *
- * As palavras contidas neste array pertencem à Electronic Frontier Foundation (EFF)
- * e estão licenciadas sob a Licença Creative Commons Attribution 4.0 Internacional (CC BY 4.0)
- * ou posterior.
+ * As palavras contidas neste array pertencem integralmente à  Electronic 
+ * Frontier Foundation (EFF) e estão licenciadas sob a Licença Creative
+ * Commons Attribution 4.0 Internacional (CC BY 4.0)
  * Fonte Original: https://www.eff.org/dice
  *
+ * Você pode utilizar todas as palavras dessa lista se fornecer crédito e
+ * mencionar a licença utilizada pela EFF.
+ *
+ * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * A integração, a formatação em código JavaScript e os demais componentes
  * deste software são distribuídos sob os termos da Licença Pública Geral
- * GNU (GNU GPL) versão 3 ou posterior, sob o Copyright (C) de Fernando Isnaldo Silva de Faria,
- * com as mesmas cláusulas de isenção de garantia.
- *
+ * GNU (GNU GPL) versão 3 ou posterior, SEM QUALQURE GARANTIA
+ * 
  * SPDX-License-Identifier: CC-BY-4.0 AND GPL-3.0-or-later
  */
 const palavras = [
