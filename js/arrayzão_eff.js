@@ -15,7 +15,7 @@
  * deste software são distribuídos sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, SEM QUALQUER GARANTIA
  * 
- * SPDX-License-Identifier: CC-BY-4.0 AND GPL-3.0-or-later
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 const palavras = [
     "abacus",
