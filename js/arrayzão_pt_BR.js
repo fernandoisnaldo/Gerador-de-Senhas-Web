@@ -15,7 +15,7 @@
  * derivados da lista original.
  *
  * Consulte o arquivo LICENSE para os termos da GPL.
- * NÃO HÀ QUALQUER GARANTIA.
+ * NÃO HÁ QUALQUER GARANTIA.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
