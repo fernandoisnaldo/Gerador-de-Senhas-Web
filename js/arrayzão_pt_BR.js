@@ -1,32 +1,21 @@
 /*
- * Lista de Palavras derivada de Ricardo Ueda Karpischek
+ * Lista de palavras derivada de Ricardo Ueda Karpischek (IME-USP).
  *
- * O conjunto de palavras contido neste arquivo foi adaptado de uma lista organizada por 
- * Ricardo Ueda Karpischek (IME-USP), originalmente disponibilizada sob a licença 
- * Creative Commons Attribution 4.0 International (CC BY 4.0).
- * Fonte Original: https://www.ime.usp.br/~pf/dicios/
- *
- * Ao modificar e/ou redistribuir estas palavras, você deve concordar em: fornecer os
- * créditos para o Ricardo Ueda Karpischek, citar a fonte original, mencionar a licença 
- * Creative Commons Attribution 4.0 International (CC BY 4.0) e mencionar quando houver
- * as suas próprias modificações
+ * Fonte original: https://www.ime.usp.br/~pf/dicios/
+ * Licença original dos dados originais: CC BY 4.0
+ * https://creativecommons.org/licenses/by/4.0/
  *
  * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
- * Modificações realizadas:
- * 1) Integração e formatação em código JavaScript
- * 2) Redução da lista original
- * 3) Correção de colisões
- * 4) Adição de algumas palavras próprias
  *
- * As modificações realizadas a partir deste código-fonte podem ser distribuídas sob os
- * termos da Licença Pública Geral GNU (GNU GPL) versão 3 ou posterior, conforme publicado
- * Free Software Foundation.
- * Veja a licença GPL v3 (disponível no arquivo LICENSE) para mais detalhes
- * NÃO HÁ GARANTIA.
+ * Modificações: redução da lista, correção de colisões, adição de
+ * palavras próprias e conversão para array JavaScript.
  *
- * Este arquivo contém dados adaptados de uma lista disponibilizada sob CC BY 4.0.
- * A licença GPL indicada para este arquivo não elimina as obrigações de atribuição e
- * demais condições aplicáveis ao material original.
+ * Este arquivo é distribuído sob a GNU GPL, versão 3 ou posterior,
+ * sem prejuízo das condições da CC BY 4.0 aplicáveis aos dados
+ * derivados da lista original.
+ *
+ * Consulte LICENSE para os termos da GPL.
+ * SEM QUALQUER GARANTIA.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
