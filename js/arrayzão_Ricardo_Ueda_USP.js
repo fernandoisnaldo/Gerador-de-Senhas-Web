@@ -11,7 +11,7 @@
  * 1) Integração em código JavaScript
  * 2) Redução da lista original
  * 3) Correção de colisões
- * 4) adição de algumas palavras próprias.
+ * 4) Adição de algumas palavras próprias.
  *
  * Este software é distribuído sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, SEM QUALQUER GARANTIA.
