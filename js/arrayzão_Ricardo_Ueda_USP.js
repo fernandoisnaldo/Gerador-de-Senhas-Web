@@ -9,7 +9,7 @@
  * Ao utilizar modificar e/ou redistribuir este código, você deve concordar em fornecer
  * os devidos créditos para o Ricardo Ueda Karpischek, a fonte original, citar a licença
  * Creative Commons Attribution 4.0 International (CC BY 4.0) e mencionar quando houver
- * modificações.
+ * as suas próprias modificações.
  *
  * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * Modificações realizadas:
