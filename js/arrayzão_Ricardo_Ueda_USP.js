@@ -20,7 +20,7 @@
  *
  * Todas as modificações realizadas a partir deste código podem ser distribuídas sob os
  * termos da Licença Pública Geral GNU (GNU GPL) versão 3 ou posterior
- * NÃO HÁ QUALQUER GARANTIA.
+ * NÃO HÁ GARANTIA.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
