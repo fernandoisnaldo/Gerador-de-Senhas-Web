@@ -5,10 +5,9 @@
  * Licença original dos dados: CC BY 4.0
  * https://creativecommons.org/licenses/by/4.0/
  *
+ * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * Modificações: redução da lista, correção de colisões, adição de
  * palavras próprias e conversão para array JavaScript.
- *
- * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  *
  * Este arquivo é distribuído sob a GNU GPL, versão 3 ou posterior,
  * sem prejuízo das condições da CC BY 4.0 aplicáveis aos dados
