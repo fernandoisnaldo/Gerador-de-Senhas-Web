@@ -21,6 +21,7 @@
 const palavras = [
 	"a",
 	"à",
+	"aba",
 	"ábaco",
 	"abafa",
 	"abafá",
@@ -1863,7 +1864,6 @@ const palavras = [
 	"conte",
 	"contê",
 	"conto",
-	"coo",
 	"coou",
 	"copa",
 	"copas",
@@ -2015,7 +2015,6 @@ const palavras = [
 	"cruzá",
 	"cruze",
 	"cruzo",
-	"cu",
 	"cuba",
 	"cubas",
 	"cubo",
