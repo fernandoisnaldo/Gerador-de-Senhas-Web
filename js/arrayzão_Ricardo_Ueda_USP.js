@@ -6,7 +6,7 @@
  * Creative Commons Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
- * Ao utilizar modificar e/ou redistribuir este arquivo, você deve concordar em fornecer
+ * Ao modificar e/ou redistribuir este arquivo, você deve concordar em fornecer
  * os devidos créditos para o Ricardo Ueda Karpischek, a fonte original, citar a licença
  * Creative Commons Attribution 4.0 International (CC BY 4.0) e mencionar quando houver
  * as suas próprias modificações.
