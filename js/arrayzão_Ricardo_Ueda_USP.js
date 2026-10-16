@@ -6,11 +6,12 @@
  * Creative Commons Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
+ * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * Modificações realizadas: Redução da lista original, correção de colisões e adição de 
  * algumas palavras próprias.
  *
  * Este software é distribuído sob os termos da Licença Pública Geral
- * GNU (GNU GPL) versão 3 ou posterior, Copyright (C) Fernando Isnaldo Silva de Faria,
+ * GNU (GNU GPL) versão 3 ou posterior
  * SEM QUALQUER GARANTIA.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
