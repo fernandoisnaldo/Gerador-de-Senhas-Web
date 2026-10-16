@@ -1,5 +1,5 @@
 /*
- * Lista de Palavras de Ricardo Ueda Karpischek
+ * Lista de Palavras derivada de Ricardo Ueda Karpischek
  *
  * O conjunto de palavras contido neste arquivo foi adaptado de uma lista organizada por 
  * Ricardo Ueda Karpischek (IME-USP), originalmente disponibilizada sob a licença 
