@@ -13,7 +13,7 @@
  *
  * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * Modificações realizadas:
- * 1) Integração em código JavaScript
+ * 1) Integração e formatação em código JavaScript
  * 2) Redução da lista original
  * 3) Correção de colisões
  * 4) Adição de algumas palavras próprias
