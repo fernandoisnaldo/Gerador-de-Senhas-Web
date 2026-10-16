@@ -7,7 +7,7 @@
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
  * Ao modificar e/ou redistribuir este arquivo, você deve concordar em fornecer os devidos
- * créditos para o Ricardo Ueda Karpischek, a citar a fonte original, mencionar a licença 
+ * créditos para o Ricardo Ueda Karpischek, citar a fonte original, mencionar a licença 
  * Creative Commons Attribution 4.0 International (CC BY 4.0) e mencionar quando houver as suas
  * próprias modificações.
  *
