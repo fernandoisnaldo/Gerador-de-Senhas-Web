@@ -16,6 +16,10 @@
  * deste software são distribuídos sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, SEM QUALQUER GARANTIA
  * 
+ * Este arquivo contém dados adaptados de uma lista disponibilizada sob CC BY 4.0.
+ * A licença GPL indicada para este arquivo não elimina as obrigações de atribuição e
+ * demais condições aplicáveis ao material original.
+ *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 const palavras = [
