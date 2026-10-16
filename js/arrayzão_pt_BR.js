@@ -24,6 +24,10 @@
  * Veja a licença GPL v3 (disponível no arquivo LICENSE) para mais detalhes
  * NÃO HÁ GARANTIA.
  *
+ * Este arquivo contém dados adaptados de uma lista disponibilizada sob CC BY 4.0.
+ * A licença GPL indicada para este arquivo não elimina as obrigações de atribuição e
+ * demais condições aplicáveis ao material original.
+ *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 const palavras = [
