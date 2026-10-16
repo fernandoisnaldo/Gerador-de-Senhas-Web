@@ -18,12 +18,11 @@
  * 3) Correção de colisões
  * 4) Adição de algumas palavras próprias
  *
- * As modificações realizadas a partir deste código podem ser distribuídas sob os
+ * As modificações realizadas a partir deste código-fonte podem ser distribuídas sob os
  * termos da Licença Pública Geral GNU (GNU GPL) versão 3 ou posterior, conforme publicado
- * pela Free Software Foundation.
+ * Free Software Foundation.
  * Veja a licença GPL v3 (disponível no arquivo LICENSE) para mais detalhes
  * NÃO HÁ GARANTIA.
- *
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
