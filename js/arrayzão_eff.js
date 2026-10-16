@@ -7,7 +7,7 @@
  * Fonte Original: https://www.eff.org/dice
  *
  * Você pode utilizar todas as palavras dessa lista da forma como preferir
- * desde que forneça crédito e mencione a licença utilizada pela EFF.
+ * desde que forneça crédito à EFF e mencione a licença utilizada pela EFF.
  *
  * A integração, a formatação em código JavaScript e os demais componentes
  * deste software são distribuídos sob os termos da Licença Pública Geral
