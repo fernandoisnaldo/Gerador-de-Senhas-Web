@@ -8,7 +8,8 @@
  *
  * Você pode redistribuir e/ou modificar todas as palavras deste array da
  * forma como preferir, desde que exiba os créditos à EFF, a fonte original 
- * da EFF e a licença Creative Commons Attribution 4.0 Internacional (CC BY 4.0)
+ * da EFF, a licença Creative Commons Attribution 4.0 Internacional (CC BY 4.0)
+ * e também todas as modificações que você realizar.
  *
  * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * A integração, a formatação em código JavaScript e os demais componentes
