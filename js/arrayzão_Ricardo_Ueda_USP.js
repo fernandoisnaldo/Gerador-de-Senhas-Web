@@ -6,10 +6,10 @@
  * Creative Commons Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
- * Ao modificar e/ou redistribuir este arquivo, você deve concordar em fornecer os devidos
+ * Ao modificar e/ou redistribuir estas palavras, você deve concordar em: fornecer os
  * créditos para o Ricardo Ueda Karpischek, citar a fonte original, mencionar a licença 
  * Creative Commons Attribution 4.0 International (CC BY 4.0) e mencionar quando houver
- * as suas próprias modificações.
+ * as suas próprias modificações
  *
  * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * Modificações realizadas:
@@ -18,8 +18,9 @@
  * 3) Correção de colisões
  * 4) Adição de algumas palavras próprias
  *
- * Este software é distribuído sob os termos da Licença Pública Geral
- * GNU (GNU GPL) versão 3 ou posterior, SEM QUALQUER GARANTIA.
+ * Todas as modificações realizadas a partir deste código podem ser distribuídas sob os
+ * termos da Licença Pública Geral GNU (GNU GPL) versão 3 ou posterior
+ * NÃO HÁ QUALQUER GARANTIA.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
