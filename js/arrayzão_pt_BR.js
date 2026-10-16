@@ -2,7 +2,7 @@
  * Lista de palavras derivada de Ricardo Ueda Karpischek (IME-USP).
  *
  * Fonte original: https://www.ime.usp.br/~pf/dicios/
- * Licença original dos dados originais: CC BY 4.0
+ * Licença original dos dados: CC BY 4.0
  * https://creativecommons.org/licenses/by/4.0/
  *
  * Modificações: redução da lista, correção de colisões, adição de
