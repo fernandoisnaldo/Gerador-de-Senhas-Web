@@ -9,7 +9,6 @@
  * Você pode utilizar todas as palavras dessa lista se fornecer crédito e
  * mencionar a licença utilizada pela EFF.
  *
- * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * A integração, a formatação em código JavaScript e os demais componentes
  * deste software são distribuídos sob os termos da Licença Pública Geral
  * GNU (GNU GPL) versão 3 ou posterior, SEM QUALQURE GARANTIA
