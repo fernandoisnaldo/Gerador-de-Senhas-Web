@@ -6,6 +6,10 @@
  * Creative Commons Attribution 4.0 International (CC BY 4.0).
  * Fonte Original: https://www.ime.usp.br/~pf/dicios/
  *
+ * Ao utilizar modificar e/ou redistribuir este código, você deve concordar em fornecer
+ * os devidos créditos para o Ricardo Ueda Karpischek, a fonte original e citar também
+ * a licença Creative Commons Attribution 4.0 International (CC BY 4.0).
+ *
  * Copyright (C) 2026 Fernando Isnaldo Silva de Faria
  * Modificações realizadas:
  * 1) Integração em código JavaScript
